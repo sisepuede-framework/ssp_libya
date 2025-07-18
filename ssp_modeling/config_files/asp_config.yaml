@@ -1,0 +1,5 @@
+country_name: "uganda"
+ssp_input_file_name: "ssp_inputs_uganda_ASP_Scenario.csv"
+ssp_transformation_cw: "ssp_uganda_transformation_cw_asp.xlsx"
+set_lndu_reallocation_factor_to_zero: true
+energy_model_flag: false
