@@ -4,37 +4,79 @@ This repository contains notebooks and supporting files used to run the
 **SISEPUEDE** model on Uganda's mitigation scenarios. All modeling resources
 reside in the `ssp_modeling` folder described below.
 
-## Get Started
+Absolutely! Here’s an updated version of the instructions, emphasizing the use of the `.yml` file and how to set a custom environment name.
 
-Create a conda environment with Python 3.11 (you can use any name):
+---
 
-```bash
-conda create -n sisepuede python=3.11
+## Instructions: Setting Up the SISEPUEDE Environment
+
+### 1. **Go to the `environment.yml` file**
+
+Obtain the provided `environment.yml` file for SISEPUEDE.
+
+---
+
+### 2. **Set a Custom Environment Name**
+
+Open the `environment.yml` file in your preferred text editor (such as VS Code, Atom, nano, or even Notepad).
+At the very top, you'll see a line like:
+
+```yaml
+name: sisepuede
 ```
 
-Activate the environment:
+**Change `sisepuede` to your preferred environment name, usually related to the region you are working with** (e.g., `ssp-mex`, `ssp-usa`, or whatever you'd like).
 
-```bash
-conda activate sisepuede
+For example:
+
+```yaml
+name: ssp-mex
 ```
 
-Install the working version of the sisepuede package:
+---
+
+### 3. **Create the Environment from the `.yml` File**
+
+In your terminal, navigate to the directory containing your `environment.yml` file, then run:
 
 ```bash
-pip install git+https://github.com/jcsyme/sisepuede.git@working_version
+conda env create -f environment.yml
 ```
 
-Install the cost benefits package:
+This will create a new Conda environment with the name you set in the file.
+
+---
+
+### 4. **Activate the Environment**
+
+After installation, activate your new environment with:
 
 ```bash
-pip install git+https://github.com/milocortes/costs_benefits_ssp.git@main
+conda activate <your_env_name>
 ```
 
-Install additional libraries:
+*(Replace `<your_env_name>` with the name you specified in the `.yml` file, e.g., `ssp-mex`)*
 
-```bash
-pip install -r requirements.txt
-```
+---
+
+### 5. **Done!**
+
+Your environment is now ready to use, with all dependencies (including those installed via pip) preconfigured.
+
+---
+
+#### **Tips:**
+
+* If you update the `environment.yml` file later, you can update your environment with:
+
+  ```bash
+  conda env update -f environment.yml --prune
+  ```
+* You can list all your environments with:
+
+  ```bash
+  conda env list
+  ```
 
 ## Project Structure
 
