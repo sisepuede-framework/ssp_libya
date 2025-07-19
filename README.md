@@ -1,12 +1,9 @@
-# SSP_Uganda
+# SSP_Libya
 
 This repository contains notebooks and supporting files used to run the
-**SISEPUEDE** model on Uganda's mitigation scenarios. All modeling resources
+**SISEPUEDE** model on Libya's mitigation scenarios. All modeling resources
 reside in the `ssp_modeling` folder described below.
 
-Absolutely! Here’s an updated version of the instructions, emphasizing the use of the `.yml` file and how to set a custom environment name.
-
----
 
 ## Instructions: Setting Up the SISEPUEDE Environment
 
@@ -90,27 +87,3 @@ The most relevant files are inside the `ssp_modeling` directory:
 - `transformations/` – CSVs and YAML files describing the transformations applied by the model.
 - `output_postprocessing/` – R scripts used to rescale model results and
     generate processed outputs.
-
-## Uganda Manager Workbooks
-
-Three notebooks drive the modeling process:
-
-- **`uganda_manager_wb_bau.ipynb`** – Runs the Business as Usual scenario using
-    `bau_config.yaml`.
-- **`uganda_manager_wb_asp.ipynb`** – Runs the ambition scenario defined in
-    `asp_config.yaml`.
-- **`uganda_manager_wb_bau_w_energy.ipynb`** – Runs a BaU case that also calls
-    the energy model with `bau_energy_config.yaml`.
-
-Each notebook loads the appropriate configuration file, prepares the input data
-frame, applies the transformations listed in the corresponding workbook, and
-produces a CSV in `ssp_run/<scenario>/` with the results.
-
-## Rescaling
-
-After running a scenario, the outputs can be rescaled to match the national
-inventory targets. Scripts under
-`output_postprocessing/scr/` (for example,
-`run_script_baseline_run_new_asp.r`) load the simulation results, apply the
-function defined in `rescale_function_baseline_mapping_timeref.r`, and overwrite
-the CSV in `ssp_run/<scenario>/` with calibrated values.
