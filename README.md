@@ -4,6 +4,14 @@ This repository contains notebooks and supporting files used to run the
 **SISEPUEDE** model on Libya's mitigation scenarios. All modeling resources
 reside in the `ssp_modeling` folder described below.
 
+---
+
+## Visualization
+
+Explore the public visualization of Libya's case study here:  
+[Libya Case Study – (Tableau)](https://public.tableau.com/app/profile/carlos.fabian.fuentes.rivas/viz/Libya_CaseStudy_v0/GHGsectorlayers)
+
+---
 
 ## Instructions: Setting Up the SISEPUEDE Environment
 
@@ -87,3 +95,4 @@ The most relevant files are inside the `ssp_modeling` directory:
 - `transformations/` – CSVs and YAML files describing the transformations applied by the model.
 - `output_postprocessing/` – R scripts used to rescale model results and
     generate processed outputs.
+
