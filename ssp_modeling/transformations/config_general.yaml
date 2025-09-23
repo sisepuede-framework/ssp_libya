@@ -3,15 +3,13 @@ baseline:
   categories_entc_pps_to_cap: null
   categories_entc_renewable: null
   dict_entc_renewable_target_msp_baseline: {}
-  magnitude_lurf: 0.0
+  magnitude_lurf: null
   vec_implementation_ramp:
-    alpha_logistic: 0.0
+    alpha_logistic: null
     d: 0
     n_tp_ramp: null
     tp_0_ramp: null
-    window_logistic:
-    - -8
-    - 8
+    window_logistic: null
 general:
   categories_entc_max_investment_ramp: null
   categories_entc_pps_to_cap: null
@@ -26,12 +24,8 @@ general:
   frac_inen_high_temp_elec_hydg: 0.45
   frac_inen_low_temp_elec: 0.4275
   vec_implementation_ramp:
-    alpha_logistic: 0.0
+    alpha_logistic: null
     d: 0
     n_tp_ramp: null
     tp_0_ramp: null
-    window_logistic:
-    - -8
-    - 8
-  vir_renewable_cap_delta_frac: 0.0075
-  vir_renewable_cap_max_frac: 0.125
+    window_logistic: null
