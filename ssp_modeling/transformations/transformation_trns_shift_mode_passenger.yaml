@@ -1,5 +1,5 @@
 citations: null
-description: "None"
+description: "Missing"
 identifiers:
   transformation_code: "TX:TRNS:SHIFT_MODE_PASSENGER"
   transformation_name: "Default Value - TRNS: Mode shift passenger vehicles to others"

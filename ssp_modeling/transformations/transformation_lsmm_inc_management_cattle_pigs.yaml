@@ -9,6 +9,7 @@ identifiers:
     \ and pigs"
 parameters:
   dict_lsmm_pathways: null
+  return_pathways: false
   vec_cats_lvst: null
   vec_implementation_ramp: null
 transformer: "TFR:LSMM:INC_MANAGEMENT_CATTLE_PIGS"

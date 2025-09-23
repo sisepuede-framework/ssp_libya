@@ -1,5 +1,5 @@
 citations: null
-description: "Increase Direct Air Capture deployment to 50 MT CO2e by 2050"
+description: "Increase Direct Air Capture deployment to 50 MT CO2e by final time period."
 identifiers:
   transformation_code: "TX:CCSQ:INC_CAPTURE"
   transformation_name: "Default Value - CCSQ: Increase direct air capture"

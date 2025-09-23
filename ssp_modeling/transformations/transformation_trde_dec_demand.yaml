@@ -1,5 +1,5 @@
 citations: null
-description: "None"
+description: "Missing"
 identifiers:
   transformation_code: "TX:TRDE:DEC_DEMAND"
   transformation_name: "Default Value - TRDE: Reduce demand for transport"
