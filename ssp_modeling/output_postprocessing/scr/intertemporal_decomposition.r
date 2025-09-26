@@ -100,7 +100,7 @@ data[,paste0("emission_co2e_subsector_total_",subsectors[a])] <- rowSums(data[,s
 #print file  
 data$Index <- NULL 
 dim(data)
-write.csv(data,paste0(dir.output,tregion,".csv"),row.names=FALSE)
+write.csv(data,paste0(dir.output,"decomposed_ssp_output.csv"),row.names=FALSE)
 
 rm(data)
 print(rall[z])
