@@ -10,3 +10,5 @@ dependencies:
   - pip:
       - git+https://github.com/jcsyme/sisepuede.git@05722b11b1c15cd61a467ef3f5b270255480ab4b
       - ssp-transformations-handler
+      - costs-benefits-ssp
+      - polars
