@@ -11,8 +11,8 @@ library(ggplot2)
 rm(list=ls())
 
 #ouputfile
-dir.output  <- "ssp_modeling/ssp_run_output/sisepuede_results_run_sisepuede_run_2025-09-29T14;54;58.069424/"
-output.file <- "sisepuede_results_sisepuede_run_2025-09-29T14;54;58.069424_WIDE_INPUTS_OUTPUTS.csv"
+dir.output  <- "ssp_modeling/ssp_run_output/sisepuede_results_run_sisepuede_run_2025-09-29T15;56;28.615676/"
+output.file <- "sisepuede_results_sisepuede_run_2025-09-29T15;56;28.615676_WIDE_INPUTS_OUTPUTS.csv"
 
 region <- "libya" 
 iso_code3 <- "LBY"
