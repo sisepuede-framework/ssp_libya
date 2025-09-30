@@ -3,7 +3,7 @@ file.name <- paste0("decomposed_ssp_output.csv")
 iso_code3 <- iso_code3
 Country <- region
 
-mapping <- read.csv(paste0("ssp_modeling/output_postprocessing/data/emission_targets_",region,"_",year_ref,".csv"))
+mapping <- read.csv(paste0("ssp_modeling/output_postprocessing/data/emission_targets_",region,"_",year_ref,"_LULUCF_update.csv"))
 
 # drop "id" directly
 mapping$id <- NULL
@@ -17,7 +17,7 @@ mapping[[iso_code3]] <- NULL
 # mapping$Vars[3] <- "emission_co2e_n2o_lsmm_direct_anaerobic_digester:emission_co2e_n2o_lsmm_direct_anaerobic_lagoon:emission_co2e_n2o_lsmm_direct_composting:emission_co2e_n2o_lsmm_direct_daily_spread:emission_co2e_n2o_lsmm_direct_deep_bedding:emission_co2e_n2o_lsmm_direct_dry_lot:emission_co2e_n2o_lsmm_direct_incineration:emission_co2e_n2o_lsmm_direct_liquid_slurry:emission_co2e_n2o_lsmm_direct_paddock_pasture_range:emission_co2e_n2o_lsmm_direct_poultry_manure:emission_co2e_n2o_lsmm_direct_storage_solid:emission_co2e_n2o_lsmm_indirect_anaerobic_digester:emission_co2e_n2o_lsmm_indirect_anaerobic_lagoon:emission_co2e_n2o_lsmm_indirect_composting:emission_co2e_n2o_lsmm_indirect_daily_spread:emission_co2e_n2o_lsmm_indirect_deep_bedding:emission_co2e_n2o_lsmm_indirect_dry_lot:emission_co2e_n2o_lsmm_indirect_incineration:emission_co2e_n2o_lsmm_indirect_liquid_slurry:emission_co2e_n2o_lsmm_indirect_paddock_pasture_range:emission_co2e_n2o_lsmm_indirect_poultry_manure:emission_co2e_n2o_lsmm_indirect_storage_solid"
 
 # add edgar
-edgar <- read.csv(paste0("ssp_modeling/output_postprocessing/data/CSC-GHG_emissions-April2024_to_calibrate.csv"))
+edgar <- read.csv(paste0("ssp_modeling/output_postprocessing/data/CSC-GHG_emissions-April2024_to_calibrate_LULUCF_update.csv"))
 dim(edgar)
 edgar <- subset(edgar,Code==iso_code3)
 dim(edgar)
