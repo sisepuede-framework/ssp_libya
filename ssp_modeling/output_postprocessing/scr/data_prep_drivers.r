@@ -153,95 +153,98 @@ if (grepl("prod_ippu_textiles_tonne:IPPU",ids_all[i])==TRUE)
 test2$value <- ifelse(test2$value_new==0,test2$value,test2$value_new)
 test2$value_new <- NULL 
 
-#write
-#test2 <- subset(test2,strategy_id!=6005)
+gdp <- fread(paste0(dir.output,output.file))
+gdp <- gdp[primary_id==0]
+gdp <- subset(gdp,select=c("time_period","gdp_mmm_usd"))
 
-# gdp <- read.csv('data_processing/output_data/GDP.csv')
+gdp$year <- (gdp$time_period) + 2015
 
+gdp <- subset(gdp,select=c("year","gdp_mmm_usd"))
+gdp <- gdp[year<=2022]
 
-# build_drivers_table <- function(hist_dt,
-#                                 strategies_dt,
-#                                 iso_code3 = "UGA",
-#                                 country   = "uganda",
-#                                 data_type = "historical") {
-#   # hist_dt:       columnas c("year", "gdp_mmm_usd")
-#   # strategies_dt: columnas c("strategy_id","design_id","future_id","strategy")
+build_drivers_table <- function(hist_dt,
+                                strategies_dt,
+                                iso_code3 = "MEX",
+                                country   = "mexico",
+                                data_type = "historical") {
+  # hist_dt:       columnas c("year", "gdp_mmm_usd")
+  # strategies_dt: columnas c("strategy_id","design_id","future_id","strategy")
   
-#   hist_dt       <- as.data.table(hist_dt)
-#   strategies_dt <- as.data.table(strategies_dt)
+  hist_dt       <- as.data.table(hist_dt)
+  strategies_dt <- as.data.table(strategies_dt)
   
-#   # Renombrar columnas históricas
-#   hist_dt[, `:=`(Year  = year,
-#                  value = gdp_mmm_usd)]
-#   hist_dt[, c("year","gdp_mmm_usd") := NULL]
+  # Renombrar columnas históricas
+  hist_dt[, ':='(Year  = year,
+                 value = gdp_mmm_usd)]
+  hist_dt[, c("year","gdp_mmm_usd") := NULL]
   
-#   # Cross join (todas las estrategias x todos los años)
-#   strategies_dt[, dummy := 1]
-#   hist_dt[, dummy := 1]
-#   out <- strategies_dt[hist_dt, on = "dummy", allow.cartesian = TRUE]
-#   out[, dummy := NULL]
+  # Cross join (todas las estrategias x todos los años)
+  strategies_dt[, dummy := 1]
+  hist_dt[, dummy := 1]
+  out <- strategies_dt[hist_dt, on = "dummy", allow.cartesian = TRUE]
+  out[, dummy := NULL]
   
-#   # Variables constantes
-#   out[, `:=`(
-#     variable        = "gdp_mmm_usd",
-#     primary_id      = 0L,
-#     sector          = "Socioeconomic",
-#     subsector       = "Economy",
-#     model_variable  = "GDP",
-#     category_value  = "('', '')",
-#     category_name   = "cat_economy",
-#     gas             = NA_character_,
-#     gas_name        = "",
-#     Units           = "NA",
-#     Data_Type       = data_type,
-#     iso_code3       = iso_code3,
-#     Country         = country,
-#     output_type     = "drivers",
-#     energy_subsector= NA_character_,
-#     ids             = "gdp_mmm_usd:Economy:('', ''):0"
-#   )]
+  # Variables constantes
+  out[, ':=' (
+    variable        = "gdp_mmm_usd",
+    primary_id      = 0L,
+    sector          = "Socioeconomic",
+    subsector       = "Economy",
+    model_variable  = "GDP",
+    category_value  = "('', '')",
+    category_name   = "cat_economy",
+    gas             = NA_character_,
+    gas_name        = "",
+    Units           = "NA",
+    Data_Type       = data_type,
+    iso_code3       = iso_code3,
+    Country         = country,
+    output_type     = "drivers",
+    energy_subsector= NA_character_,
+    ids             = "gdp_mmm_usd:Economy:('', ''):0"
+  )]
   
-#   # Reordenar columnas exactamente como pediste
-#   setcolorder(out, c(
-#     "variable","strategy_id","primary_id","value","sector","subsector","model_variable",
-#     "category_value","category_name","gas","gas_name","Year","design_id","future_id",
-#     "strategy","Units","Data_Type","iso_code3","Country","output_type","energy_subsector","ids"
-#   ))
+  # Reordenar columnas exactamente como pediste
+  setcolorder(out, c(
+    "variable","strategy_id","primary_id","value","sector","subsector","model_variable",
+    "category_value","category_name","gas","gas_name","Year","design_id","future_id",
+    "strategy","Units","Data_Type","iso_code3","Country","output_type","energy_subsector","ids"
+  ))
   
-#   setorder(out, strategy_id, Year)
-#   return(out[])
-# }
+  setorder(out, strategy_id, Year)
+  return(out[])
+}
 
 
-# # Lista de estrategias (una fila por estrategia)
+# Lista de estrategias (una fila por estrategia)
 
-# strategies_dt <- data.table(
-#   strategy_id = unique(test2$strategy_id),
-#   design_id   = unique(test2$design_id),
-#   future_id   = unique(test2$future_id),
-#   strategy    = unique(test2$strategy)
-# )
+strategies_dt <- data.table(
+  strategy_id = unique(test2$strategy_id),
+  design_id   = unique(test2$design_id),
+  future_id   = unique(test2$future_id),
+  strategy    = unique(test2$strategy)
+)
 
-# drivers_table <- build_drivers_table(gdp, strategies_dt)
-# drivers_table
+drivers_table <- build_drivers_table(gdp, strategies_dt)
+drivers_table
 
 
-# # Filter drivers_table for years not present in test2 for the variable "gdp_mmm_usd"
-# years_in_test2 <- unique(test2$Year[test2$variable == "gdp_mmm_usd"])
-# last_year_in_test2 <- min(years_in_test2, na.rm = TRUE)
-# drivers_table <- drivers_table[drivers_table$Year < last_year_in_test2, ]
+# Filter drivers_table for years not present in test2 for the variable "gdp_mmm_usd"
+years_in_test2 <- unique(test2$Year[test2$variable == "gdp_mmm_usd"])
+last_year_in_test2 <- min(years_in_test2, na.rm = TRUE)
+drivers_table <- drivers_table[drivers_table$Year < last_year_in_test2, ]
 
-# table(drivers_table$Year)
+table(drivers_table$Year)
 
-# setcolorder(drivers_table, c(
-#     "variable","strategy_id","primary_id","value","sector","subsector","model_variable",
-#     "category_value","category_name","gas","gas_name","Year","design_id","future_id",
-#     "strategy","Units","Data_Type","iso_code3","Country","output_type","energy_subsector","ids"
-#   ))
+setcolorder(drivers_table, c(
+  "variable","strategy_id","primary_id","value","sector","subsector","model_variable",
+  "category_value","category_name","gas","gas_name","Year","design_id","future_id",
+  "strategy","Units","Data_Type","iso_code3","Country","output_type","energy_subsector","ids"
+))
 
-# drivers_table$variable <- "gdp_mmm_usd"
+drivers_table$variable <- "gdp_mmm_usd"
 
-# test2 <- rbind(test2, drivers_table, fill = TRUE)
+test2 <- rbind(test2, drivers_table, fill = TRUE)
 
 
 #write file
