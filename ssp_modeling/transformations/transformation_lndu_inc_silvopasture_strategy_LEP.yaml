@@ -6,9 +6,9 @@ description: Increase the use of silvopasture by increaasing the average sequest
   and f is the secondary forest sequestration factor.
 identifiers:
   transformation_code: "TX:LNDU:INC_SILVOPASTURE_STRATEGY_LEP"
-  transformation_name: "Scaled Default Max Parameters by 1.0 - LNDU: Expand silvopasture"
+  transformation_name: "Scaled Default Max Parameters by 2.0 - LNDU: Expand silvopasture"
 parameters:
-  magnitude: 0.1
+  magnitude: 0.2
   vec_implementation_ramp:
     tp_0_ramp: 12
 transformer: "TFR:LNDU:INC_SILVOPASTURE"

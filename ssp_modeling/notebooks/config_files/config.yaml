@@ -1,5 +1,5 @@
 country_name: "libya"
-ssp_input_file_name: "sisepuede_raw_inputs_latest_LBY_oct_28_updated_petroleum.csv"
+ssp_input_file_name: "sisepuede_raw_inputs_latest_LBY_modified_oct_28.csv"
 ssp_transformation_cw: "ssp_libya_transformation_cw_20251030.xlsx"
 set_lndu_reallocation_factor_to_zero: true
 energy_model_flag: true
