@@ -184,3 +184,5 @@ ssp_modeling/ssp_run_output/
 
 # ignore tableau/data directory
 ssp_modeling/tableau/data/
+
+ssp_modeling/cost-benefits/output
