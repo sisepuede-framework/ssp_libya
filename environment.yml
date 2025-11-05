@@ -1,4 +1,4 @@
-name: ssp_libya_env
+name: ssp_libya_env_2
 channels:
   - conda-forge
 dependencies:
@@ -8,7 +8,7 @@ dependencies:
   - ipykernel=6.29.5
   - pip
   - pip:
-      - git+https://github.com/jcsyme/sisepuede.git@05722b11b1c15cd61a467ef3f5b270255480ab4b
+      - git+https://github.com/jcsyme/sisepuede.git@73354fe8c57c38c233585b0574f3da6bc96dda1e
       - ssp-transformations-handler
       - costs-benefits-ssp
       - polars
