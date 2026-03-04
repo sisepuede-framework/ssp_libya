@@ -1,7 +1,7 @@
 #drivers
 output.folder <- dir.output
 dir.data <- paste0(output.folder)
-file.name <- paste0("decomposed_ssp_output.csv")
+file.name <- paste0("libya.csv")
 
 #load turkey data  
 data <- read.csv(paste0(dir.data,file.name)) 
@@ -35,7 +35,7 @@ sapply(DT.m1,class)
 
 
 #now read drivers taxonomy. 
-drivers <- read.csv("ssp_modeling/output_postprocessing/data/driver_variables_taxonomy_20240117.csv")
+drivers <- read.csv("ssp_modeling/output_postprocessing/data/driver_variables_taxonomy_20251013.csv")
 
 #change column name to taxonomy 
 drivers$variable <- drivers$field

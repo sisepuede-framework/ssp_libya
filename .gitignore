@@ -182,6 +182,8 @@ ssp_modeling/transformations/templates/
 # ignore the ssp_run_output/ directory
 ssp_modeling/ssp_run_output/
 ssp_modeling/transformations_orig/
+ssp_modeling/cost-benefits/tornado_plot/data
+ssp_modeling/cost-benefits/out
 
 # ignore tableau/data directory
 ssp_modeling/tableau/data/

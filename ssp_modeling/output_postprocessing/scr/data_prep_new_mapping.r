@@ -1,5 +1,5 @@
 # This script prepares the data for emissions mapping in Uganda
-file.name <- paste0("decomposed_ssp_output.csv")
+file.name <- paste0("libya.csv")
 iso_code3 <- iso_code3
 Country <- region
 
