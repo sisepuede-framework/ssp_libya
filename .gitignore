@@ -192,3 +192,6 @@ ssp_modeling/cost-benefits/output
 
 # ignore .sqlite database files
 *.sqlite
+
+# Tableau workbook backup files
+*.twbr
