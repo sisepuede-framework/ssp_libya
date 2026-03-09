@@ -11,7 +11,7 @@ library(ggplot2)
 rm(list=ls())
 
 #ouputfile
-run <- 'sisepuede_results_sisepuede_run_2026-03-04T13;30;56.393965'
+run <- 'sisepuede_results_sisepuede_run_2026-03-06T15;26;14.694911'
 
 dir.output  <- paste0("ssp_modeling/ssp_run_output/",run,"/")
 output.file <- paste0(run, "_WIDE_INPUTS_OUTPUTS.csv")
@@ -45,24 +45,22 @@ dim(whirlpool)
 whirlpool[, c('design_id','strategy_id','future_id') := NULL]
 dim(whirlpool)
 
-# # load data for NZ
-# dir.output  <- "ssp_modeling/ssp_run_output/sisepuede_run_2025-10-29T19;49;25.722413/"
-# output.file <- "sisepuede_ide_run_2025-10-29T19;49;25.722413.csv"
+# replace fail runs
+dir.output  <- "ssp_modeling/ssp_run_output/sisepuede_results_sisepuede_run_2026-03-06T16;13;19.208759/"
+output.file <- "sisepuede_results_sisepuede_run_2026-03-06T16;13;19.208759_WIDE_INPUTS_OUTPUTS.csv"
 
-# nz <- fread(paste0(dir.output, output.file))
-# nz <- nz[nz$primary_id == 70070, ]
-# dim(nz)
-# whirlpool <- rbind(nz, whirlpool)
+error <- fread(paste0(dir.output, output.file))
+error <- error[error$primary_id == 86086 | error$primary_id == 103103, ]
+dim(error)
 
-# att_nz <- read.csv(paste0(dir.output,"ATTRIBUTE_PRIMARY.csv"))
-# att_nz <- att_nz[att_nz$primary_id == 70070, ]
+dim(whirlpool)
+whirlpool <- whirlpool[!whirlpool$primary_id %in% c(86086, 103103), ]
+dim(whirlpool)
 
-# atts_nz <- read.csv(paste0(dir.output,"ATTRIBUTE_STRATEGY.csv"))
-# atts_nz <- atts_nz[atts_nz$strategy_id == 6004, ]
-# atts_nz
+whirlpool <- rbind(whirlpool,error)
+dim(whirlpool)
 
-# att <- rbind(att_nz, att)
-# atts <- rbind(atts_nz, atts)
+
 
 #ouputfile
 if (!dir.exists(paste0(dir.output, "/whirlpool/"))) {
