@@ -8,10 +8,7 @@ identifiers:
 parameters:
   categories_entc_max_investment_ramp:
   categories_entc_renewable:
-  dict_entc_renewable_target_msp:
-    pp_wind: 0.1
-    pp_geothermal: 0.05
-    pp_solar: 0.35
+  dict_entc_renewable_target_msp: {}
   magnitude: 0.475
   scale_non_renewables_to_match_surplus_msp: true
   vec_implementation_ramp:
