@@ -38,6 +38,7 @@ all_vars <- unique(unlist(strsplit(te_all$Vars, ":", fixed = TRUE)))
 all_vars <- trimws(all_vars)
 all_vars_made <- make.names(all_vars)
 missing <- setdiff(all_vars_made, names(data_all))
+  
 if (length(missing)) {
   message("Variables in te_all$Vars not found in data_all: ",
           paste(missing, collapse = ", "))
@@ -55,6 +56,7 @@ for (i in 1:nrow(te_all))
     } else {
      te_all$simulation[i] <- as.numeric(data_all[data_all$primary_id==gsub("_","",initial_conditions_id) &  data_all$time_period==time_period_ref,vars])   
     }
+    print(paste0('Sector: ', te_all$Edgar_Class[i]))
 }
 
 te_all$simulation <- ifelse(te_all$simulation==0 & te_all$tvalue>0,0,1)

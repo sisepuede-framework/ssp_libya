@@ -112,7 +112,7 @@ for (a in 1:length(subsectors))
 #print file  
 data$Index <- NULL 
 dim(data)
-fwrite(data,paste0(dir.output,tregion,".csv"),row.names=FALSE)
+fwrite(data,paste0(dir.output,"decomposed_ssp_output.csv"),row.names=FALSE)
 
 rm(data)
 print(rall[z])
