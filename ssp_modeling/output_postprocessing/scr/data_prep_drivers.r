@@ -4,7 +4,7 @@ dir.data <- paste0(output.folder)
 file.name <- paste0("decomposed_ssp_output.csv")
 
 #load turkey data  
-data <- read.csv(paste0(dir.data,file.name)) 
+data <- fread(paste0(dir.data,file.name)) %>% as.data.frame()
 data <- subset(data,region==region)
 
 # temporal correction baseline condition BaU
@@ -35,7 +35,7 @@ sapply(DT.m1,class)
 
 
 #now read drivers taxonomy. 
-drivers <- read.csv("ssp_modeling/output_postprocessing/data/driver_variables_taxonomy_20240117.csv")
+drivers <- read.csv("ssp_modeling/output_postprocessing/data/driver_variables_taxonomy_20251013.csv")
 
 #change column name to taxonomy 
 drivers$variable <- drivers$field
@@ -57,7 +57,7 @@ drivers$field <- NULL
 #
 test2$Year <- test2$time_period + 2015 
 test2$time_period <- NULL 
-test2 <- subset (test2,Year>=2023)
+test2 <- subset (test2,Year>=year_ref)
 
 #read attribute primary
 att <- read.csv(paste0(output.folder,"ATTRIBUTE_PRIMARY.csv"))
@@ -106,52 +106,6 @@ dim(test2)
 test2 <- merge(test2,energy_vars,by="variable", all.x=TRUE)
 dim(test2)
 
-test2 <- test2[order(test2$strategy_id,test2$model_variable,test2$subsector,test2$category_value,test2$Year),]
-#saved_data <- test2
-#test2 <- saved_data
-##
-test2$ids <- paste(test2$variable,test2$subsector,test2$category_value,test2$strategy_id,sep=":")
-ids_all <- unique(test2$ids)
-test2$value_new <- 0
-for (i in 1:length(ids_all))
-{
-if (grepl("prod_ippu_glass_tonne:IPPU",ids_all[i])==TRUE)
-{
- pivot <-subset(test2,ids==ids_all[i] & test2$Year%in%c(2022:2030,2070))[,c("value","Year")]
- pivot$value[pivot$Year==2050] <- pivot$value[pivot$Year==2030]*1.5
- pivot <- subset(pivot,Year%in%c(2022:2025,2070))
- inter_fun <- approxfun(x=as.numeric(pivot$Year), y=as.numeric(pivot$value), rule = 2:1)
- test2[test2$ids==ids_all[i],"value_new"] <- inter_fun(test2[test2$ids==ids_all[i],"Year"])
-}
-if (grepl("prod_ippu_metals_tonne:IPPU",ids_all[i])==TRUE)
-{
- pivot <-subset(test2,ids==ids_all[i] & test2$Year%in%c(2022:2030,2070))[,c("value","Year")]
- pivot$value[pivot$Year==2050] <- pivot$value[pivot$Year==2030]*2.0
- pivot <- subset(pivot,Year%in%c(2022:2025,2070))
- inter_fun <- approxfun(x=as.numeric(pivot$Year), y=as.numeric(pivot$value), rule = 2:1)
- test2[test2$ids==ids_all[i],"value_new"] <- inter_fun(test2[test2$ids==ids_all[i],"Year"])
-}
-if (grepl("prod_ippu_rubber_and_leather_tonne:IPPU",ids_all[i])==TRUE)
-{
- pivot <-subset(test2,ids==ids_all[i] & test2$Year%in%c(2022:2030,2070))[,c("value","Year")]
- pivot$value[pivot$Year==2050] <- pivot$value[pivot$Year==2030]*1.5
- pivot <- subset(pivot,Year%in%c(2022:2025,2070))
- inter_fun <- approxfun(x=as.numeric(pivot$Year), y=as.numeric(pivot$value), rule = 2:1)
- test2[test2$ids==ids_all[i],"value_new"] <- inter_fun(test2[test2$ids==ids_all[i],"Year"])
-}
-if (grepl("prod_ippu_textiles_tonne:IPPU",ids_all[i])==TRUE)
-{
- pivot <-subset(test2,ids==ids_all[i] & test2$Year%in%c(2022:2030,2070))[,c("value","Year")]
- pivot$value[pivot$Year==2050] <- pivot$value[pivot$Year==2030]*1.5
- pivot <- subset(pivot,Year%in%c(2022:2025,2070))
- inter_fun <- approxfun(x=as.numeric(pivot$Year), y=as.numeric(pivot$value), rule = 2:1)
- test2[test2$ids==ids_all[i],"value_new"] <- inter_fun(test2[test2$ids==ids_all[i],"Year"])
-}
- else {}
-} 
-#subsitute value 
-test2$value <- ifelse(test2$value_new==0,test2$value,test2$value_new)
-test2$value_new <- NULL 
 
 gdp <- fread(paste0(dir.output,output.file))
 gdp <- gdp[primary_id==0]
@@ -160,12 +114,12 @@ gdp <- subset(gdp,select=c("time_period","gdp_mmm_usd"))
 gdp$year <- (gdp$time_period) + 2015
 
 gdp <- subset(gdp,select=c("year","gdp_mmm_usd"))
-gdp <- gdp[year<=2022]
+gdp <- gdp[year<=year_ref]
 
 build_drivers_table <- function(hist_dt,
                                 strategies_dt,
-                                iso_code3 = "MEX",
-                                country   = "mexico",
+                                iso_code3 = "LBY",
+                                country   = "libya",
                                 data_type = "historical") {
   # hist_dt:       columnas c("year", "gdp_mmm_usd")
   # strategies_dt: columnas c("strategy_id","design_id","future_id","strategy")
@@ -174,7 +128,7 @@ build_drivers_table <- function(hist_dt,
   strategies_dt <- as.data.table(strategies_dt)
   
   # Renombrar columnas históricas
-  hist_dt[, ':='(Year  = year,
+  hist_dt[, `:=`(Year  = year,
                  value = gdp_mmm_usd)]
   hist_dt[, c("year","gdp_mmm_usd") := NULL]
   
@@ -185,7 +139,7 @@ build_drivers_table <- function(hist_dt,
   out[, dummy := NULL]
   
   # Variables constantes
-  out[, ':=' (
+  out[, `:=`(
     variable        = "gdp_mmm_usd",
     primary_id      = 0L,
     sector          = "Socioeconomic",
@@ -200,15 +154,14 @@ build_drivers_table <- function(hist_dt,
     iso_code3       = iso_code3,
     Country         = country,
     output_type     = "drivers",
-    energy_subsector= NA_character_,
-    ids             = "gdp_mmm_usd:Economy:('', ''):0"
+    energy_subsector= NA_character_
   )]
   
   # Reordenar columnas exactamente como pediste
   setcolorder(out, c(
     "variable","strategy_id","primary_id","value","sector","subsector","model_variable",
     "category_value","category_name","gas","gas_name","Year","design_id","future_id",
-    "strategy","Units","Data_Type","iso_code3","Country","output_type","energy_subsector","ids"
+    "strategy","Units","Data_Type","iso_code3","Country","output_type","energy_subsector"
   ))
   
   setorder(out, strategy_id, Year)
@@ -239,7 +192,7 @@ table(drivers_table$Year)
 setcolorder(drivers_table, c(
   "variable","strategy_id","primary_id","value","sector","subsector","model_variable",
   "category_value","category_name","gas","gas_name","Year","design_id","future_id",
-  "strategy","Units","Data_Type","iso_code3","Country","output_type","energy_subsector","ids"
+  "strategy","Units","Data_Type","iso_code3","Country","output_type","energy_subsector"
 ))
 
 drivers_table$variable <- "gdp_mmm_usd"
@@ -249,8 +202,8 @@ test2 <- rbind(test2, drivers_table, fill = TRUE)
 
 #write file
 dir.tableau <- paste0("ssp_modeling/tableau/data/")
-file.name <- paste0("drivers_",region,"_",output.file)
+file.name <- paste0("drivers_",region,".csv")
 
-write.csv(test2,paste0(dir.tableau,file.name), row.names=FALSE)
+fwrite(test2,paste0(dir.tableau,file.name), row.names=FALSE)
 
 print('Finish: data_prep_drivers process')

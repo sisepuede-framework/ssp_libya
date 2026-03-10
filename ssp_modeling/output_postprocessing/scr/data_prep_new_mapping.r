@@ -24,7 +24,7 @@ dim(edgar)
 edgar$Edgar_Class<- paste(edgar$CSC.Subsector,edgar$Gas,sep=":")
 
 #load data  
-data <- read.csv(paste0(dir.output,file.name)) 
+data <- fread(paste0(dir.output,file.name)) %>% as.data.frame()
 data <- subset(data,region==Country)
 dim(data)
 #order data
@@ -228,7 +228,7 @@ res <- hp_filter_subsec(
   data = data_new,
   subsec_target = "AG - Crops",
   gas_target = "N2O",
-  lambda_hp = 1600
+  lambda_hp = 600
 )
 
 # plot
@@ -245,6 +245,8 @@ res <- hp_filter_subsec(
   lambda_hp = 1600
 )
 
+print(res$plot)
+
 res <- hp_filter_subsec(
   data = res$data,
   subsec_target = "AG - Livestock",
@@ -253,7 +255,6 @@ res <- hp_filter_subsec(
 )
 
 
-# plot
 print(res$plot)
 
 
@@ -314,7 +315,7 @@ res <- hp_filter_subsec(
   data = res$data,
   subsec_target = "EN - Manufacturing/Construction",
   gas_target = "CH4",
-  lambda_hp = 1600
+  lambda_hp = 600
 )
 
 # plot
