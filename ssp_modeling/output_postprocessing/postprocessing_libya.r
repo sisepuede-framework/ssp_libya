@@ -21,11 +21,11 @@ output.file <- paste0(run, "_WIDE_INPUTS_OUTPUTS.csv")
 region <- "libya" 
 iso_code3 <- "LBY"
 
-year_ref <- 2022
+year_ref <- 2023
 
-source('ssp_modeling/output_postprocessing/scr/run_script_baseline_run_new.r')
+source('ssp_modeling/output_postprocessing/scr/invent/run_script_baseline_run_new.r')
 
-source('ssp_modeling/output_postprocessing/scr/data_prep_new_mapping.r')
+source('ssp_modeling/output_postprocessing/scr/invent/data_prep_new_mapping.r')
 
-source('ssp_modeling/output_postprocessing/scr/data_prep_drivers.r')
+source('ssp_modeling/output_postprocessing/scr/invent/data_prep_drivers.r')
 
