@@ -7,7 +7,7 @@ import numpy as np
 
 # Define paths
 SSP_PATH = pathlib.Path(os.getcwd())
-SSP_RUN  = os.path.join(SSP_PATH, "ssp_modeling/ssp_run_output/sisepuede_results_sisepuede_run_2026-03-04T10;28;03.599060/tornado")
+SSP_RUN  = os.path.join(SSP_PATH, "ssp_modeling/ssp_run_output/sisepuede_results_sisepuede_run_2026-03-10T17;51;53.927764/tornado")
 
 
 CB_DEFAULT_DEFINITION_PATH = os.path.join(SSP_PATH,"ssp_modeling/cost-benefits/cb_config_files")
@@ -16,7 +16,7 @@ CB_DEFAULT_DEFINITION_FILE_PATH = os.path.join(CB_DEFAULT_DEFINITION_PATH, "cb_c
 CB_OUTPUT = os.path.join(SSP_PATH,"ssp_modeling/cost-benefits/tornado_plot/data/input/tornado")
 
 # Load data
-ssp_data = pd.read_csv(os.path.join(SSP_RUN, "libya.csv"))
+ssp_data = pd.read_csv(os.path.join(SSP_RUN, "decomposed_ssp_output.csv"))
 att_primary = pd.read_csv(os.path.join(SSP_RUN,"ATTRIBUTE_PRIMARY.csv"))
 att_strategy = pd.read_csv(os.path.join(SSP_RUN,"ATTRIBUTE_STRATEGY.csv"))
 strategy_code_base = "BASE"

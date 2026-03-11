@@ -29,3 +29,8 @@ source('ssp_modeling/output_postprocessing/scr/invent/data_prep_new_mapping.r')
 
 source('ssp_modeling/output_postprocessing/scr/invent/data_prep_drivers.r')
 
+# Levers table
+source('ssp_modeling/output_postprocessing/scr/levers_table/#create levers table.r')
+
+# # Jobs table
+source('ssp_modeling/output_postprocessing/scr/levers_table/#create jobs table.r')

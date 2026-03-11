@@ -11,7 +11,7 @@ library(ggplot2)
 rm(list=ls())
 
 #ouputfile
-run <- 'sisepuede_results_sisepuede_run_2026-03-04T10;28;03.599060'
+run <- 'sisepuede_results_sisepuede_run_2026-03-10T17;51;53.927764'
 
 dir.output  <- paste0("ssp_modeling/ssp_run_output/",run,"/")
 output.file <- paste0(run, "_WIDE_INPUTS_OUTPUTS.csv")

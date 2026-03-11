@@ -11,7 +11,7 @@ library(ggplot2)
 rm(list=ls())
 
 #ouputfile
-run <- 'sisepuede_results_sisepuede_run_2026-03-06T15;26;14.694911'
+run <- 'sisepuede_results_sisepuede_run_2026-03-10T22;51;32.350715'
 
 dir.output  <- paste0("ssp_modeling/ssp_run_output/",run,"/")
 output.file <- paste0(run, "_WIDE_INPUTS_OUTPUTS.csv")
@@ -46,19 +46,19 @@ whirlpool[, c('design_id','strategy_id','future_id') := NULL]
 dim(whirlpool)
 
 # replace fail runs
-dir.output  <- "ssp_modeling/ssp_run_output/sisepuede_results_sisepuede_run_2026-03-06T16;13;19.208759/"
-output.file <- "sisepuede_results_sisepuede_run_2026-03-06T16;13;19.208759_WIDE_INPUTS_OUTPUTS.csv"
+# dir.output  <- "ssp_modeling/ssp_run_output/sisepuede_results_sisepuede_run_2026-03-06T16;13;19.208759/"
+# output.file <- "sisepuede_results_sisepuede_run_2026-03-06T16;13;19.208759_WIDE_INPUTS_OUTPUTS.csv"
 
-error <- fread(paste0(dir.output, output.file))
-error <- error[error$primary_id == 86086 | error$primary_id == 103103, ]
-dim(error)
+# error <- fread(paste0(dir.output, output.file))
+# error <- error[error$primary_id == 86086 | error$primary_id == 103103, ]
+# dim(error)
 
-dim(whirlpool)
-whirlpool <- whirlpool[!whirlpool$primary_id %in% c(86086, 103103), ]
-dim(whirlpool)
+# dim(whirlpool)
+# whirlpool <- whirlpool[!whirlpool$primary_id %in% c(86086, 103103), ]
+# dim(whirlpool)
 
-whirlpool <- rbind(whirlpool,error)
-dim(whirlpool)
+# whirlpool <- rbind(whirlpool,error)
+# dim(whirlpool)
 
 
 
