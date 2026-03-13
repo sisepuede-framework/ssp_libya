@@ -35,6 +35,7 @@ all_vars <- trimws(all_vars)
 all_vars_made <- make.names(all_vars)
 missing <- setdiff(all_vars_made, names(data_all))
 
+all_vars <- setdiff(all_vars, c("emission_co2e_co2_ccsq_direct_air_capture","emission_co2e_ch4_ccsq_direct_air_capture","emission_co2e_n2o_ccsq_direct_air_capture"))
 
 for (var in all_vars) {
   mask <- data_all$time_period == time_period_ref & data_all[[var]] == 0
@@ -45,7 +46,6 @@ for (var in all_vars) {
   }
 }
 
-data_all$emission_co2e_co2_frst_harvested_wood_products = 0
   
 if (length(missing)) {
   message("Variables in te_all$Vars not found in data_all: ",

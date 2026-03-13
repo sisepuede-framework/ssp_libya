@@ -11,7 +11,7 @@ library(ggplot2)
 rm(list=ls())
 
 #ouputfile
-run <- 'sisepuede_results_sisepuede_run_2026-03-10T22;51;32.350715'
+run <- 'sisepuede_results_sisepuede_run_2026-03-11T23;20;40.125735'
 
 dir.output  <- paste0("ssp_modeling/ssp_run_output/",run,"/")
 output.file <- paste0(run, "_WIDE_INPUTS_OUTPUTS.csv")
@@ -24,13 +24,13 @@ dim(whirlpool)
 
 att <- read.csv(paste0(dir.output,"ATTRIBUTE_PRIMARY.csv"))
 dim(att)
-att <- att[att$strategy_id==0 | (att$strategy_id >= 6004 & att$strategy_id <= 6045), ]
+att <- att[att$strategy_id==0 | att$strategy_id==6002 | (att$strategy_id >= 6005 & att$strategy_id <= 6072), ]
 dim(att)
 head(att)
 
 atts <- read.csv(paste0(dir.output,"ATTRIBUTE_STRATEGY.csv"))
 dim(atts)
-atts <- atts[att$strategy_id==0 | (atts$strategy_id >= 6004 & atts$strategy_id <= 6045), ]
+atts <- atts[atts$strategy_id==0 | atts$strategy_id==6002 | (atts$strategy_id >= 6005 & atts$strategy_id <= 6072), ]
 dim(atts)
 head(atts)
 
@@ -39,26 +39,26 @@ whirlpool <- merge(whirlpool,att,by="primary_id")
 dim(whirlpool)
 
 #filter for the strategies we want to include in the whirlpool
-whirlpool <- whirlpool[whirlpool$strategy_id==0 | (whirlpool$strategy_id >= 6004 & whirlpool$strategy_id <= 6045), ]
+whirlpool <- whirlpool[whirlpool$strategy_id==0 | whirlpool$strategy_id==6002 | (whirlpool$strategy_id >= 6005 & whirlpool$strategy_id <= 6072), ]
 
 dim(whirlpool)
 whirlpool[, c('design_id','strategy_id','future_id') := NULL]
 dim(whirlpool)
 
 # replace fail runs
-# dir.output  <- "ssp_modeling/ssp_run_output/sisepuede_results_sisepuede_run_2026-03-06T16;13;19.208759/"
-# output.file <- "sisepuede_results_sisepuede_run_2026-03-06T16;13;19.208759_WIDE_INPUTS_OUTPUTS.csv"
+dir.output.err  <- "ssp_modeling/ssp_run_output/sisepuede_results_sisepuede_run_2026-03-12T17;22;02.508214/"
+output.file <- "sisepuede_results_sisepuede_run_2026-03-12T17;22;02.508214_WIDE_INPUTS_OUTPUTS.csv"
 
-# error <- fread(paste0(dir.output, output.file))
-# error <- error[error$primary_id == 86086 | error$primary_id == 103103, ]
-# dim(error)
+error <- fread(paste0(dir.output.err, output.file))
+error <- error[error$primary_id %in% c(76076,77077,81081,89089,97097,99099,111111,119119), ]
+dim(error)
 
-# dim(whirlpool)
-# whirlpool <- whirlpool[!whirlpool$primary_id %in% c(86086, 103103), ]
-# dim(whirlpool)
+dim(whirlpool)
+whirlpool <- whirlpool[!whirlpool$primary_id %in% c(76076,77077,81081,89089,97097,99099,111111,119119), ]
+dim(whirlpool)
 
-# whirlpool <- rbind(whirlpool,error)
-# dim(whirlpool)
+whirlpool <- rbind(whirlpool,error)
+dim(whirlpool)
 
 
 
