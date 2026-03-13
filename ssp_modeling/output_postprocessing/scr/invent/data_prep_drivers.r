@@ -197,7 +197,8 @@ setcolorder(drivers_table, c(
 
 drivers_table$variable <- "gdp_mmm_usd"
 
-test2 <- rbind(test2, drivers_table, fill = TRUE)
+# Convert to data table before the rbind
+test2 <- rbind(data.table(test2), drivers_table, fill = TRUE)
 
 
 #write file

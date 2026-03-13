@@ -13,10 +13,12 @@ rm(list=ls())
 
 #ouputfile
 
-run <- 'sisepuede_results_sisepuede_run_2026-03-09T21;11;56.265181'
+run <- 'sisepuede_results_run_sisepuede_run_2026-03-13T07;36;11.592365'
+run_id <- 'sisepuede_results_sisepuede_run_2026-03-13T07;36;11.592365'
 
 dir.output  <- paste0("ssp_modeling/ssp_run_output/",run,"/")
-output.file <- paste0(run, "_WIDE_INPUTS_OUTPUTS.csv")
+output.file <- paste0(run_id, "_WIDE_INPUTS_OUTPUTS.csv")
+
 
 region <- "libya" 
 iso_code3 <- "LBY"

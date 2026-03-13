@@ -10,9 +10,12 @@ library(ggplot2)
 
 rm(list=ls())
 
+# Create data directory in case it doesn't exist
+dir.create("ssp_modeling/tableau/data", recursive = TRUE, showWarnings = FALSE)
+
 #ouputfile
-dir.output  <- "ssp_modeling/ssp_run_output/sisepuede_results_run_sisepuede_run_2026-03-02T17;31;54.943694/"
-output.file <- "sisepuede_results_sisepuede_run_2026-03-02T17;31;54.943694_WIDE_INPUTS_OUTPUTS.csv"
+dir.output  <- "ssp_modeling/ssp_run_output/sisepuede_results_run_sisepuede_run_2026-03-09T17;13;41.063042/"
+output.file <- "sisepuede_results_sisepuede_run_2026-03-09T17;13;41.063042_WIDE_INPUTS_OUTPUTS.csv"
 
 region <- "libya" 
 iso_code3 <- "LBY"

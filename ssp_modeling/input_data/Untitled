@@ -1,0 +1,236 @@
+# Adjust SCOE variables
+scoe = pd.read_csv("/Users/alexa/Projects/ssp_libya/ssp_modeling/input_data/row_values_scoe.csv")
+scoe_libya = scoe[scoe["iso_alpha_3"] == "LBY"]
+print(scoe.columns)
+value_mapping = {
+'oil_products' : 'heat',
+'solid_biomass' : 'heat',
+'electricity': 'electricity'
+
+}
+scoe_libya['source_consuption'] = scoe_libya['consumption_by_source'].replace(value_mapping)
+scoe_libya
+scoe_libya = scoe_libya.groupby(['year','iso_alpha_3','source_consuption','Units'])[['residential_total_final_consumption','commercial_and_public_services_total_final']].sum().reset_index()
+scoe_libya
+Lets adjust numbers for scoe demand of energy 
+
+Average size of hh is 6: https://wfp.tind.io/record/130421/files/ELR%203440.pdf
+Total population at 2022 was 7,223,805 based on Wolrd Bank data: https://data.worldbank.org/indicator/SP.POP.TOTL?locations=LY
+# === CÁLCULO DE LOS VALORES OBJETIVO PARA 2023 ===
+total_pop_2022 = 7223805
+personas_por_hogar = 6
+total_households_2022 = total_pop_2022 / personas_por_hogar  # 178,742 hogares
+
+# Consumo de energía en TJ 
+consumo_elec_tj_2022 = 53321.0
+consumo_heat_tj_2022 = 27747.0
+
+# Conversión: 1 TJ = 1000 GJ
+elec_gj_per_hh_2022 = (consumo_elec_tj_2022 * 1000) / total_households_2022  # ~5.25 GJ/hh
+heat_gj_per_hh_2022 = (consumo_heat_tj_2022 * 1000) / total_households_2022  # ~16.75 GJ/hh
+
+print(f"Total households (2022): {total_households_2022:,.0f}")
+print(f"Electricity consumption per household (2022): {elec_gj_per_hh_2022:.2f} GJ/hh")
+print(f"Heat consumption per household (2022): {heat_gj_per_hh_2022:.2f} GJ/hh")
+
+# === OBTENER VALORES ACTUALES ===
+# Encontrar el índice del año 2023 en tus datos
+idx_2023 = df[df['year'] == 2022].index[0] if 2022 in df['year'].values else None
+
+if idx_2023 is not None:
+    current_elec = df.loc[idx_2023, 'consumpinit_scoe_gj_per_hh_residential_elec_appliances']
+    current_heat = df.loc[idx_2023, 'consumpinit_scoe_gj_per_hh_residential_heat_energy']
+    print(f"\nValores actuales en 2023:")
+    print(f"  Electricidad: {current_elec:.2f} GJ/hh")
+    print(f"  Calor: {current_heat:.2f} GJ/hh")
+    
+    # Calcular factores de escala
+    scale_elec = elec_gj_per_hh_2022 / current_elec
+    scale_heat = heat_gj_per_hh_2022 / current_heat
+    print(f"\nFactores de escala necesarios:")
+    print(f"  Electricidad: {scale_elec:.4f}x")
+    print(f"  Calor: {scale_heat:.4f}x")
+
+# === ACTUALIZAR LOS VALORES ===
+# Opción 1: Escalar toda la serie temporal manteniendo las tendencias
+df['consumpinit_scoe_gj_per_hh_residential_elec_appliances'] *= scale_elec
+df['consumpinit_scoe_gj_per_hh_residential_heat_energy'] *= scale_heat
+GDP value for 2022: https://data.worldbank.org/indicator/NY.GDP.MKTP.PP.CD?locations=LY&name_desc=false&year=2000
+# === CÁLCULO DE LOS VALORES OBJETIVO PARA 2023 ===
+# Consumo comercial/municipal de energía
+
+total_gdp_2022 = 88.61  
+
+# Consumo de energía en TJ (ya están en TJ, no necesitan conversión)
+consumo_elec_tj_2022 = 9258.0  # TJ - electricidad comercial/municipal
+consumo_heat_tj_2022 = 0   # TJ - calor comercial/municipal
+
+# Cálculo: TJ / MMM_GDP = TJ por cada mil millones de USD de PIB
+elec_tj_per_mmmgdp_2022 = consumo_elec_tj_2022 / total_gdp_2022 
+heat_tj_per_mmmgdp_2022 = consumo_heat_tj_2022 / total_gdp_2022  
+
+print(f"Total GDP (2022): {total_gdp_2022:.2f} MMM USD")
+print(f"Electricity consumption (2022): {elec_tj_per_mmmgdp_2022:.2f} TJ/MMM_GDP")
+print(f"Heat consumption (2022): {heat_tj_per_mmmgdp_2022:.2f} TJ/MMM_GDP")
+
+# === OBTENER VALORES ACTUALES ===
+idx_2023 = df[df['year'] == 2022].index[0] if 2022 in df['year'].values else None
+
+if idx_2023 is not None:
+    current_elec = df.loc[idx_2023, 'consumpinit_scoe_tj_per_mmmgdp_commercial_municipal_elec_appliances']
+    current_heat = df.loc[idx_2023, 'consumpinit_scoe_tj_per_mmmgdp_commercial_municipal_heat_energy']
+    print(f"\nValores actuales en 2023:")
+    print(f"  Electricidad: {current_elec:.2f} TJ/MMM_GDP")
+    print(f"  Calor: {current_heat:.2f} TJ/MMM_GDP")
+    
+    # Calcular factores de escala
+    scale_elec = elec_tj_per_mmmgdp_2022 / current_elec
+    scale_heat = heat_tj_per_mmmgdp_2022 / current_heat
+    print(f"\nFactores de escala necesarios:")
+    print(f"  Electricidad: {scale_elec:.4f}x")
+    print(f"  Calor: {scale_heat:.4f}x")
+
+# === ACTUALIZAR LOS VALORES ===
+df['consumpinit_scoe_tj_per_mmmgdp_commercial_municipal_elec_appliances'] *= scale_elec
+df['consumpinit_scoe_tj_per_mmmgdp_commercial_municipal_heat_energy'] *= scale_heat
+
+# Adjust Energy Mix
+# Valores objetivo para 2023 (en porcentaje)
+targets_2023 = {
+    'pp_hydropower': 0,
+    'pp_biomass': 0,
+    'pp_oil': .85,
+    'pp_solar':0.9,
+    'pp_coal': 0,
+    'pp_coal_ccs': 0,
+    'pp_gas': .141,
+    'pp_gas_ccs': 0,
+    'pp_geothermal': 0,
+    'pp_nuclear': 0,
+    'pp_ocean': 0,
+    'pp_wind': 0,
+    'pp_biogas': 0
+}
+
+# Obtener índice de 2023
+idx_2023 = df[df['year'] == 2023].index[0]
+
+print("AJUSTE DE ENERGY MIX - Escalado con tendencia anclado en 2023")
+
+# Lista de columnas de energy mix
+energy_cols = [f'nemomod_entc_frac_min_share_production_{et}' for et in targets_2023.keys()]
+
+for energy_type, target_value in targets_2023.items():
+    col_name = f'nemomod_entc_frac_min_share_production_{energy_type}'
+    
+    # Obtener valor original en 2023
+    original_2023 = df.loc[idx_2023, col_name]
+    
+    if target_value == 0:
+        # Si el objetivo es 0%, poner toda la columna en 0
+        df[col_name] = 0.0
+        if original_2023 > 0:
+            print(f"  {energy_type}: {original_2023:.4f}% → 0% (eliminado)")
+        else:
+            print(f"  {energy_type}: 0% → 0% (sin cambio)")
+    else:
+        # Si el objetivo es > 0%, escalar manteniendo la tendencia temporal
+        if original_2023 > 0:
+            scale_factor = target_value / original_2023
+            df[col_name] = df[col_name] * scale_factor
+            print(f"  {energy_type}: {original_2023:.4f}% → {target_value:.4f}% (factor: {scale_factor:.4f}x)")
+        else:
+            # Si el valor original es 0 pero queremos un valor, asignamos constante
+            df[col_name] = target_value
+            print(f"  {energy_type}: 0% → {target_value:.4f}% (asignado constante)")
+
+# === NORMALIZACIÓN PARA QUE SUME 1 EN TODOS LOS AÑOS ===
+print("\n" + "=" * 70)
+print("NORMALIZACIÓN - Ajustando para que sume 1 en todos los años")
+print("=" * 70)
+
+# Calcular la suma por fila (año)
+row_sums = df[energy_cols].sum(axis=1)
+
+# Mostrar años con mayor desviación antes de normalizar
+deviations = abs(row_sums - 1.0)
+max_dev_idx = deviations.idxmax()
+max_dev_year = df.loc[max_dev_idx, 'year']
+print(f"  Mayor desviación antes de normalizar: año {max_dev_year}, suma = {row_sums[max_dev_idx]:.6f}")
+
+# Normalizar: dividir cada valor por la suma de su fila
+for col in energy_cols:
+    df[col] = df[col] / row_sums
+
+# Verificar que ahora suman 1
+new_sums = df[energy_cols].sum(axis=1)
+print(f"  Rango de sumas después de normalizar: [{new_sums.min():.6f}, {new_sums.max():.6f}]")
+
+# === VERIFICACIÓN ===
+print("\n" + "=" * 70)
+print("VERIFICACIÓN - Valores en 2023:")
+print("=" * 70)
+total = 0
+for energy_type, target_value in targets_2023.items():
+    col_name = f'nemomod_entc_frac_min_share_production_{energy_type}'
+    val = df.loc[idx_2023, col_name]
+    if val > 0.001:
+        print(f"  {energy_type}: {val:.4f}")
+        total += val
+print(f"\n  SUMA TOTAL: {total:.6f}")
+
+# === TENDENCIA TEMPORAL ===
+print("\n" + "=" * 70)
+print("TENDENCIA TEMPORAL - Algunos ejemplos:")
+print("=" * 70)
+years_to_show = [2015, 2020, 2023, 2030, 2050, 2070]
+example_types = ['pp_gas', 'pp_solar', 'pp_oil']
+
+for energy_type in example_types:
+    col_name = f'nemomod_entc_frac_min_share_production_{energy_type}'
+    print(f"\n{energy_type}:")
+    for year in years_to_show:
+        if year in df['year'].values:
+            idx = df[df['year'] == year].index[0]
+            val = df.loc[idx, col_name]
+            print(f"  {year}: {val:.4f}")
+
+# Verificar sumas por año
+print("\n" + "=" * 70)
+print("VERIFICACIÓN - Suma total por año:")
+print("=" * 70)
+for year in years_to_show:
+    if year in df['year'].values:
+        idx = df[df['year'] == year].index[0]
+        total_year = df.loc[idx, energy_cols].sum()
+        print(f"  {year}: {total_year:.6f}")
+
+# Check initial producton of IPPU
+df[[x for x in df.columns if "prodinit_ippu_" in x]]#.columns
+Cement production: https://libyaeconomicreview.com/libyan-manufacturing-economic-recovery/
+
+For Metals, Mining and chemicals,lime values are for 2020 from :https://www.usgs.gov/media/files/mineral-industry-libya-2022-tables-only-release-xlsx
+
+
+
+# Annual production of cement 
+
+df['prodinit_ippu_cement_tonne'] = 10
+df['prodinit_ippu_metals_tonne'] = 1.788
+df['prodinit_ippu_mining_tonne'] = 0.290
+df['prodinit_ippu_chemicals_tonne'] = 0.331
+df['prodinit_ippu_lime_and_carbonite_tonne'] = 0.350
+
+# No information
+df['prodinit_ippu_glass_tonne'] = 0
+
+# No production
+df['prodinit_ippu_paper_tonne'] = 0
+df['prodinit_ippu_plastic_tonne'] = 0
+df['prodinit_ippu_rubber_and_leather_tonne'] = 0
+df['prodinit_ippu_textiles_tonne'] = 0 
+df['prodinit_ippu_electronics_tonne'] = 0 
+df['prodinit_ippu_wood_tonne'] = 0 
+
+
+df[[x for x in df.columns if "prodinit_ippu_" in x and "demand" in x]]
