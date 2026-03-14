@@ -1,9 +1,9 @@
 # This script prepares the data for emissions mapping in Uganda
-file.name <- paste0("libya.csv")
+file.name <- paste0("decomposed_ssp_output.csv")
 iso_code3 <- iso_code3
 Country <- region
 
-mapping <- read.csv(paste0("ssp_modeling/output_postprocessing/data/emission_targets_",region,"_",year_ref,"_LULUCF_update.csv"))
+mapping <- read.csv("ssp_modeling/output_postprocessing/data/invent/emission_targets_lby_2023.csv")
 
 # drop "id" directly
 mapping$id <- NULL
@@ -17,11 +17,11 @@ mapping[[iso_code3]] <- NULL
 # mapping$Vars[3] <- "emission_co2e_n2o_lsmm_direct_anaerobic_digester:emission_co2e_n2o_lsmm_direct_anaerobic_lagoon:emission_co2e_n2o_lsmm_direct_composting:emission_co2e_n2o_lsmm_direct_daily_spread:emission_co2e_n2o_lsmm_direct_deep_bedding:emission_co2e_n2o_lsmm_direct_dry_lot:emission_co2e_n2o_lsmm_direct_incineration:emission_co2e_n2o_lsmm_direct_liquid_slurry:emission_co2e_n2o_lsmm_direct_paddock_pasture_range:emission_co2e_n2o_lsmm_direct_poultry_manure:emission_co2e_n2o_lsmm_direct_storage_solid:emission_co2e_n2o_lsmm_indirect_anaerobic_digester:emission_co2e_n2o_lsmm_indirect_anaerobic_lagoon:emission_co2e_n2o_lsmm_indirect_composting:emission_co2e_n2o_lsmm_indirect_daily_spread:emission_co2e_n2o_lsmm_indirect_deep_bedding:emission_co2e_n2o_lsmm_indirect_dry_lot:emission_co2e_n2o_lsmm_indirect_incineration:emission_co2e_n2o_lsmm_indirect_liquid_slurry:emission_co2e_n2o_lsmm_indirect_paddock_pasture_range:emission_co2e_n2o_lsmm_indirect_poultry_manure:emission_co2e_n2o_lsmm_indirect_storage_solid"
 
 # add edgar
-edgar <- read.csv(paste0("ssp_modeling/output_postprocessing/data/CSC-GHG_emissions-April2024_to_calibrate_LULUCF_update.csv"))
+edgar <- read.csv('ssp_modeling/output_postprocessing/data/invent/invent_historic_lby.csv')
 dim(edgar)
 edgar <- subset(edgar,Code==iso_code3)
 dim(edgar)
-edgar$Edgar_Class<- paste(edgar$CSC.Subsector,edgar$Gas,sep=":")
+edgar$ID<- paste(edgar$subsector,edgar$Gas,sep=":")
 
 #load data  
 data <- fread(paste0(dir.output,file.name)) %>% as.data.frame()
@@ -38,23 +38,25 @@ total_vars <- subset(target_vars,grepl("emission_co2e_subsector_total",target_va
 target_vars <- subset(target_vars,!(target_vars%in%total_vars))
 
 #load inventory mapping table 
-mapping$ids <- paste(row.names(mapping),mapping$Subsector,mapping$Gas,sep="_")
+mapping$ids <- paste(row.names(mapping),mapping$subsector_ssp,mapping$gas,sep="_")
+
 #now create those new columns in the simulation data set 
 for  (i in 1:nrow(mapping))
 {
-#i<- 63
-tvars <- mapping$Vars[i]
-tvars <- unlist(strsplit(tvars,":"))
-tvars <- subset(tvars,tvars%in%colnames(data))
-if (length(tvars)>1) {
- data [,mapping$ids[i]] <- rowSums(data[,tvars])
-} else if (length(tvars)==1 ) 
-{ 
-  data [,mapping$ids[i]] <- data[,tvars]
-} else {
-  data [,mapping$ids[i]] <- 0
-} 
+  #i<- 63
+  tvars <- mapping$vars[i]
+  tvars <- unlist(strsplit(tvars,":"))
+  tvars <- subset(tvars,tvars%in%colnames(data))
+  if (length(tvars)>1) {
+    data [,mapping$ids[i]] <- rowSums(data[,tvars])
+  } else if (length(tvars)==1 ) 
+  { 
+    data [,mapping$ids[i]] <- data[,tvars]
+  } else {
+    data [,mapping$ids[i]] <- 0
+  } 
 }
+
 #now we just keep the new variables and the time period which we will reduce to above 2022
 data_new <- data [,c(id_vars,mapping$ids)]
 dim(data_new)
@@ -68,21 +70,21 @@ data_new <- data.frame(data_new)
 data_new$ids <- as.character(data_new$variable)
 
 #merge with mapping 
- mapping$Vars <- NULL
- colnames(mapping) <- gsub("Edgar_Sector","CSC.Sector",colnames(mapping))
- colnames(mapping) <- gsub("Edgar_Subsector","CSC.Subsector",colnames(mapping)) 
- data_new <- merge(data_new,mapping,by="ids")
+mapping$vars <- NULL
+colnames(mapping)[colnames(mapping) == "sector"]    <- "CSC.Sector"
+colnames(mapping)[colnames(mapping) == "subsector"] <- "CSC.Subsector"
+data_new <- merge(data_new,mapping,by="ids")
 
 #now aggregare at inventory level 
 data_new <- aggregate(list(value=data_new$value),by=list(primary_id=data_new$primary_id,
                                              time_period=data_new$time_period,
-                                             Edgar_Class=data_new$Edgar_Class,
-                                             CSC.Sector=data_new$CSC.Sector,
-                                             CSC.Subsector=data_new$CSC.Subsector),sum)
+                                             ID=data_new$ID,
+                                             sector=data_new$CSC.Sector,
+                                             subsector=data_new$CSC.Subsector),sum)
 
 
 data_new$Year <- data_new$time_period + 2015
-data_new$Gas <- do.call("rbind",strsplit(data_new$Edgar_Class,":"))[,2]
+data_new$Gas <- do.call("rbind",strsplit(data_new$ID,":"))[,2]
 
 
 #merge additional files  
@@ -102,7 +104,7 @@ data_new <- merge(data_new,atts[c("strategy_id","strategy")],by="strategy_id")
 dim(data_new)
 
 #melt edgar data 
-id_varsEd <- c("Code","CSC.Sector","CSC.Subsector","Gas","Edgar_Class")
+id_varsEd <- c("Code","sector","subsector","Gas","ID")
 measure.vars_Ed <- subset(colnames(edgar),grepl("X",colnames(edgar))==TRUE)
 edgar <- data.table(edgar)
 edgar <- melt(edgar, id.vars = id_varsEd, measure.vars =measure.vars_Ed)
@@ -131,7 +133,11 @@ data_new <- subset(data_new,Year>=max(edgar$Year))
 
 #rbind both 
 data_new <- rbind(data_new,edgar)
-data_new <- data_new[order(data_new$strategy_id,data_new$CSC.Subsector,data_new$Gas,data_new$Year),]
+data_new <- data_new[order(data_new$strategy_id,
+                           data_new$sector,
+                           data_new$subsector,
+                           data_new$Gas,
+                           data_new$Year),]
 
 
 
@@ -155,7 +161,7 @@ hp_filter_subsec <- function(data,
   library(ggplot2)
   library(mFilter)
   
-  # Ensure data.table
+  # Ensure data.tablex
   dt <- copy(data)
   setDT(dt)
   
@@ -163,7 +169,7 @@ hp_filter_subsec <- function(data,
   dt[, value_original := get(value_col)]
   
   # Apply HP filter only if strategy_id is not NA, anchored to first year
-  dt[`CSC.Subsector` == subsec_target & Gas %in% gas_target & !is.na(strategy_id),
+  dt[`subsector` == subsec_target & Gas %in% gas_target & !is.na(strategy_id),
      value_hp := {
        # order by time within group
        o  <- order(get(time_col))
@@ -195,16 +201,16 @@ hp_filter_subsec <- function(data,
   ]
   
   # Plot data (incluye históricos con strategy_id NA para ver original completo)
-  plot_dt <- dt[`CSC.Subsector` == subsec_target & Gas %in% gas_target]
+  plot_dt <- dt[`subsector` == subsec_target & Gas %in% gas_target]
   
   p <- ggplot(plot_dt, aes(x = .data[[time_col]])) +
-    geom_line(aes(y = value_original, colour = "Original"), size = 1) +
-    geom_line(aes(y = value_hp,      colour = "HP (anchored)"), size = 1, na.rm = TRUE) +
+    geom_line(aes(y = value_original, colour = "Original"), linewidth = 1) +
+    geom_line(aes(y = value_hp,      colour = "HP (anchored)"), linewidth = 1, na.rm = TRUE) +
     scale_colour_manual(values = c("Original" = "steelblue", "HP (anchored)" = "red")) +
     labs(
       x = time_col,
       y = value_col,
-      title = paste("HP Filter anchored at first year (λ =", lambda_hp, ") -",
+      title = paste("(λ =", lambda_hp, ") -",
                     subsec_target, "-", paste(gas_target, collapse = ", ")),
       colour = "Series"
     ) +
@@ -213,7 +219,7 @@ hp_filter_subsec <- function(data,
   
   # Replace original values with anchored smooth ONLY where it exists
   if (replace_original) {
-    dt[`CSC.Subsector` == subsec_target & Gas %in% gas_target &
+    dt[`subsector` == subsec_target & Gas %in% gas_target &
          !is.na(strategy_id) & !is.na(value_hp),
        (value_col) := value_hp]
   }
@@ -222,182 +228,35 @@ hp_filter_subsec <- function(data,
 }
 
 
-# AG - Crops
 
-res <- hp_filter_subsec(
-  data = data_new,
-  subsec_target = "AG - Crops",
-  gas_target = "N2O",
-  lambda_hp = 1600
-)
+# # 1.A - Fuel Combustion Activities
 
-# plot
-print(res$plot)
+# res <- hp_filter_subsec(
+#   data = data_new,
+#   subsec_target = "1.A - Fuel Combustion Activities",
+#   gas_target = "CO2",
+#   lambda_hp = 600
+# )
 
-
-
-# AG - Livestock
-
-res <- hp_filter_subsec(
-  data = res$data,
-  subsec_target = "AG - Livestock",
-  gas_target = "CH4",
-  lambda_hp = 1600
-)
-
-res <- hp_filter_subsec(
-  data = res$data,
-  subsec_target = "AG - Livestock",
-  gas_target = c('HFC','N2O','PFC','SF6'),
-  lambda_hp = 1600
-)
-
-
-# plot
-print(res$plot)
-
-
-#  EN - Building 
-
-
-res <- hp_filter_subsec(
-  data = res$data,
-  subsec_target = "EN - Building",
-  gas_target = "CH4",
-  lambda_hp = 1600
-)
-
-# plot
-print(res$plot)
-
-#  EN - Electricity/Heat
-
-
-res <- hp_filter_subsec(
-  data = res$data,
-  subsec_target = "EN - Electricity/Heat",
-  gas_target = "CH4",
-  lambda_hp = 1600
-)
-
-# plot
-print(res$plot)
-
-
-res <- hp_filter_subsec(
-  data = res$data,
-  subsec_target = "EN - Electricity/Heat",
-  gas_target = "CO2",
-  lambda_hp = 1600
-)
-
-# plot
-print(res$plot)
-
-
-res <- hp_filter_subsec(
-  data = res$data,
-  subsec_target = "EN - Electricity/Heat",
-  gas_target = c('HFC','N2O','PFC','SF6'),
-  lambda_hp = 1600
-)
-
-# plot
-print(res$plot)
-
-
-
-#   EN - Manufacturing/Construction
-
-
-res <- hp_filter_subsec(
-  data = res$data,
-  subsec_target = "EN - Manufacturing/Construction",
-  gas_target = "CH4",
-  lambda_hp = 1600
-)
-
-# plot
-print(res$plot)
-
-res <- hp_filter_subsec(
-  data = res$data,
-  subsec_target = "EN - Manufacturing/Construction",
-  gas_target = "CO2",
-  lambda_hp = 1600
-)
-
-# plot
-print(res$plot)
-
-
-#   LULUCF - Deforestation
-
-
-res <- hp_filter_subsec(
-  data = res$data,
-  subsec_target = "LULUCF - Deforestation",
-  gas_target = "CO2",
-  lambda_hp = 1600
-)
-
-# plot
-print(res$plot)
-
-# Waste - Solid Waste 
-
-res <- hp_filter_subsec(
-  data = res$data,
-  subsec_target = "Waste - Solid Waste",
-  gas_target = c('HFC','N2O','PFC','SF6'),
-  lambda_hp = 1600
-)
-
-# plot
-print(res$plot)
-
-
-# LULUCF - Other Lan
-
-res <- hp_filter_subsec(
-  data = res$data,
-  subsec_target = "LULUCF - Other Land",
-  gas_target = "CO2",
-  lambda_hp = 1600
-)
-
-# plot
-print(res$plot)
-
-
-
-# Waste - Wastewater Treatment
-
-res <- hp_filter_subsec(
-  data = res$data,
-  subsec_target = "Waste - Wastewater Treatment",
-  gas_target = "CH4",
-  lambda_hp = 1600
-)
-
-# plot
-print(res$plot)
+# # plot
+# print(res$plot)
 
 
 
 
 
 
-table(data_new$CSC.Subsector)
+
+table(data_new$subsector)
 table(data_new$Gas)
+
 
 #write file
 dir.tableau <- paste0("ssp_modeling/cost-benefits/tornado_plot/data/input/tornado/")
-file.name <- paste0("emissions_", region, "_", year_ref, "_", output.file)
+file.name <- paste0("decomposed_emissions_", region, "_", year_ref, "_", output.file)
 
-fwrite(data_new,paste0(dir.tableau,'raw_',file.name),row.names=FALSE)
+write.csv(data_new,paste0(dir.tableau,file.name),row.names=FALSE)
 
 print('Finish:data_prep_new_mapping process')
-
 
 

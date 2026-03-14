@@ -27,7 +27,7 @@ whirlpool <- select(whirlpool, transformation_name, sector, mac_whirlpool)
 
 
 
-mac <- fread('ssp_modeling/cost-benefits/tornado_plot/data/input/primary_id_map_tornado_to_whirlpool.csv')
+mac <- fread('ssp_modeling/cost-benefits/tornado_plot/data/input/map_tornado_to_whirlpool.csv')
 
 mac <- left_join(mac, tornado, by=c('strategy_id'='strategy_id'))
 

@@ -228,22 +228,33 @@ hp_filter_subsec <- function(data,
 }
 
 
+table(data_new$subsector)
 
-# # 1.A - Fuel Combustion Activities
+# 1.A - Fuel Combustion Activities
 
-# res <- hp_filter_subsec(
-#   data = data_new,
-#   subsec_target = "1.A - Fuel Combustion Activities",
-#   gas_target = "CO2",
-#   lambda_hp = 600
-# )
+res <- hp_filter_subsec(
+  data = data_new,
+  subsec_target = "1.A.3 - Transport",
+  gas_target = "CO2",
+  lambda_hp = 600
+)
 
-# # plot
-# print(res$plot)
-
-
+# plot
+print(res$plot)
 
 
+
+# 1.B - Fugitive emissions from fuels
+
+res <- hp_filter_subsec(
+  data = res$data,
+  subsec_target = "1.B - Fugitive emissions from fuels",
+  gas_target = "CO2",
+  lambda_hp = 200
+)
+
+# plot
+print(res$plot)
 
 
 
@@ -255,7 +266,7 @@ table(data_new$Gas)
 dir.tableau <- paste0("ssp_modeling/tableau/data/")
 file.name <- paste0("decomposed_emissions_", region, "_", year_ref, "_", output.file)
 
-write.csv(data_new,paste0(dir.tableau,file.name),row.names=FALSE)
+write.csv(res$data,paste0(dir.tableau,file.name),row.names=FALSE)
 
 print('Finish:data_prep_new_mapping process')
 
