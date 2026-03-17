@@ -2,10 +2,10 @@ citations: null
 description: Decrease transmission losses by upgrading electrical transmission infrastructure.
 identifiers:
   transformation_code: "TX:ENTC:DEC_LOSSES_STRATEGY_LEP"
-  transformation_name: "Scaled Default Max Parameters by 0.3 - ENTC: Reduce transmission\
+  transformation_name: "Scaled Default Max Parameters by 0.05 - ENTC: Reduce transmission\
     \ losses"
 parameters:
-  magnitude: 0.018
+  magnitude: 0.003
   magnitude_type: final_value
   min_loss: 0.02
   vec_implementation_ramp:
