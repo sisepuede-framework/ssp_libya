@@ -83,6 +83,75 @@ Your environment is now ready to use, with all dependencies (including those ins
   conda env list
   ```
 
+---
+
+## Workflow: Running the Model and Post-Processing
+
+### 6. **Define the Configuration**
+
+Edit the configuration file to specify the database and the strategies (scenarios) to run:
+
+```
+ssp_modeling/notebooks/config_files/config.yaml
+```
+
+This file controls which input data, transformations, and scenarios will be used in the model run.
+
+---
+
+### 7. **Run the Model**
+
+With the configuration file set, execute the model using the following notebook:
+
+```
+ssp_modeling/notebooks/libya_manager_mar.ipynb
+```
+
+At the end of the notebook, the output directory path is exposed as `RUN_ID_OUTPUT_DIR_PATH`. This folder contains:
+
+- The SISEPUEDE input/output files.
+- A table with the transformations activated in each strategy.
+
+---
+
+### 8. **Run the Post-Processing**
+
+Take the run ID from the previous step and open the post-processing script:
+
+```
+ssp_modeling/output_postprocessing/postprocessing_libya.r
+```
+
+> **Note:** Update the `run` object at the top of the script with the run ID of interest before executing.
+
+```r
+run <- 'sisepuede_results_sisepuede_run_<your_run_id>'
+```
+
+The script executes the following four routines in sequence:
+
+#### 8.1 `run_script_baseline_run_new`
+
+Computes intertemporal variations and rewrites the model output rescaled to the inventory values for each country. This produces a corrected output file aligned with national inventory baselines.
+
+#### 8.2 `data_prep_new_mapping`
+
+Takes the rescaled output and aggregates results into the new sector categories required for Tableau visualization.
+
+#### 8.3 `data_prep_drivers`
+
+Processes the aggregated outputs and generates the **drivers table** used for Tableau visualization.
+
+#### 8.4 `#create levers table`
+
+Generates the **levers (actions) table** used for Tableau visualization.
+
+#### 8.5 `#create jobs table`
+
+Generates the **jobs table** used for Tableau visualization.
+
+---
+
 ## Project Structure
 
 The most relevant files are inside the `ssp_modeling` directory:
