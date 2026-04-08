@@ -18,11 +18,9 @@ parameters:
   - pp_biogas
   - pp_biomass
   dict_entc_renewable_target_msp:
-    pp_gas_ccs: 0.2
-    pp_wind: 0.2
-    pp_biogas: 0.1
-    pp_solar: 0.3
-  magnitude: 0.8
+    pp_solar: 0.35
+    pp_wind: 0.1
+  magnitude: 0.45
   scale_non_renewables_to_match_surplus_msp: true
   vec_implementation_ramp:
     tp_0_ramp: 12

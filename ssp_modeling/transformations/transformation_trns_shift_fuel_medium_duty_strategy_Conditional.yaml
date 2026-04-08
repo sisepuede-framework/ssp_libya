@@ -2,8 +2,8 @@ citations: null
 description: Missing
 identifiers:
   transformation_code: "TX:TRNS:SHIFT_FUEL_MEDIUM_DUTY_STRATEGY_CONDITIONAL"
-  transformation_name: "Scaled Default Max Parameters by 0.3 - TRNS: Fuel switch medium\
-    \ duty road transport"
+  transformation_name: "Scaled Default Max Parameters by 0.05 - TRNS: Fuel switch\
+    \ medium duty road transport"
 parameters:
   categories:
   - road_heavy_freight
@@ -13,7 +13,7 @@ parameters:
   fuels_source:
   - fuel_diesel
   - fuel_gasoline
-  magnitude: 0.21
+  magnitude: 0.034999999999999996
   vec_implementation_ramp:
     tp_0_ramp: 12
 transformer: "TFR:TRNS:SHIFT_FUEL_MEDIUM_DUTY"

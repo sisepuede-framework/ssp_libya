@@ -264,7 +264,7 @@ table(data_new$Gas)
 
 #write file
 dir.tableau <- paste0("ssp_modeling/tableau/data/")
-file.name <- paste0("decomposed_emissions_", region, "_", year_ref, "_", output.file)
+file.name <- paste0("decomposed_emissions_", region, "_", year_ref, ".csv")
 
 write.csv(res$data,paste0(dir.tableau,file.name),row.names=FALSE)
 

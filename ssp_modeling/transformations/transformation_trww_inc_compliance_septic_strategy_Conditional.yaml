@@ -2,10 +2,10 @@ citations: null
 description: Missing
 identifiers:
   transformation_code: "TX:TRWW:INC_COMPLIANCE_SEPTIC_STRATEGY_CONDITIONAL"
-  transformation_name: "Scaled Default Max Parameters by 0.2 - TRWW: Increase septic\
+  transformation_name: "Scaled Default Max Parameters by 0.5 - TRWW: Increase septic\
     \ compliance"
 parameters:
-  magnitude: 0.18000000000000002
+  magnitude: 0.45
   vec_implementation_ramp:
     tp_0_ramp: 12
 transformer: "TFR:TRWW:INC_COMPLIANCE_SEPTIC"
