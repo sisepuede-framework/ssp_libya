@@ -6,9 +6,9 @@ identifiers:
   transformation_name: "Scaled Default Max Parameters by 0.1 - ENTC: Reduce transmission
     losses"
 parameters:
-  magnitude: 0.9
+  magnitude: 0.05
   magnitude_type: final_value
-  min_loss: 0.5
+  min_loss: 0.01
   vec_implementation_ramp:
     tp_0_ramp: 12
 transformer: "TFR:ENTC:DEC_LOSSES"
