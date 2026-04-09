@@ -256,6 +256,57 @@ res <- hp_filter_subsec(
 # plot
 print(res$plot)
 
+# 2.B - Chemical Industry
+
+res <- hp_filter_subsec(
+  data = res$data,
+  subsec_target = "2.B - Chemical Industry",
+  gas_target = "HFCS",
+  lambda_hp = 200
+)
+
+# plot
+print(res$plot)
+
+
+# 2.C - Metal Industry
+
+res <- hp_filter_subsec(
+  data = res$data,
+  subsec_target = "2.C - Metal Industry",
+  gas_target = "HFCS",
+  lambda_hp = 200
+)
+
+# plot
+print(res$plot)
+
+
+# 2.D - Non-Energy Products from Fuels and Solvent Use
+
+res <- hp_filter_subsec(
+  data = res$data,
+  subsec_target = "2.D - Non-Energy Products from Fuels and Solvent Use",
+  gas_target = "CO2",
+  lambda_hp = 600
+)
+
+# plot
+print(res$plot)
+
+
+# 2.F - Product Uses as Substitutes for Ozone Depleting Substances
+
+res <- hp_filter_subsec(
+  data = res$data,
+  subsec_target = "2.F - Product Uses as Substitutes for Ozone Depleting Substances",
+  gas_target = "PFCS",
+  lambda_hp = 600
+)
+
+# plot
+print(res$plot)
+
 
 
 table(data_new$subsector)
