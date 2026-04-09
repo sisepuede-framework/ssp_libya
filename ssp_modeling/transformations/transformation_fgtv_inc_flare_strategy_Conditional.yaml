@@ -2,9 +2,9 @@ citations: null
 description: Missing
 identifiers:
   transformation_code: "TX:FGTV:INC_FLARE_STRATEGY_CONDITIONAL"
-  transformation_name: "Scaled Default Max Parameters by 5.0 - FGTV: Maximize flaring"
+  transformation_name: "Scaled Default Max Parameters by 3.0 - FGTV: Maximize flaring"
 parameters:
-  magnitude: 4.0
+  magnitude: 2.4000000000000004
   vec_implementation_ramp:
     tp_0_ramp: 12
 transformer: "TFR:FGTV:INC_FLARE"
