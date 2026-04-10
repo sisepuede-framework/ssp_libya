@@ -1,4 +1,4 @@
-name: ssp_libya_env_3 # you can adjust the name 
+name: ssp_libya_env_whirlpool
 channels:
   - conda-forge
 dependencies:
