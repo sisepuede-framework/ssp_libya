@@ -23,6 +23,7 @@ def run_mac_analysis(
     run_output_dir: Path,
     targets_path: Path,
     strategy_code_pflo_hble: str = "PFLO:HBLE",
+    output_filename: str = "marginal_abatement_costs_whirlpool.csv",
 ) -> pd.DataFrame:
     """
     Compute MAC curves and export CSV.
@@ -202,7 +203,7 @@ def run_mac_analysis(
     # ── 7. Export ─────────────────────────────────────────────────────────────
     run_output_dir.mkdir(parents=True, exist_ok=True)
     mac_df.to_csv(
-        run_output_dir / "marginal_abatement_costs_whirlpool.csv",
+        run_output_dir / output_filename,
         index=False, encoding="UTF-8",
     )
 
@@ -277,6 +278,7 @@ def build_tableau_whirlpool(
     run_output_dir: Path,
     tableau_dir: Path,
     tornado_mac_path: Path,
+    output_path: Path = None,
 ) -> pd.DataFrame:
     """
     Build and export the Tableau whirlpool plot data.
@@ -336,7 +338,8 @@ def build_tableau_whirlpool(
     tableau = tableau[tableau["emission_diff_whirlpool"].notna()].reset_index(drop=True)
 
     tableau_dir.mkdir(parents=True, exist_ok=True)
-    tableau.to_csv(tableau_dir / "tableau_whirlpool.csv", index=False, encoding="UTF-8")
+    out = Path(output_path) if output_path is not None else tableau_dir / "tableau_whirlpool.csv"
+    tableau.to_csv(out, index=False, encoding="UTF-8")
 
     return tableau
 
@@ -346,6 +349,7 @@ def build_mac_tornado_to_whirlpool(
     run_output_dir: Path,
     tableau_dir: Path,
     tornado_mac_path: Path,
+    output_path: Path = None,
 ) -> pd.DataFrame:
     """
     Build and export the combined tornado vs whirlpool MAC comparison table.
@@ -378,6 +382,7 @@ def build_mac_tornado_to_whirlpool(
     mac["mac_whirlpool"] = pd.to_numeric(mac["mac_whirlpool"], errors="coerce")
 
     tableau_dir.mkdir(parents=True, exist_ok=True)
-    mac.to_csv(tableau_dir / "mac_tornado_to_whirlpool.csv", index=False, encoding="UTF-8")
+    out = Path(output_path) if output_path is not None else tableau_dir / "mac_tornado_to_whirlpool.csv"
+    mac.to_csv(out, index=False, encoding="UTF-8")
 
     return mac

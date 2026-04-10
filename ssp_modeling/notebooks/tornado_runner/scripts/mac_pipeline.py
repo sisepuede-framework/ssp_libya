@@ -31,6 +31,7 @@ def run_mac_analysis(
     run_output_dir: Path,
     targets_path: Path,
     strategy_code_baseline: str = "BASE",
+    output_filename: str = "marginal_abatement_costs_tornado.csv",
 ) -> pd.DataFrame:
     """
     Compute MAC curves for tornado strategies and export CSV.
@@ -210,7 +211,7 @@ def run_mac_analysis(
     # ── 7. Export ─────────────────────────────────────────────────────────────
     run_output_dir.mkdir(parents=True, exist_ok=True)
     mac_df.to_csv(
-        run_output_dir / "marginal_abatement_costs_tornado.csv",
+        run_output_dir / output_filename,
         index=False, encoding="UTF-8",
     )
 
@@ -267,6 +268,7 @@ def build_tableau_tornado(
     mac_df: pd.DataFrame,
     run_output_dir: Path,
     tableau_dir: Path,
+    output_path: Path = None,
 ) -> pd.DataFrame:
     """
     Build and export the Tableau tornado plot data.
@@ -296,6 +298,7 @@ def build_tableau_tornado(
     tableau = tableau[tableau["emission_diff"].notna()].reset_index(drop=True)
 
     tableau_dir.mkdir(parents=True, exist_ok=True)
-    tableau.to_csv(tableau_dir / "tableau_tornado.csv", index=False, encoding="UTF-8")
+    out = Path(output_path) if output_path is not None else tableau_dir / "tableau_tornado.csv"
+    tableau.to_csv(out, index=False, encoding="UTF-8")
 
     return tableau

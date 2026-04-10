@@ -43,7 +43,7 @@ OUTPUT_TABLEAU_WHIRLPOOL        = TABLEAU_DIR / "tableau_whirlpool.csv"
 OUTPUT_MAC_TORNADO_TO_WHIRLPOOL = TABLEAU_DIR / "mac_tornado_to_whirlpool.csv"
 
 # ── Tornado run reference (for tornado vs whirlpool comparison) ───────────────
-TORNADO_RUN_ID  = "sisepuede_results_sisepuede_run_2026-04-09T12;54;26.166477"
+TORNADO_RUN_ID  = "sisepuede_results_sisepuede_run_2026-04-10T10;27;13.004973"
 TORNADO_MAC_PATH = RUN_OUTPUT_DIR / TORNADO_RUN_ID / "marginal_abatement_costs_tornado.csv"
 
 # ── Cost-benefits parameters ──────────────────────────────────────────────────

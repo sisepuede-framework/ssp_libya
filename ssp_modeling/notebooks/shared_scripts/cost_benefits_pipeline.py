@@ -2,7 +2,7 @@
 cost_benefits_pipeline.py
 --------------------------
 Full cost-benefits computation: system costs + technical costs → reshaped
-cb_data DataFrame (B USD).  Exports cost_benefits_data_whirlpool.csv.
+cb_data DataFrame (B USD).  Output path is controlled by the caller via output_path.
 """
 
 import sys
@@ -18,6 +18,7 @@ def run_cost_benefits(
     run_output_dir: Path,
     project_dir: Path,
     strategy_code_base: str = "BASE",
+    output_path: Path = None,
 ) -> pd.DataFrame:
     """
     Run cost-benefit analysis and return the reshaped *cb_data* DataFrame.
@@ -112,6 +113,7 @@ def run_cost_benefits(
 
     # ── 5. Export ─────────────────────────────────────────────────────────────
     run_output_dir.mkdir(parents=True, exist_ok=True)
-    cb_data.to_csv(run_output_dir / "cost_benefits_data_whirlpool.csv", index=False, encoding="UTF-8")
+    out = Path(output_path) if output_path is not None else run_output_dir / "cost_benefits_data.csv"
+    cb_data.to_csv(out, index=False, encoding="UTF-8")
 
     return cb_data
