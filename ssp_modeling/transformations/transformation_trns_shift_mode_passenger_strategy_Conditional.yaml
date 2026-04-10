@@ -1,10 +1,14 @@
 citations:
 description: Missing
 identifiers:
-  transformation_code: "TX:FGTV:INC_FLARE_STRATEGY_CONDITIONAL"
-  transformation_name: "Scaled Default Max Parameters by 1.2 - FGTV: Maximize flaring"
+  transformation_code: "TX:TRNS:SHIFT_MODE_PASSENGER_STRATEGY_CONDITIONAL"
+  transformation_name: "Scaled Default Max Parameters by 1.0 - TRNS: Mode shift passenger
+    vehicles to others"
 parameters:
-  magnitude: 0.96
+  categories_out:
+  - road_light
+  dict_categories_target:
+  magnitude: 0.3
   vec_implementation_ramp:
   - 0.0
   - 0.0
@@ -42,4 +46,4 @@ parameters:
   - 1.0
   - 1.0
   - 1.0
-transformer: "TFR:FGTV:INC_FLARE"
+transformer: "TFR:TRNS:SHIFT_MODE_PASSENGER"

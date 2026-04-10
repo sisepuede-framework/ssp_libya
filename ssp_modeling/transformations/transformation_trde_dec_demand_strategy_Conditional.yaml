@@ -1,10 +1,11 @@
 citations:
 description: Missing
 identifiers:
-  transformation_code: "TX:FGTV:INC_FLARE_STRATEGY_CONDITIONAL"
-  transformation_name: "Scaled Default Max Parameters by 1.2 - FGTV: Maximize flaring"
+  transformation_code: "TX:TRDE:DEC_DEMAND_STRATEGY_CONDITIONAL"
+  transformation_name: "Scaled Default Max Parameters by 1.0 - TRDE: Reduce demand
+    for transport"
 parameters:
-  magnitude: 0.96
+  magnitude: 0.25
   vec_implementation_ramp:
   - 0.0
   - 0.0
@@ -42,4 +43,4 @@ parameters:
   - 1.0
   - 1.0
   - 1.0
-transformer: "TFR:FGTV:INC_FLARE"
+transformer: "TFR:TRDE:DEC_DEMAND"
