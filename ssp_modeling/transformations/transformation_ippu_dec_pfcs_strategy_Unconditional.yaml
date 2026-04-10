@@ -1,0 +1,11 @@
+citations: null
+description: Missing
+identifiers:
+  transformation_code: "TX:IPPU:DEC_PFCS_STRATEGY_UNCONDITIONAL"
+  transformation_name: "Scaled Default Max Parameters by 0.1 - IPPU: Reduce use of\
+    \ PFCs"
+parameters:
+  magnitude: 0.010000000000000002
+  vec_implementation_ramp:
+    tp_0_ramp: 12
+transformer: "TFR:IPPU:DEC_PFCS"

@@ -28,6 +28,7 @@
 "3 - Agriculture, Forestry, and Other Land Use",3.A - Livestock,3.A.1 - Enteric Fermentation,3.A.1 - Enteric Fermentation:CH4,CH4,1.634488579281,1.699230661946,1.741064007668,1.685286213372,1.680306053167,1.702218758069,1.724131462971,LBY
 "3 - Agriculture, Forestry, and Other Land Use",3.A - Livestock,3.A.1 - Enteric Fermentation,3.A.1 - Enteric Fermentation:N2O,N2O,0.006511420719,0.006769338054,0.006935992332,0.006713786628,0.006693946833,0.006781241931,0.006868537029,LBY
 "3 - Agriculture, Forestry, and Other Land Use",3.A - Livestock,3.A.2 - Manure Management,3.A.2 - Manure Management:CH4,CH4,0.64,0.661,0.678,0.661,0.661,0.665,0.678,LBY
+"3 - Agriculture, Forestry, and Other Land Use",3.B - Land,3.B.1 - Forest land,3.B.1 - Forest land:CO2,CO2,-0.653036222,-0.653036222,-0.653036222,-0.653036222,-0.653036222,-0.653036222,-0.653036222,LBY
 "3 - Agriculture, Forestry, and Other Land Use",3.C - Aggregate sources and non-CO2 emissions sources on land,3.C.1 - Burning,3.C.1 - Burning:CH4,CH4,0.007968256328,0.008964288369,0.00996032041,0.00996032041,0.008964288369,0.008964288369,0.007968256328,LBY
 "3 - Agriculture, Forestry, and Other Land Use",3.C - Aggregate sources and non-CO2 emissions sources on land,3.C.1 - Burning,3.C.1 - Burning:N2O,N2O,3.1743672e-05,3.5711631e-05,3.967959e-05,3.967959e-05,3.5711631e-05,3.5711631e-05,3.1743672e-05,LBY
 "3 - Agriculture, Forestry, and Other Land Use",3.C - Aggregate sources and non-CO2 emissions sources on land,3.C.3 - Urea application,3.C.3 - Urea application:CO2,CO2,0.027,0.013,0.021,0.008,0.001,0.004,1e-04,LBY
