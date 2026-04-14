@@ -54,6 +54,19 @@ def parse_strategy_metadata(att_strategy: pd.DataFrame) -> pd.DataFrame:
         df["transformation_code"] = spec.str.replace(
             r"_STRATEGY_[A-Z0-9]+$", "", regex=True
         )
+
+        # Composite whirlpool strategies (e.g. WHIRLPOOL_...:TX:SECTOR:CODE_STRATEGY_...)
+        # represent "all-but-one" portfolios; derive the removed transformation from
+        # strategy_code so downstream merges on (transformation_code, sector) work.
+        whirlpool_tc = (
+            df["strategy_code"]
+            .str.extract(r"[^:]+:(TX:[A-Z]+:[A-Z0-9_]+)", expand=False)
+            .str.replace(r"_STRATEGY_[A-Z0-9]+$", "", regex=True)
+        )
+        df["transformation_code"] = df["transformation_code"].fillna(whirlpool_tc)
+        df["sector"] = df["sector"].fillna(
+            df["transformation_code"].str.extract(r"^TX:([A-Z]+):", expand=False)
+        )
     else:
         # Fallback: parse strategy_code directly
         df["sector"] = (
