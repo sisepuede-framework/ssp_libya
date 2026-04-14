@@ -24,7 +24,7 @@ DATA_DIR          = SSP_MODELING_DIR / "input_data"
 RUN_OUTPUT_DIR    = SSP_MODELING_DIR / "ssp_run_output"
 
 # ── Run to analyze ────────────────────────────────────────────────────────────
-RUN_ID            = "sisepuede_results_sisepuede_run_2026-04-10T10;27;13.004973"
+RUN_ID            = "sisepuede_results_sisepuede_run_2026-04-13T21;07;08.365137"
 RUN_ID_OUTPUT_DIR = RUN_OUTPUT_DIR / RUN_ID
 
 # ── Model time range ──────────────────────────────────────────────────────────
