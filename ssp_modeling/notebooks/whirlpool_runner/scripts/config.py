@@ -18,7 +18,7 @@ DATA_DIR          = SSP_MODELING_DIR / "input_data"
 RUN_OUTPUT_DIR    = SSP_MODELING_DIR / "ssp_run_output"
 
 # ── Run to analyze ────────────────────────────────────────────────────────────
-RUN_ID            = "sisepuede_results_sisepuede_run_2026-04-13T22;23;49.843913"
+RUN_ID            = "sisepuede_results_sisepuede_run_2026-04-14T19;52;44.773459"
 RUN_ID_OUTPUT_DIR = RUN_OUTPUT_DIR / RUN_ID
 
 # ── Model time range ──────────────────────────────────────────────────────────
@@ -43,7 +43,7 @@ OUTPUT_TABLEAU_WHIRLPOOL        = TABLEAU_DIR / "tableau_whirlpool.csv"
 OUTPUT_MAC_TORNADO_TO_WHIRLPOOL = TABLEAU_DIR / "mac_tornado_to_whirlpool.csv"
 
 # ── Tornado run reference (for tornado vs whirlpool comparison) ───────────────
-TORNADO_RUN_ID  = "sisepuede_results_sisepuede_run_2026-04-13T21;07;08.365137"
+TORNADO_RUN_ID  = "sisepuede_results_sisepuede_run_2026-04-14T18;46;48.501980"
 TORNADO_MAC_PATH = RUN_OUTPUT_DIR / TORNADO_RUN_ID / "marginal_abatement_costs_tornado.csv"
 
 # ── Cost-benefits parameters ──────────────────────────────────────────────────
