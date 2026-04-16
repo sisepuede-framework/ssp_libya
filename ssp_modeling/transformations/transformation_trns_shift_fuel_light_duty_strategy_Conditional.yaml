@@ -1,49 +1,14 @@
-citations:
+citations: null
 description: Missing
 identifiers:
   transformation_code: "TX:TRNS:SHIFT_FUEL_LIGHT_DUTY_STRATEGY_CONDITIONAL"
-  transformation_name: "Scaled Default Max Parameters by 1.0 - TRNS: Electrify light
-    duty road transport"
+  transformation_name: "Scaled Default Max Parameters by 1.0 - TRNS: Electrify light\
+    \ duty road transport"
 parameters:
   categories:
   - road_light
-  dict_fuel_allocation:
+  dict_fuel_allocation: null
   magnitude: 0.7
   vec_implementation_ramp:
-  - 0.0
-  - 0.0
-  - 0.0
-  - 0.0
-  - 0.0
-  - 0.0
-  - 0.0
-  - 0.0
-  - 0.0
-  - 0.0
-  - 0.0
-  - 0.04
-  - 0.08
-  - 0.12
-  - 0.16
-  - 0.2
-  - 0.24
-  - 0.28
-  - 0.32
-  - 0.36
-  - 0.4
-  - 0.44
-  - 0.48
-  - 0.52
-  - 0.56
-  - 0.6
-  - 0.64
-  - 0.68
-  - 0.72
-  - 0.76
-  - 0.8
-  - 0.84
-  - 0.88
-  - 0.92
-  - 0.96
-  - 1.0
+    tp_0_ramp: 12
 transformer: "TFR:TRNS:SHIFT_FUEL_LIGHT_DUTY"

@@ -1,10 +1,14 @@
 citations: null
-description: "LBY Conditional - Gas Flaring Recovery. Initial magnitude 0.60 (placeholder) capturing ~60% of associated gas at Libyan oil/gas wellheads by 2050. Represents the full package of 19 NDC GFR projects ($1,233 MUS$ total, of which $993 MUS$ is conditional on international finance / ~81%). Full ambition project list from NDC Workshop Sept 2025 includes DP-3/DP-4 Bouri with CCS, K 82, IR field, Matrouk EPF (zero-flaring), LP Gas Compressors at multiple wellheads. Final magnitude to be calibrated against the full 85 MtCO2e cumulative 2026-2035 target."
+description: "Gas Flaring Recovery (GFR): capture associated gas at oil/gas wellheads\
+  \ that would otherwise be flared, vented, or released as fugitive leaks. Represents\
+  \ LP gas compressors, thermal oxidizers, re-injection to reservoir, or productive\
+  \ use of recovered gas. Captured gas is removed from the three production-emission\
+  \ streams proportionally to the magnitude."
 identifiers:
   transformation_code: "TX:FGTV:INC_GAS_RECOVERY_STRATEGY_CONDITIONAL"
-  transformation_name: "LBY Conditional - FGTV: Gas Recovery"
+  transformation_name: "Scaled Default Max Parameters by 1.0 - FGTV: Gas Recovery"
 parameters:
-  magnitude: 0.60
+  magnitude: 0.5
   vec_implementation_ramp:
-    tp_0_ramp: 11
+    tp_0_ramp: 12
 transformer: "TFR:FGTV:INC_GAS_RECOVERY"
