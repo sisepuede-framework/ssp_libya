@@ -256,6 +256,45 @@ res <- hp_filter_subsec(
 # plot
 print(res$plot)
 
+
+# 3.C.4 - Direct N2O Emissions from managed soils
+
+res <- hp_filter_subsec(
+  data = res$data,
+  subsec_target = "3.C.4 - Direct N2O Emissions from managed soils",
+  gas_target = "N2O",
+  lambda_hp = 200
+)
+
+# plot
+print(res$plot)
+
+
+# 3.A.1 - Enteric Fermentation:CH4
+
+res <- hp_filter_subsec(
+  data = res$data,
+  subsec_target = "3.A.1 - Enteric Fermentation",
+  gas_target = "CH4",
+  lambda_hp = 200
+)
+
+# plot
+print(res$plot)
+
+
+# 3.A.2 - Manure Management
+
+res <- hp_filter_subsec(
+  data = res$data,
+  subsec_target = "3.A.2 - Manure Management",
+  gas_target = "CH4",
+  lambda_hp = 200
+)
+
+# plot
+print(res$plot)
+
 # 2.B - Chemical Industry
 
 res <- hp_filter_subsec(
