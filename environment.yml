@@ -1,4 +1,4 @@
-name: ssp_libya
+name: ssp_libya_env
 channels:
   - conda-forge
 dependencies:
@@ -11,7 +11,10 @@ dependencies:
   - pip
   - setuptools>=60,<70 # otherwise install it directly on the terminal /opt/anaconda3/envs/ssp_libya_env_2/bin/python -m pip install "setuptools>=60,<70"
   - pip:
-      - git+https://github.com/jcsyme/sisepuede.git
+      # SISEPUEDE core with the TFR:FGTV:INC_GAS_RECOVERY transformer.
+      # Switch back to `jcsyme/sisepuede.git` (without @branch) once GFR is merged upstream.
+      - git+https://github.com/sisepuede-framework/sisepuede.git@feature/fgtv-gas-recovery
       - ssp-transformations-handler
+      # Costs & Benefits with the GFR cost + `gas_recovery_savings` benefit category.
       - git+https://github.com/sisepuede-framework/costs_benefits_ssp.git
       - polars

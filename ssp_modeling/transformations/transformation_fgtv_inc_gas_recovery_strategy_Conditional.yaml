@@ -6,9 +6,9 @@ description: "Gas Flaring Recovery (GFR): capture associated gas at oil/gas well
   \ streams proportionally to the magnitude."
 identifiers:
   transformation_code: "TX:FGTV:INC_GAS_RECOVERY_STRATEGY_CONDITIONAL"
-  transformation_name: "Scaled Default Max Parameters by 1.0 - FGTV: Gas Recovery"
+  transformation_name: "Scaled Default Max Parameters by 1.5 - FGTV: Gas Recovery"
 parameters:
-  magnitude: 0.5
+  magnitude: 0.75
   vec_implementation_ramp:
     tp_0_ramp: 12
 transformer: "TFR:FGTV:INC_GAS_RECOVERY"
