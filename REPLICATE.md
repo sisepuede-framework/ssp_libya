@@ -23,93 +23,98 @@ No Gurobi license is needed — the NemoMod solver uses open-source HiGHS by def
 
 ---
 
-## 2. Clone the three repositories
+## 2. Two install flows — pick one
 
-Pick a parent directory (example: `~/git`) and clone all three:
+There are two supported paths, depending on whether you just want to **run** the model or also **edit** it.
+
+- **Flow A — "Just run"** (easiest, one command): use `environment.yml`. Installs SISEPUEDE and costs_benefits_ssp as pinned wheels straight from our fork branches. Recommended for collaborators who will run the notebook without modifying core code. Jump to [§ 3A](#3a-flow-a--conda-env-create).
+- **Flow B — "Develop"** (editable clones): clone all three repos locally and `pip install -e` the two Python packages so edits to the git worktrees are picked up live. Recommended for anyone iterating on GFR, new transformers, or the CBA rows. Jump to [§ 3B](#3b-flow-b--editable-clones).
+
+Either flow also needs the `ssp_libya` repo cloned locally (for the notebook, YAMLs, inputs, and the cost config xlsx). That clone is the same in both flows:
 
 ```bash
 mkdir -p ~/git && cd ~/git
-
-# SISEPUEDE core (our fork, with the GFR transformer)
-git clone https://github.com/sisepuede-framework/sisepuede.git
-cd sisepuede
-git checkout feature/fgtv-gas-recovery
-cd ..
-
-# Costs & Benefits (GFR cost + benefit rows registered)
-git clone https://github.com/sisepuede-framework/costs_benefits_ssp.git
-cd costs_benefits_ssp
-git checkout feature/fgtv-gas-recovery-costs   # until PR #5 is merged; then `main`
-cd ..
-
-# Libya-specific inputs, YAMLs, notebooks (this repo)
 git clone https://github.com/sisepuede-framework/ssp_libya.git
 cd ssp_libya
 git checkout tornado_update
-cd ..
-```
-
-Verify you're on the right branches:
-
-```bash
-(cd sisepuede            && git log --oneline -2)
-# expected top commit: "Register TFR:FGTV:INC_GAS_RECOVERY in strategy attribute tables"
-
-(cd costs_benefits_ssp   && git log --oneline -2)
-# expected top commit: "merge origin/main resolviendo conflictos..."
-#                 or:  "renombra benefit GFR a categoría propia..."
-
-(cd ssp_libya            && git log --oneline -2)
-# expected top commit: "gas recovery fgtv fix"
 ```
 
 ---
 
-## 3. Create the conda environment
+## 3A. Flow A — `conda env create`
+
+The `environment.yml` at the root of this repo already pins SISEPUEDE and costs_benefits_ssp to the **right branches** (our fork branches with GFR). One command:
+
+```bash
+cd ~/git/ssp_libya
+conda env create -f environment.yml
+conda activate ssp_libya_env
+```
+
+That installs:
+
+- Python 3.11 + matplotlib, xlsxwriter, ipykernel, ruamel.yaml
+- **SISEPUEDE** from `sisepuede-framework/sisepuede @ feature/fgtv-gas-recovery` (with the GFR transformer)
+- **ssp-transformations-handler** from PyPI
+- **costs_benefits_ssp** from `sisepuede-framework/costs_benefits_ssp @ feature/fgtv-gas-recovery-costs` (with GFR cost + benefit)
+- polars
+
+Note that SISEPUEDE and costs_benefits_ssp install as **non-editable wheels** under `site-packages`. If you later edit `cb_data.db` or any attribute CSV in a local clone, the env won't see it — you'd need `pip install --force-reinstall --no-deps git+https://...` to refresh. For that workflow, use Flow B instead.
+
+---
+
+## 3B. Flow B — editable clones
+
+Clone the other two repos alongside `ssp_libya`:
+
+```bash
+cd ~/git
+
+# SISEPUEDE core (our fork, with the GFR transformer)
+git clone https://github.com/sisepuede-framework/sisepuede.git
+cd sisepuede && git checkout feature/fgtv-gas-recovery && cd ..
+
+# Costs & Benefits (GFR cost + benefit rows registered)
+git clone https://github.com/sisepuede-framework/costs_benefits_ssp.git
+cd costs_benefits_ssp && git checkout feature/fgtv-gas-recovery-costs && cd ..
+```
+
+Verify the branches:
+
+```bash
+(cd sisepuede          && git log --oneline -2)
+# expected top commit: "Register TFR:FGTV:INC_GAS_RECOVERY in strategy attribute tables"
+
+(cd costs_benefits_ssp && git log --oneline -2)
+# expected top commit: "merge origin/main resolviendo conflictos..." or
+#                      "renombra benefit GFR a categoría propia..."
+```
+
+Create the conda env without installing the two Python packages from git, then `pip install -e` locally:
 
 ```bash
 conda create -n ssp_libya_env python=3.11 -y
 conda activate ssp_libya_env
-```
 
-Install Python deps (pandas 2.x, numpy, openpyxl, ruamel.yaml, juliacall, etc.):
+# Base deps + everything in environment.yml except the two git+https lines
+pip install matplotlib==3.9.2 xlsxwriter==3.1.1 ipykernel==6.29.5 "setuptools>=60,<70" \
+            ruamel.yaml polars ssp-transformations-handler openpyxl
 
-```bash
-# From the sisepuede repo — includes all runtime deps except cb and libya specifics
-pip install -r ~/git/sisepuede/requirements.txt
-
-# If sisepuede/requirements.txt is missing or incomplete, install manually:
-pip install numpy pandas openpyxl ruamel.yaml juliacall pyDOE2 sqlalchemy polars matplotlib seaborn jupyterlab
-
-# Libya notebook extras
-pip install geopandas  # only if plots use mapping; otherwise skip
-```
-
----
-
-## 4. Editable installs
-
-The core idea: install both SISEPUEDE and costs_benefits_ssp in **editable mode** (`pip install -e`) so any future code changes in the git worktrees are picked up automatically without reinstalling.
-
-```bash
-# SISEPUEDE core
+# Editable installs of the two sisepuede-framework packages
 pip install -e ~/git/sisepuede
-
-# Costs & Benefits
 pip install -e ~/git/costs_benefits_ssp
 ```
 
-Verify both:
+Verify both point to the git worktree (NOT `site-packages`):
 
 ```bash
 python -c "import sisepuede, costs_benefits_ssp; print(sisepuede.__file__); print(costs_benefits_ssp.__file__)"
+# Both paths must start with ~/git/... otherwise see § 9.1 (orphan dir).
 ```
-
-Both paths must point to `~/git/...`, **not** to `site-packages/`. If they point to site-packages, remove the orphan directory there and re-install (see **Known pitfalls** below).
 
 ---
 
-## 5. Verify the GFR transformer is installed
+## 4. Verify the GFR transformer is installed
 
 ```bash
 python <<'PY'
@@ -134,7 +139,7 @@ Both should print `True`.
 
 ---
 
-## 6. Verify the GFR cost + benefit entries are installed
+## 5. Verify the GFR cost + benefit entries are installed
 
 ```bash
 python <<'PY'
@@ -153,7 +158,7 @@ PY
 
 ---
 
-## 7. Run the Libya notebook
+## 6. Run the Libya notebook
 
 The canonical entry point is:
 
@@ -179,7 +184,7 @@ The run takes **~20–40 minutes** on a laptop (the bottleneck is NemoMod LP sol
 
 ---
 
-## 8. Where outputs land
+## 7. Where outputs land
 
 After a successful run, outputs appear under:
 
@@ -197,7 +202,7 @@ To visualize, open the Tableau workbook at `ssp_modeling/Tableau/` or the plotti
 
 ---
 
-## 9. Run the CBA
+## 8. Run the CBA
 
 From the notebook or a standalone script:
 
@@ -231,9 +236,9 @@ Expected for `Conditional` cumulative 2026–2035 (GFR magnitude ≈ 0.75):
 
 ---
 
-## 10. Known pitfalls
+## 9. Known pitfalls
 
-### **10.1 `sisepuede.__file__ = None`** after `pip install`
+### **9.1 `sisepuede.__file__ = None`** after `pip install`
 
 Happens when there's an orphan `sisepuede/` directory in `site-packages` from a prior wheel install without an `__init__.py`. Python creates a namespace-package that conflicts with the editable install.
 
@@ -246,7 +251,7 @@ rm -rf <path>
 ```
 Then `pip install -e ~/git/sisepuede` again.
 
-### **10.2 `tmp_cb_data.db` out of sync**
+### **9.2 `tmp_cb_data.db` out of sync**
 
 The `costs_benefits_ssp` runtime sometimes caches into `tmp_cb_data.db`. If you just updated `cb_data.db` (backup) but results look stale:
 
@@ -256,7 +261,7 @@ rm -f ~/git/costs_benefits_ssp/costs_benefits_ssp/database/tmp_cb_data.db
 
 It regenerates on the next `CostBenefits(...)` instantiation.
 
-### **10.3 NumPy 2.x / pandas 2.x warnings**
+### **9.3 NumPy 2.x / pandas 2.x warnings**
 
 You may see warnings like `AttributeError: _ARRAY_API not found` at import time. Safe to ignore if followed by working pandas calls. If pandas actually breaks:
 
@@ -265,17 +270,17 @@ pip install --upgrade pandas numpy
 # or pin if a specific version is required
 ```
 
-### **10.4 Jupyter kernel has stale modules**
+### **9.4 Jupyter kernel has stale modules**
 
 After any `pip install -e` or edit to the git repos: **Kernel → Restart**. Otherwise old modules stay cached and you'll see phantom `AttributeError`s.
 
-### **10.5 Julia slow on first run**
+### **9.5 Julia slow on first run**
 
 First call to `EnergyProduction.project(...)` triggers Julia package download and precompilation (~5 minutes one-time). Second run uses the cached Julia env under `sisepuede/julia/`.
 
 ---
 
-## 11. What's on each branch
+## 10. What's on each branch
 
 | Repo | Branch | Why |
 |---|---|---|
@@ -287,7 +292,7 @@ When the upstream PRs land (PR #5 on costs_benefits_ssp; and eventually a PR to 
 
 ---
 
-## 12. Reference docs
+## 11. Reference docs
 
 - **GFR transformer technical memo** (English, for James): `sisepuede/TFR_FGTV_INC_GAS_RECOVERY.md` on the `feature/fgtv-gas-recovery` branch
 - **CBA README**: `costs_benefits_ssp/README.md`
