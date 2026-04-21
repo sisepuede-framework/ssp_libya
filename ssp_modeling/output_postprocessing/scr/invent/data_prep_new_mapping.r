@@ -230,13 +230,35 @@ hp_filter_subsec <- function(data,
 
 table(data_new$subsector)
 
-# 1.A - Fuel Combustion Activities
+# 1.A.3 - Transport
 
 res <- hp_filter_subsec(
   data = data_new,
   subsec_target = "1.A.3 - Transport",
   gas_target = "CO2",
   lambda_hp = 600
+)
+
+# plot
+print(res$plot)
+
+# 1.A.1 - Fuel Production 
+
+res <- hp_filter_subsec(
+  data = res$data,
+  subsec_target = "1.A.1 - Fuel Production",
+  gas_target = "CO2",
+  lambda_hp = 200
+)
+
+# plot
+print(res$plot)
+
+res <- hp_filter_subsec(
+  data = res$data,
+  subsec_target = "1.A.1 - Fuel Production",
+  gas_target = "CH4",
+  lambda_hp = 200
 )
 
 # plot
@@ -250,6 +272,26 @@ res <- hp_filter_subsec(
   data = res$data,
   subsec_target = "1.B - Fugitive emissions from fuels",
   gas_target = "CO2",
+  lambda_hp = 200
+)
+
+# plot
+print(res$plot)
+
+res <- hp_filter_subsec(
+  data = res$data,
+  subsec_target = "1.B - Fugitive emissions from fuels",
+  gas_target = "CH4",
+  lambda_hp = 200
+)
+
+# plot
+print(res$plot)
+
+res <- hp_filter_subsec(
+  data = res$data,
+  subsec_target = "1.B - Fugitive emissions from fuels",
+  gas_target = "N2O",
   lambda_hp = 200
 )
 
