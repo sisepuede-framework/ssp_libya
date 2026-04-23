@@ -1,11 +1,11 @@
 citations: null
 description: Missing
 identifiers:
-  transformation_code: "TX:TRNS:INC_EFFICIENCY_NON_ELECTRIC_STRATEGY_CONDITIONAL"
-  transformation_name: "Scaled Default Max Parameters by 0.22 - TRNS: Increase non-electric\
+  transformation_code: "TX:TRNS:INC_EFFICIENCY_NON_ELECTRIC_STRATEGY_UNCONDITIONAL"
+  transformation_name: "Scaled Default Max Parameters by 0.1 - TRNS: Increase non-electric\
     \ transportation energy efficiency"
 parameters:
-  magnitude: 0.055
+  magnitude: 0.025
   vec_implementation_ramp:
     tp_0_ramp: 12
 transformer: "TFR:TRNS:INC_EFFICIENCY_NON_ELECTRIC"
