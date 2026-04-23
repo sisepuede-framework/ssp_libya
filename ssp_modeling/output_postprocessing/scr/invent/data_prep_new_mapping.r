@@ -365,6 +365,32 @@ res <- hp_filter_subsec(
 print(res$plot)
 
 
+# 4.A - Solid Waste Disposal
+
+res <- hp_filter_subsec(
+  data = res$data,
+  subsec_target = "4.A - Solid Waste Disposal",
+  gas_target = "CH4",
+  lambda_hp = 400
+)
+
+# plot
+print(res$plot)
+
+
+# 4.D - Wastewater Treatment and Discharge
+
+res <- hp_filter_subsec(
+  data = res$data,
+  subsec_target = "4.D - Wastewater Treatment and Discharge",
+  gas_target = "CH4",
+  lambda_hp = 400
+)
+
+# plot
+print(res$plot)
+
+
 # 2.F - Product Uses as Substitutes for Ozone Depleting Substances
 
 res <- hp_filter_subsec(
