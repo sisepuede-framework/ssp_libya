@@ -3,9 +3,9 @@ description: "FGTV: Gradually reduce flaring fraction from baseline to 0.10 by 2
   \ (Unconditional NDC commitment)"
 identifiers:
   transformation_code: "TX:FGTV:INC_FLARE_STRATEGY_UNCONDITIONAL"
-  transformation_name: "Scaled Default Max Parameters by 0.15 - FGTV: Maximize flaring"
+  transformation_name: "Scaled Default Max Parameters by 0.01 - FGTV: Maximize flaring"
 parameters:
-  magnitude: 0.12
+  magnitude: 0.008
   vec_implementation_ramp:
     tp_0_ramp: 12
 transformer: "TFR:FGTV:INC_FLARE"
