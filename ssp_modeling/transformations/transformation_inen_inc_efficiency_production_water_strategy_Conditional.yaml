@@ -1,0 +1,48 @@
+citations:
+description: Missing
+identifiers:
+  transformation_code: "TX:INEN:INC_EFFICIENCY_PRODUCTION_WATER_STRATEGY_CONDITIONAL"
+  transformation_name: "INEN: Water desalination extra electricity demand - Conditional"
+parameters:
+  categories:
+  - rubber_and_leather
+  - recycled_rubber_and_leather
+  magnitude: 0.9
+  vec_implementation_ramp:
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.003508
+  - 0.019174
+  - 0.033787
+  - 0.047907
+  - 0.061353
+  - 0.074411
+  - 0.087124
+  - 0.099306
+  - 0.111199
+  - 0.108698
+  - 0.106557
+  - 0.104273
+  - 0.102309
+  - 0.100651
+  - 0.098857
+  - 0.097133
+  - 0.095677
+  - 0.094298
+  - 0.092758
+  - 0.091489
+  - 0.090254
+  - 0.089084
+  - 0.088153
+transformer: "TFR:INEN:INC_EFFICIENCY_PRODUCTION"

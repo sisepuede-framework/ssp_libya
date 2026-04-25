@@ -230,13 +230,24 @@ hp_filter_subsec <- function(data,
 
 table(data_new$subsector)
 
-# 1.A - Fuel Combustion Activities
+
+# 1.A.1 - Fuel Production 
 
 res <- hp_filter_subsec(
   data = data_new,
-  subsec_target = "1.A.3 - Transport",
+  subsec_target = "1.A.1 - Fuel Production",
   gas_target = "CO2",
-  lambda_hp = 600
+  lambda_hp = 200
+)
+
+# plot
+print(res$plot)
+
+res <- hp_filter_subsec(
+  data = res$data,
+  subsec_target = "1.A.1 - Fuel Production",
+  gas_target = "CH4",
+  lambda_hp = 200
 )
 
 # plot
@@ -250,6 +261,65 @@ res <- hp_filter_subsec(
   data = res$data,
   subsec_target = "1.B - Fugitive emissions from fuels",
   gas_target = "CO2",
+  lambda_hp = 200
+)
+
+# plot
+print(res$plot)
+
+res <- hp_filter_subsec(
+  data = res$data,
+  subsec_target = "1.B - Fugitive emissions from fuels",
+  gas_target = "CH4",
+  lambda_hp = 200
+)
+
+# plot
+print(res$plot)
+
+res <- hp_filter_subsec(
+  data = res$data,
+  subsec_target = "1.B - Fugitive emissions from fuels",
+  gas_target = "N2O",
+  lambda_hp = 200
+)
+
+# plot
+print(res$plot)
+
+
+# 3.C.4 - Direct N2O Emissions from managed soils
+
+res <- hp_filter_subsec(
+  data = res$data,
+  subsec_target = "3.C.4 - Direct N2O Emissions from managed soils",
+  gas_target = "N2O",
+  lambda_hp = 200
+)
+
+# plot
+print(res$plot)
+
+
+# 3.A.1 - Enteric Fermentation:CH4
+
+res <- hp_filter_subsec(
+  data = res$data,
+  subsec_target = "3.A.1 - Enteric Fermentation",
+  gas_target = "CH4",
+  lambda_hp = 200
+)
+
+# plot
+print(res$plot)
+
+
+# 3.A.2 - Manure Management
+
+res <- hp_filter_subsec(
+  data = res$data,
+  subsec_target = "3.A.2 - Manure Management",
+  gas_target = "CH4",
   lambda_hp = 200
 )
 
@@ -289,6 +359,32 @@ res <- hp_filter_subsec(
   subsec_target = "2.D - Non-Energy Products from Fuels and Solvent Use",
   gas_target = "CO2",
   lambda_hp = 600
+)
+
+# plot
+print(res$plot)
+
+
+# 4.A - Solid Waste Disposal
+
+res <- hp_filter_subsec(
+  data = res$data,
+  subsec_target = "4.A - Solid Waste Disposal",
+  gas_target = "CH4",
+  lambda_hp = 400
+)
+
+# plot
+print(res$plot)
+
+
+# 4.D - Wastewater Treatment and Discharge
+
+res <- hp_filter_subsec(
+  data = res$data,
+  subsec_target = "4.D - Wastewater Treatment and Discharge",
+  gas_target = "CH4",
+  lambda_hp = 400
 )
 
 # plot

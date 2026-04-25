@@ -242,7 +242,7 @@ def build_attribute_map(
                            ATTRIBUTE_MAP_TORNADO_WHIRLPOOL.csv
     """
     # ── 1. Whirlpool side: only id columns ────────────────────────────────────
-    whirlpool_cols = [c for c in ["strategy_id", "transformation_code", "sector"]
+    whirlpool_cols = [c for c in ["strategy_id", "strategy_code", "transformation_code", "sector"]
                       if c in att_strategy.columns]
 
     whirlpool_map = (
@@ -250,10 +250,26 @@ def build_attribute_map(
         .merge(att_strategy[whirlpool_cols], on="strategy_id", how="left")
         .rename(columns={"primary_id": "primary_id_whirlpool"})
         .query("strategy_id != 0")
-        [["primary_id_whirlpool", "transformation_code", "sector"]]
         .sort_values("primary_id_whirlpool")
         .reset_index(drop=True)
     )
+
+    # Whirlpool composite strategies have transformation_code = NaN from
+    # parse_strategy_metadata (they contain '|' separators).  The removed
+    # transformation is encoded in strategy_code as:
+    #   WHIRLPOOL_...:TX:SECTOR:CODE_STRATEGY_...  →  TX:SECTOR:CODE
+    if "transformation_code" not in whirlpool_map.columns or whirlpool_map["transformation_code"].isna().all():
+        whirlpool_map["transformation_code"] = (
+            whirlpool_map["strategy_code"]
+            .str.extract(r"[^:]+:(TX:[A-Z]+:[A-Z0-9_]+)", expand=False)
+            .str.replace(r"_STRATEGY_[A-Z0-9]+$", "", regex=True)
+        )
+        whirlpool_map["sector"] = (
+            whirlpool_map["transformation_code"]
+            .str.extract(r"^TX:([A-Z]+):", expand=False)
+        )
+
+    whirlpool_map = whirlpool_map[["primary_id_whirlpool", "transformation_code", "sector"]]
 
     # ── 2. Merge with tornado map to get full metadata ────────────────────────
     tornado_map = pd.read_csv(tornado_att_map_path)

@@ -1,5 +1,5 @@
 citations: null
-description: "Missing"
+description: "FGTV: Gradually reduce flaring fraction from baseline to 0.10 by 2050 (Unconditional NDC commitment)"
 identifiers:
   transformation_code: "TX:FGTV:INC_FLARE"
   transformation_name: "Default Value - FGTV: Maximize flaring"
