@@ -261,7 +261,7 @@ res <- hp_filter_subsec(
   data = res$data,
   subsec_target = "1.B - Fugitive emissions from fuels",
   gas_target = "CO2",
-  lambda_hp = 200
+  lambda_hp = 1600
 )
 
 # plot
@@ -271,7 +271,7 @@ res <- hp_filter_subsec(
   data = res$data,
   subsec_target = "1.B - Fugitive emissions from fuels",
   gas_target = "CH4",
-  lambda_hp = 200
+  lambda_hp = 1600
 )
 
 # plot
@@ -281,7 +281,7 @@ res <- hp_filter_subsec(
   data = res$data,
   subsec_target = "1.B - Fugitive emissions from fuels",
   gas_target = "N2O",
-  lambda_hp = 200
+  lambda_hp = 1600
 )
 
 # plot

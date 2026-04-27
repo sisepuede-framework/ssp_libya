@@ -8,5 +8,5 @@ parameters:
   magnitude: 0.0072
   vec_implementation_ramp:
     tp_0_ramp: 8
-    n_tp_ramp: 5
+    n_tp_ramp: 12
 transformer: "TFR:FGTV:INC_FLARE"
