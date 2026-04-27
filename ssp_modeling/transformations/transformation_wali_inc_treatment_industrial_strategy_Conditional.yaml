@@ -1,12 +1,15 @@
-citations: null
+citations:
 description: Missing
 identifiers:
   transformation_code: "TX:WALI:INC_TREATMENT_INDUSTRIAL_STRATEGY_CONDITIONAL"
-  transformation_name: "Scaled Default Max Parameters by 1.0 - WALI: Improved industrial\
-    \ wastewater treatment"
+  transformation_name: "Scaled Default Max Parameters by 1.0 - WALI: Improved industrial
+    wastewater treatment"
 parameters:
-  dict_magnitude: null
+  dict_magnitude:
+    treated_advanced_aerobic: 0.36
+    treated_secondary_aerobic: 0.15
   return_pathways: false
   vec_implementation_ramp:
-    tp_0_ramp: 12
+    tp_0_ramp: 8
+    n_tp_ramp: 17
 transformer: "TFR:WALI:INC_TREATMENT_INDUSTRIAL"
