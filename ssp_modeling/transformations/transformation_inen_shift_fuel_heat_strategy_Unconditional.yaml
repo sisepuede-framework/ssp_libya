@@ -1,0 +1,20 @@
+citations:
+description: 'Transformations for both (and/or) low and high-heat should be implemented
+  using this transformer. '
+identifiers:
+  transformation_code: "TX:INEN:SHIFT_FUEL_HEAT_STRATEGY_UNCONDITIONAL"
+  transformation_name: "Scaled Default Max Parameters by 1.0 - INEN: Fuel switch high-
+    and low-temp thermal processes. "
+parameters:
+  frac_high_given_high:
+    cement: 0.0
+    chemicals: 0.5
+    glass: 0.88
+    lime_and_carbonite: 0.88
+    metals: 0.5
+    paper: 0.18
+  frac_switchable: 0.5
+  vec_implementation_ramp:
+    tp_0_ramp: 8
+    n_tp_ramp: 17
+transformer: "TFR:INEN:SHIFT_FUEL_HEAT"
