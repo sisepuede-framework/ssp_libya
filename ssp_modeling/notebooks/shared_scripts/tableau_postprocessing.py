@@ -24,6 +24,7 @@ Usage from a manager notebook:
 Outputs land in `<project_dir>/ssp_modeling/tableau/data/`:
   - decomposed_emissions_<region>_<year_ref>.csv   (HP-smoothed, EDGAR + SISEPUEDE)
   - drivers_<region>.csv                            (driver variables + GDP history)
+  - fgtv_volumes_<region>.csv                       (oil/gas production + flaring/venting/fugitive volumes, m^3)
   - tableau_levers_table_complete.csv               (levers + stakeholder merge)
   - jobs_demand_<region>.csv                        (employment subset)
 """
@@ -371,6 +372,175 @@ def build_drivers_table(
 
 
 # ---------------------------------------------------------------------------
+# FGTV volumes table (oil/gas production + flaring/venting/fugitive volumes)
+# ---------------------------------------------------------------------------
+
+# IPCC AR6 100-year GWP for CH4 (matches sisepuede/attributes/attribute_gas.csv).
+# Needed to convert emission_co2e_ch4_* (Mt CO2eq) into raw CH4 mass before
+# converting to gas volume.
+GWP_CH4_AR6_100Y = 27.9
+
+# Standard-condition densities (15 degC, 1 atm) for converting emission mass
+# to fuel volume. These mirror the World Bank GGFR / IEA convention used to
+# report flaring/venting volumes:
+#   - 1 m^3 of natural gas (~95% CH4) fully combusted yields ~1.96 kg of CO2
+#   - 1 m^3 of pure CH4 weighs ~0.717 kg
+#   - Natural gas is treated as ~95% CH4 by volume for venting/fugitive
+#     (vented and leaked gas is the raw stream, not pure CH4)
+KG_CO2_PER_M3_NG_COMBUSTION = 1.96
+KG_CH4_PER_M3_PURE          = 0.717
+NG_CH4_VOLUME_FRACTION      = 0.95
+
+# Fuels in the FGTV pathway that we report volumes for. "crude" and "oil"
+# both flag oil-side fugitive streams in the SISEPUEDE schema; we report
+# both so downstream users can pick the relevant one for their dashboard.
+FGTV_FUELS = ("natural_gas", "crude", "oil")
+
+# Pathway -> (emission process tag in SISEPUEDE column names, gas to use for
+# the volume back-conversion). Flaring is dominated by CO2 (combustion of
+# associated gas to CO2 is the dominant signal), while venting and fugitive
+# leaks are CH4-dominated since the gas escapes uncombusted.
+FGTV_PATHWAYS = {
+    "flaring":  ("flaring", "co2"),
+    "venting":  ("venting", "ch4"),
+    "fugitive": ("dtp",     "ch4"),
+}
+
+
+def _gas_volume_from_co2_emissions_m3(emission_co2eq_mt: pd.Series) -> pd.Series:
+    """Convert tonnes-CO2eq of CO2 (= tonnes CO2, since GWP_CO2 = 1) emitted
+    from flaring into volume of natural gas combusted, in m^3 at standard
+    conditions. emission_co2eq_mt is in Mt; output is m^3."""
+    emission_kg = emission_co2eq_mt * 1e9
+    return emission_kg / KG_CO2_PER_M3_NG_COMBUSTION
+
+
+def _gas_volume_from_ch4_emissions_m3(emission_co2eq_mt: pd.Series) -> pd.Series:
+    """Convert tonnes-CO2eq of CH4 emitted (vented or leaked) into volume of
+    natural gas escaped, in m^3 at standard conditions. The CO2eq is divided
+    by GWP_CH4 to recover CH4 mass, by CH4 density to get pure-CH4 volume,
+    then divided by the natural-gas CH4 volume fraction so the answer is
+    expressed as 'natural gas equivalent' rather than pure CH4."""
+    emission_kg = emission_co2eq_mt * 1e9
+    mass_ch4_kg = emission_kg / GWP_CH4_AR6_100Y
+    volume_pure_ch4_m3 = mass_ch4_kg / KG_CH4_PER_M3_PURE
+    return volume_pure_ch4_m3 / NG_CH4_VOLUME_FRACTION
+
+
+def build_fgtv_volumes_table(
+    run_dir: Path,
+    iso_code3: str,
+    region: str,
+    out_path: Path,
+) -> pd.DataFrame:
+    """Produce a long-format CSV of oil/gas production volumes and the
+    flaring/venting/fugitive natural-gas-equivalent volumes implied by the
+    SISEPUEDE FGTV emissions outputs.
+
+    Methodology (World Bank GGFR / IEA convention)
+    ----------------------------------------------
+    SISEPUEDE does not export pathway volumes natively. We derive them from
+    the model's CO2eq emissions outputs using standard-condition densities:
+
+      * Production volume (m^3) = prod_enfu_fuel_X_pj * 1e6 / density_MJ_per_L
+        where density is ``energydensity_enfu_mj_per_litre_fuel_X``.
+
+      * Flaring volume (m^3 of natural gas combusted)
+            = (emission_co2e_co2_fgtv_flaring_fuel_X * 1e9 kg/Mt) / 1.96 kg/m^3
+        (full combustion of ~95%-CH4 natural gas to CO2).
+
+      * Venting and fugitive (DTP) volume (m^3 of natural gas escaped)
+            = (emission_co2e_ch4_fgtv_PROCESS_fuel_X * 1e9 / GWP_CH4)
+              / 0.717 kg/m^3 / 0.95
+        (CO2eq -> CH4 mass via GWP, mass -> pure-CH4 volume via density,
+         then expressed as natural-gas equivalent at 95% CH4).
+
+    Pathway volumes are reported in cubic metres (m^3) and Bcm (1 Bcm = 1e9 m^3).
+    """
+    data = pd.read_csv(run_dir / "decomposed_ssp_output.csv")
+    data = data[data["region"] == region].copy()
+    data = data.sort_values(["primary_id", "time_period"]).reset_index(drop=True)
+
+    id_cols = ["primary_id", "time_period"]
+    rows: list[pd.DataFrame] = []
+
+    # 1) Production volumes (oil, crude, natural_gas) from PJ + density.
+    for fuel in FGTV_FUELS:
+        prod_col = f"prod_enfu_fuel_{fuel}_pj"
+        dens_col = f"energydensity_enfu_mj_per_litre_fuel_{fuel}"
+        if prod_col not in data.columns or dens_col not in data.columns:
+            continue
+        density = data[dens_col].replace(0, np.nan)
+        # PJ * 1e9 MJ/PJ / (MJ/L) / 1000 L/m3 = PJ * 1e6 / (MJ/L)  [m3]
+        volume_m3 = data[prod_col] * 1e6 / density
+        rows.append(
+            data[id_cols].assign(
+                fuel     = fuel,
+                pathway  = "production",
+                value_m3 = volume_m3.fillna(0.0),
+            )
+        )
+
+    # 2) Pathway volumes (flaring/venting/fugitive) derived from emissions.
+    for pathway_label, (process_tag, gas_kind) in FGTV_PATHWAYS.items():
+        for fuel in FGTV_FUELS:
+            em_col = f"emission_co2e_{gas_kind}_fgtv_{process_tag}_fuel_{fuel}"
+            if em_col not in data.columns:
+                continue
+            if gas_kind == "co2":
+                volume_m3 = _gas_volume_from_co2_emissions_m3(data[em_col])
+            else:
+                volume_m3 = _gas_volume_from_ch4_emissions_m3(data[em_col])
+            rows.append(
+                data[id_cols].assign(
+                    fuel     = fuel,
+                    pathway  = pathway_label,
+                    value_m3 = volume_m3.fillna(0.0),
+                )
+            )
+
+    if not rows:
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        pd.DataFrame(
+            columns=["Year", "primary_id", "strategy_id", "design_id",
+                     "future_id", "strategy", "iso_code3", "Country",
+                     "fuel", "pathway", "value_m3", "value_bcm"]
+        ).to_csv(out_path, index=False)
+        print(f"[fgtv_vol]  {out_path}  (no FGTV columns found)")
+        return pd.DataFrame()
+
+    long_df = pd.concat(rows, ignore_index=True)
+    long_df["Year"] = long_df["time_period"] + 2015
+    long_df = long_df.drop(columns=["time_period"])
+
+    # Bcm convenience (1 Bcm = 1e9 m^3).
+    long_df["value_bcm"] = long_df["value_m3"] / 1e9
+
+    att_primary  = pd.read_csv(run_dir / "ATTRIBUTE_PRIMARY.csv")
+    long_df      = long_df.merge(att_primary, on="primary_id", how="left")
+    att_strategy = pd.read_csv(run_dir / "ATTRIBUTE_STRATEGY.csv")[["strategy_id", "strategy"]]
+    long_df      = long_df.merge(att_strategy, on="strategy_id", how="left")
+
+    long_df["iso_code3"] = iso_code3
+    long_df["Country"]   = region
+
+    out_cols = [
+        "Year", "primary_id", "strategy_id", "design_id", "future_id",
+        "strategy", "iso_code3", "Country", "fuel", "pathway",
+        "value_m3", "value_bcm",
+    ]
+    out_cols = [c for c in out_cols if c in long_df.columns]
+    final = long_df[out_cols].sort_values(
+        ["strategy_id", "fuel", "pathway", "Year"]
+    ).reset_index(drop=True)
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    final.to_csv(out_path, index=False)
+    print(f"[fgtv_vol]  {out_path}  ({len(final):,} rows)")
+    return final
+
+
+# ---------------------------------------------------------------------------
 # Levers table (#create levers table.r)
 # ---------------------------------------------------------------------------
 
@@ -504,6 +674,12 @@ def run_tableau_postprocessing(
         year_ref                = year_ref,
         out_path                = out_dir / f"drivers_{region}.csv",
     )
+    fgtv_volumes = build_fgtv_volumes_table(
+        run_dir   = run_dir,
+        iso_code3 = iso_code3,
+        region    = region,
+        out_path  = out_dir / f"fgtv_volumes_{region}.csv",
+    )
     levers = build_levers_table(
         run_dir                = run_dir,
         descriptions_path      = descriptions_path,
@@ -517,8 +693,9 @@ def run_tableau_postprocessing(
     )
 
     return {
-        "emissions": emissions,
-        "drivers":   drivers,
-        "levers":    levers,
-        "jobs":      jobs,
+        "emissions":    emissions,
+        "drivers":      drivers,
+        "fgtv_volumes": fgtv_volumes,
+        "levers":       levers,
+        "jobs":         jobs,
     }
