@@ -7,7 +7,7 @@ identifiers:
     and low-temp thermal processes. "
 parameters:
   frac_high_given_high:
-    cement: 0.0
+    cement: 0.25
     chemicals: 0.5
     glass: 0.88
     lime_and_carbonite: 0.88
