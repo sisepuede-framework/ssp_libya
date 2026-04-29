@@ -7,13 +7,13 @@ identifiers:
     and low-temp thermal processes. "
 parameters:
   frac_high_given_high:
-    cement: 0.25
+    cement: 0.2
     chemicals: 0.5
     glass: 0.88
     lime_and_carbonite: 0.88
     metals: 0.6
     paper: 0.18
-  frac_switchable: 0.5
+  frac_switchable: 0.53
   vec_implementation_ramp:
     tp_0_ramp: 8
     n_tp_ramp: 17
