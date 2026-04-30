@@ -4,6 +4,6 @@ identifiers:
   transformation_code: "TX:FGTV:INC_GAS_RECOVERY"
   transformation_name: "Default Value - FGTV: Increase gas recovery"
 parameters:
-  magnitude: 0.91
+  magnitude: 0.5
   vec_implementation_ramp: null
 transformer: "TFR:FGTV:INC_GAS_RECOVERY"
