@@ -411,6 +411,26 @@ FGTV_PATHWAYS = {
     "fugitive": ("dtp",     "ch4"),
 }
 
+# Postprocessing-side calibration scalars that bring the back-derived volumes
+# to the absolute level reported in the World Bank Libya Climate Diagnostic
+# (Oil & Gas Sector, March 2026). The SISEPUEDE input EFs are conservative
+# relative to the empirical 2024 values in that report; rather than rewrite
+# the model inputs, we apply a flat multiplier per pathway here so the Bcm
+# series we ship to Tableau matches the report's stated levels in 2024.
+#
+# Calibration anchor (2024 BAU model output -> report target):
+#   Flaring:  2.348 Bcm -> 6.30 Bcm  (x2.683); equivalently 5.96 Mt CO2 -> 16 Mt
+#   Venting:  0.761 Bcm -> 0.98 Bcm  (x1.290); 14.46 -> 18.65 Mt CO2e CH4
+#   Fugitive: 0.202 Bcm -> 0.33 Bcm  (x1.652);  3.84 ->  6.34 Mt CO2e CH4
+#
+# Trends and scenario contrasts (BAU vs ZRF, year-on-year change) are
+# unaffected by these constants - they shift absolute levels only.
+PATHWAY_CALIBRATION_FACTORS = {
+    "flaring":  2.683,
+    "venting":  1.290,
+    "fugitive": 1.652,
+}
+
 
 def _gas_volume_from_co2_emissions_m3(emission_co2eq_mt: pd.Series) -> pd.Series:
     """Convert tonnes-CO2eq of CO2 (= tonnes CO2, since GWP_CO2 = 1) emitted
@@ -461,12 +481,9 @@ def build_fgtv_volumes_table(
         (CO2eq -> CH4 mass via GWP, mass -> pure-CH4 volume via density,
          then expressed as natural-gas equivalent at 95% CH4).
 
-      * Gas recovered (estimate, only non-zero when GFR is active)
-            = (flaring + venting + fugitive volume) * f / (1 - f)
-        where f = frac_fgtv_capture_associated_gas_fuel_X. SISEPUEDE
-        scales the upstream gas stream by (1 - f); the captured volume is
-        the gas removed from the production-side pathways before any
-        emissions are computed.
+    Each pathway volume is then multiplied by PATHWAY_CALIBRATION_FACTORS to
+    align the absolute level with the World Bank Libya CCD (March 2026)
+    figures (see the constant's docstring).
 
     Pathway volumes are reported in cubic metres (m^3) and Bcm (1 Bcm = 1e9 m^3).
     """
@@ -494,11 +511,11 @@ def build_fgtv_volumes_table(
             )
         )
 
-    # 2) Pathway volumes (flaring/venting/fugitive) derived from emissions.
-    #    Track the per-fuel sum of post-capture pathway volumes so we can
-    #    back out an estimate of the gas captured by the GFR transformation.
-    pathway_sum_m3: dict[str, pd.Series] = {}
+    # 2) Pathway volumes (flaring/venting/fugitive) derived from emissions,
+    #    then scaled by the report-anchored calibration factor for that
+    #    pathway so the absolute Bcm matches Libya CCD March 2026.
     for pathway_label, (process_tag, gas_kind) in FGTV_PATHWAYS.items():
+        cal = PATHWAY_CALIBRATION_FACTORS.get(pathway_label, 1.0)
         for fuel in FGTV_FUELS:
             em_col = f"emission_co2e_{gas_kind}_fgtv_{process_tag}_fuel_{fuel}"
             if em_col not in data.columns:
@@ -507,7 +524,7 @@ def build_fgtv_volumes_table(
                 volume_m3 = _gas_volume_from_co2_emissions_m3(data[em_col])
             else:
                 volume_m3 = _gas_volume_from_ch4_emissions_m3(data[em_col])
-            volume_m3 = volume_m3.fillna(0.0)
+            volume_m3 = volume_m3.fillna(0.0) * cal
             rows.append(
                 data[id_cols].assign(
                     fuel     = fuel,
@@ -515,26 +532,6 @@ def build_fgtv_volumes_table(
                     value_m3 = volume_m3,
                 )
             )
-            pathway_sum_m3[fuel] = pathway_sum_m3.get(fuel, 0.0) + volume_m3
-
-    # 3) Gas recovered (estimate). SISEPUEDE applies GFR by scaling the
-    #    upstream gas stream by (1 - frac_capture); the captured volume
-    #    therefore equals the post-capture pathway sum * f / (1 - f). For
-    #    BAU runs (f = 0) this is zero; for ZRF runs (f = 0.91) it backs
-    #    out the gas diverted away from flaring/venting/fugitive.
-    for fuel, post_capture_sum in pathway_sum_m3.items():
-        cap_col = f"frac_fgtv_capture_associated_gas_fuel_{fuel}"
-        if cap_col not in data.columns:
-            continue
-        f = data[cap_col].clip(0, 0.999).fillna(0.0)
-        recovered = post_capture_sum * f / (1.0 - f)
-        rows.append(
-            data[id_cols].assign(
-                fuel     = fuel,
-                pathway  = "recovered",
-                value_m3 = recovered.fillna(0.0),
-            )
-        )
 
     if not rows:
         out_path.parent.mkdir(parents=True, exist_ok=True)
