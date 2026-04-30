@@ -458,173 +458,129 @@ def build_fgtv_volumes_table(
     region: str,
     out_path: Path,
 ) -> pd.DataFrame:
-    """Produce a long-format CSV of oil/gas production volumes and the
-    flaring/venting/fugitive natural-gas-equivalent volumes implied by the
-    SISEPUEDE FGTV emissions outputs.
+    """Produce a wide-format CSV with one row per (Year, primary_id, fuel)
+    and a column per FGTV component plus oil/gas production and
+    gas_recovery, all in cubic metres and Bcm.
 
     Methodology (World Bank GGFR / IEA convention)
     ----------------------------------------------
     SISEPUEDE does not export pathway volumes natively. We derive them from
     the model's CO2eq emissions outputs using standard-condition densities:
 
-      * Production volume (m^3) = prod_enfu_fuel_X_pj * 1e6 / density_MJ_per_L
+      * production_m3 = prod_enfu_fuel_X_pj * 1e6 / density_MJ_per_L
         where density is ``energydensity_enfu_mj_per_litre_fuel_X``.
 
-      * Flaring volume (m^3 of associated gas combusted)
-            = (emission_co2e_co2_fgtv_flaring_fuel_X * 1e9 kg/Mt) / 2.54 kg/m^3
+      * flaring_m3 (associated gas combusted)
+            = (emission_co2e_co2_fgtv_flaring_fuel_X * 1e9) / 2.54 kg/m^3
         (full combustion of associated gas with composition-weighted CO2
          yield matching the Libya CCD March 2026 report).
 
-      * Venting and fugitive (DTP) volume (m^3 of natural gas escaped)
+      * venting_m3 and fugitive_m3 (gas escaped)
             = (emission_co2e_ch4_fgtv_PROCESS_fuel_X * 1e9 / GWP_CH4)
               / 0.717 kg/m^3 / 0.95
         (CO2eq -> CH4 mass via GWP, mass -> pure-CH4 volume via density,
          then expressed as natural-gas equivalent at 95% CH4).
 
-    Each pathway volume is then multiplied by PATHWAY_CALIBRATION_FACTORS to
-    align the absolute level with the World Bank Libya CCD (March 2026)
-    figures (see the constant's docstring).
+    flaring_m3, venting_m3 and fugitive_m3 are then multiplied by the
+    matching PATHWAY_CALIBRATION_FACTORS scalar so the absolute level
+    matches Libya CCD March 2026 in 2024.
 
-      * Recovered volume (m^3 of associated gas captured by GFR)
-            = BAU_pathway_sum_m3(Year, fuel) * frac_capture(scenario, Year, fuel)
-        where BAU_pathway_sum_m3 is the BAU twin run's flaring + venting +
-        fugitive volume at the same (Year, fuel) and frac_capture comes
-        from the current scenario's row. The "recovered" pathway is only
-        emitted when a strategy named "BAU" is present in the run; it is
-        zero for the BAU rows themselves and equals BAU - scenario for
-        ZRF rows (a true counterfactual diff).
+      * gas_recovery_m3 (intuitive baseline diff)
+            = BAU_(flaring+venting+fugitive)(Year, fuel)
+              - scenario_(flaring+venting+fugitive)(Year, fuel)
+        i.e. the volume of gas the scenario stops emitting through the
+        three FGTV streams relative to the BAU twin in the same run.
+        Zero for BAU rows. Negative values would indicate a scenario
+        that emits more than BAU through these streams; we keep the
+        sign so the metric is auditable.
 
-    Pathway volumes are reported in cubic metres (m^3) and Bcm (1 Bcm = 1e9 m^3).
+    Volumes are reported in cubic metres (m^3) and Bcm (1 Bcm = 1e9 m^3).
     """
     data = pd.read_csv(run_dir / "decomposed_ssp_output.csv")
     data = data[data["region"] == region].copy()
     data = data.sort_values(["primary_id", "time_period"]).reset_index(drop=True)
 
     id_cols = ["primary_id", "time_period"]
-    rows: list[pd.DataFrame] = []
+    per_fuel_frames: list[pd.DataFrame] = []
 
-    # 1) Production volumes (oil, crude, natural_gas) from PJ + density.
     for fuel in FGTV_FUELS:
+        frame = data[id_cols].copy()
+        frame["fuel"] = fuel
+
+        # Production volume (m^3): PJ * 1e6 / (MJ/L)
         prod_col = f"prod_enfu_fuel_{fuel}_pj"
         dens_col = f"energydensity_enfu_mj_per_litre_fuel_{fuel}"
-        if prod_col not in data.columns or dens_col not in data.columns:
-            continue
-        density = data[dens_col].replace(0, np.nan)
-        # PJ * 1e9 MJ/PJ / (MJ/L) / 1000 L/m3 = PJ * 1e6 / (MJ/L)  [m3]
-        volume_m3 = data[prod_col] * 1e6 / density
-        rows.append(
-            data[id_cols].assign(
-                fuel     = fuel,
-                pathway  = "production",
-                value_m3 = volume_m3.fillna(0.0),
-            )
-        )
+        if prod_col in data.columns and dens_col in data.columns:
+            density = data[dens_col].replace(0, np.nan)
+            frame["production_m3"] = (data[prod_col] * 1e6 / density).fillna(0.0)
+        else:
+            frame["production_m3"] = 0.0
 
-    # 2) Pathway volumes (flaring/venting/fugitive) derived from emissions,
-    #    then scaled by the report-anchored calibration factor for that
-    #    pathway so the absolute Bcm matches Libya CCD March 2026.
-    for pathway_label, (process_tag, gas_kind) in FGTV_PATHWAYS.items():
-        cal = PATHWAY_CALIBRATION_FACTORS.get(pathway_label, 1.0)
-        for fuel in FGTV_FUELS:
+        # Three FGTV components, each calibrated to the report.
+        for pathway_label, (process_tag, gas_kind) in FGTV_PATHWAYS.items():
             em_col = f"emission_co2e_{gas_kind}_fgtv_{process_tag}_fuel_{fuel}"
+            cal = PATHWAY_CALIBRATION_FACTORS.get(pathway_label, 1.0)
             if em_col not in data.columns:
+                frame[f"{pathway_label}_m3"] = 0.0
                 continue
             if gas_kind == "co2":
-                volume_m3 = _gas_volume_from_co2_emissions_m3(data[em_col])
+                vol = _gas_volume_from_co2_emissions_m3(data[em_col])
             else:
-                volume_m3 = _gas_volume_from_ch4_emissions_m3(data[em_col])
-            volume_m3 = volume_m3.fillna(0.0) * cal
-            rows.append(
-                data[id_cols].assign(
-                    fuel     = fuel,
-                    pathway  = pathway_label,
-                    value_m3 = volume_m3,
-                )
-            )
+                vol = _gas_volume_from_ch4_emissions_m3(data[em_col])
+            frame[f"{pathway_label}_m3"] = vol.fillna(0.0) * cal
 
-    if not rows:
+        per_fuel_frames.append(frame)
+
+    if not per_fuel_frames:
         out_path.parent.mkdir(parents=True, exist_ok=True)
-        pd.DataFrame(
-            columns=["Year", "primary_id", "strategy_id", "design_id",
-                     "future_id", "strategy", "iso_code3", "Country",
-                     "fuel", "pathway", "value_m3", "value_bcm"]
-        ).to_csv(out_path, index=False)
+        pd.DataFrame().to_csv(out_path, index=False)
         print(f"[fgtv_vol]  {out_path}  (no FGTV columns found)")
         return pd.DataFrame()
 
-    long_df = pd.concat(rows, ignore_index=True)
-    long_df["Year"] = long_df["time_period"] + 2015
-
-    # Bcm convenience (1 Bcm = 1e9 m^3).
-    long_df["value_bcm"] = long_df["value_m3"] / 1e9
+    wide = pd.concat(per_fuel_frames, ignore_index=True)
+    wide["Year"] = wide["time_period"] + 2015
 
     att_primary  = pd.read_csv(run_dir / "ATTRIBUTE_PRIMARY.csv")
-    long_df      = long_df.merge(att_primary, on="primary_id", how="left")
+    wide         = wide.merge(att_primary, on="primary_id", how="left")
     att_strategy = pd.read_csv(run_dir / "ATTRIBUTE_STRATEGY.csv")[["strategy_id", "strategy"]]
-    long_df      = long_df.merge(att_strategy, on="strategy_id", how="left")
+    wide         = wide.merge(att_strategy, on="strategy_id", how="left")
 
-    long_df["iso_code3"] = iso_code3
-    long_df["Country"]   = region
+    # gas_recovery = BAU(flaring+venting+fugitive) - scenario(flaring+venting+fugitive)
+    fgtv_components = ("flaring", "venting", "fugitive")
+    wide["fgtv_total_m3"] = sum(wide[f"{c}_m3"] for c in fgtv_components)
 
-    # 3) Gas recovered = production_BAU_gas * frac_capture, where
-    #    production_BAU_gas is the BAU twin's flaring + venting + fugitive
-    #    sum at the same (Year, fuel). This is a true counterfactual diff
-    #    against BAU rather than an algebraic back-derivation, so it is
-    #    only emitted when a strategy named "BAU" is present in the run.
-    bau_strategy_label = "BAU"
-    pathway_for_bau_sum = ("flaring", "venting", "fugitive")
-    bau_sum = (
-        long_df[
-            (long_df["strategy"] == bau_strategy_label)
-            & (long_df["pathway"].isin(pathway_for_bau_sum))
-        ]
-        .groupby(["Year", "fuel"], as_index=False)["value_m3"]
-        .sum()
-        .rename(columns={"value_m3": "bau_path_sum_m3"})
+    bau_total = (
+        wide[wide["strategy"] == "BAU"]
+        .groupby(["Year", "fuel"], as_index=False)["fgtv_total_m3"]
+        .first()
+        .rename(columns={"fgtv_total_m3": "bau_fgtv_total_m3"})
     )
+    if not bau_total.empty:
+        wide = wide.merge(bau_total, on=["Year", "fuel"], how="left")
+        wide["bau_fgtv_total_m3"] = wide["bau_fgtv_total_m3"].fillna(0.0)
+        wide["gas_recovery_m3"] = wide["bau_fgtv_total_m3"] - wide["fgtv_total_m3"]
+    else:
+        wide["gas_recovery_m3"] = 0.0
 
-    if not bau_sum.empty:
-        capture_records: list[pd.DataFrame] = []
-        for fuel in FGTV_FUELS:
-            cap_col = f"frac_fgtv_capture_associated_gas_fuel_{fuel}"
-            if cap_col not in data.columns:
-                continue
-            tmp = data[id_cols + [cap_col]].copy()
-            tmp["Year"] = tmp["time_period"] + 2015
-            tmp = tmp.drop(columns=["time_period"])
-            tmp["fuel"] = fuel
-            tmp = tmp.rename(columns={cap_col: "frac_capture"})
-            tmp["frac_capture"] = tmp["frac_capture"].fillna(0.0).clip(0.0, 1.0)
-            capture_records.append(tmp)
+    # Bcm conversions for every volume column.
+    volume_cols = ["production", "flaring", "venting", "fugitive", "gas_recovery"]
+    for col in volume_cols:
+        wide[f"{col}_bcm"] = wide[f"{col}_m3"] / 1e9
 
-        if capture_records:
-            cap_df = pd.concat(capture_records, ignore_index=True)
-            rec_df = cap_df.merge(bau_sum, on=["Year", "fuel"], how="left")
-            rec_df["bau_path_sum_m3"] = rec_df["bau_path_sum_m3"].fillna(0.0)
-            rec_df["value_m3"]   = rec_df["bau_path_sum_m3"] * rec_df["frac_capture"]
-            rec_df["value_bcm"]  = rec_df["value_m3"] / 1e9
-            rec_df["pathway"]    = "recovered"
-            rec_df = rec_df.merge(att_primary, on="primary_id", how="left")
-            rec_df = rec_df.merge(att_strategy, on="strategy_id", how="left")
-            rec_df["iso_code3"]  = iso_code3
-            rec_df["Country"]    = region
-            keep = ["Year","primary_id","strategy_id","design_id","future_id",
-                    "strategy","iso_code3","Country","fuel","pathway",
-                    "value_m3","value_bcm"]
-            rec_df = rec_df[[c for c in keep if c in rec_df.columns]]
-            long_df = pd.concat([long_df, rec_df], ignore_index=True, sort=False)
-
-    long_df = long_df.drop(columns=["time_period"], errors="ignore")
+    wide["iso_code3"] = iso_code3
+    wide["Country"]   = region
 
     out_cols = [
         "Year", "primary_id", "strategy_id", "design_id", "future_id",
-        "strategy", "iso_code3", "Country", "fuel", "pathway",
-        "value_m3", "value_bcm",
+        "strategy", "iso_code3", "Country", "fuel",
+        "production_m3",   "production_bcm",
+        "flaring_m3",      "flaring_bcm",
+        "venting_m3",      "venting_bcm",
+        "fugitive_m3",     "fugitive_bcm",
+        "gas_recovery_m3", "gas_recovery_bcm",
     ]
-    out_cols = [c for c in out_cols if c in long_df.columns]
-    final = long_df[out_cols].sort_values(
-        ["strategy_id", "fuel", "pathway", "Year"]
-    ).reset_index(drop=True)
+    out_cols = [c for c in out_cols if c in wide.columns]
+    final = wide[out_cols].sort_values(["strategy_id", "fuel", "Year"]).reset_index(drop=True)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     final.to_csv(out_path, index=False)
