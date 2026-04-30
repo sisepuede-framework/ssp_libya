@@ -382,14 +382,19 @@ GWP_CH4_AR6_100Y = 27.9
 
 # Standard-condition densities (15 degC, 1 atm) for converting emission mass
 # to fuel volume. These mirror the World Bank GGFR / IEA convention used to
-# report flaring/venting volumes:
-#   - 1 m^3 of natural gas (~95% CH4) fully combusted yields ~1.96 kg of CO2
-#   - 1 m^3 of pure CH4 weighs ~0.717 kg
-#   - Natural gas is treated as ~95% CH4 by volume for venting/fugitive
-#     (vented and leaked gas is the raw stream, not pure CH4)
-KG_CO2_PER_M3_NG_COMBUSTION = 1.96
-KG_CH4_PER_M3_PURE          = 0.717
-NG_CH4_VOLUME_FRACTION      = 0.95
+# report flaring/venting volumes.
+#
+# Flaring: associated gas at Libyan oil wells is heavier than pure NG (it
+# carries C2-C5 hydrocarbons in addition to CH4). The Libya CCD report
+# (March 2026) states 6.3 Bcm flared in 2024 produced ~16 Mt CO2 — implying
+# 2.54 kg CO2 / m^3 of flared gas. We use this composition-weighted factor
+# so the post-processed flaring Bcm matches the report's stated volumes.
+#
+# Venting / fugitive: the escaping stream is CH4-dominated, so we treat
+# vented/leaked gas as 95% CH4 by volume (1 m^3 pure CH4 = 0.717 kg).
+KG_CO2_PER_M3_FLARED_GAS = 2.54
+KG_CH4_PER_M3_PURE       = 0.717
+NG_CH4_VOLUME_FRACTION   = 0.95
 
 # Fuels in the FGTV pathway that we report volumes for. "crude" and "oil"
 # both flag oil-side fugitive streams in the SISEPUEDE schema; we report
@@ -409,10 +414,10 @@ FGTV_PATHWAYS = {
 
 def _gas_volume_from_co2_emissions_m3(emission_co2eq_mt: pd.Series) -> pd.Series:
     """Convert tonnes-CO2eq of CO2 (= tonnes CO2, since GWP_CO2 = 1) emitted
-    from flaring into volume of natural gas combusted, in m^3 at standard
+    from flaring into volume of associated gas combusted, in m^3 at standard
     conditions. emission_co2eq_mt is in Mt; output is m^3."""
     emission_kg = emission_co2eq_mt * 1e9
-    return emission_kg / KG_CO2_PER_M3_NG_COMBUSTION
+    return emission_kg / KG_CO2_PER_M3_FLARED_GAS
 
 
 def _gas_volume_from_ch4_emissions_m3(emission_co2eq_mt: pd.Series) -> pd.Series:
@@ -445,9 +450,10 @@ def build_fgtv_volumes_table(
       * Production volume (m^3) = prod_enfu_fuel_X_pj * 1e6 / density_MJ_per_L
         where density is ``energydensity_enfu_mj_per_litre_fuel_X``.
 
-      * Flaring volume (m^3 of natural gas combusted)
-            = (emission_co2e_co2_fgtv_flaring_fuel_X * 1e9 kg/Mt) / 1.96 kg/m^3
-        (full combustion of ~95%-CH4 natural gas to CO2).
+      * Flaring volume (m^3 of associated gas combusted)
+            = (emission_co2e_co2_fgtv_flaring_fuel_X * 1e9 kg/Mt) / 2.54 kg/m^3
+        (full combustion of associated gas with composition-weighted CO2
+         yield matching the Libya CCD March 2026 report).
 
       * Venting and fugitive (DTP) volume (m^3 of natural gas escaped)
             = (emission_co2e_ch4_fgtv_PROCESS_fuel_X * 1e9 / GWP_CH4)
