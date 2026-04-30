@@ -485,6 +485,15 @@ def build_fgtv_volumes_table(
     align the absolute level with the World Bank Libya CCD (March 2026)
     figures (see the constant's docstring).
 
+      * Recovered volume (m^3 of associated gas captured by GFR)
+            = BAU_pathway_sum_m3(Year, fuel) * frac_capture(scenario, Year, fuel)
+        where BAU_pathway_sum_m3 is the BAU twin run's flaring + venting +
+        fugitive volume at the same (Year, fuel) and frac_capture comes
+        from the current scenario's row. The "recovered" pathway is only
+        emitted when a strategy named "BAU" is present in the run; it is
+        zero for the BAU rows themselves and equals BAU - scenario for
+        ZRF rows (a true counterfactual diff).
+
     Pathway volumes are reported in cubic metres (m^3) and Bcm (1 Bcm = 1e9 m^3).
     """
     data = pd.read_csv(run_dir / "decomposed_ssp_output.csv")
@@ -545,7 +554,6 @@ def build_fgtv_volumes_table(
 
     long_df = pd.concat(rows, ignore_index=True)
     long_df["Year"] = long_df["time_period"] + 2015
-    long_df = long_df.drop(columns=["time_period"])
 
     # Bcm convenience (1 Bcm = 1e9 m^3).
     long_df["value_bcm"] = long_df["value_m3"] / 1e9
@@ -557,6 +565,56 @@ def build_fgtv_volumes_table(
 
     long_df["iso_code3"] = iso_code3
     long_df["Country"]   = region
+
+    # 3) Gas recovered = production_BAU_gas * frac_capture, where
+    #    production_BAU_gas is the BAU twin's flaring + venting + fugitive
+    #    sum at the same (Year, fuel). This is a true counterfactual diff
+    #    against BAU rather than an algebraic back-derivation, so it is
+    #    only emitted when a strategy named "BAU" is present in the run.
+    bau_strategy_label = "BAU"
+    pathway_for_bau_sum = ("flaring", "venting", "fugitive")
+    bau_sum = (
+        long_df[
+            (long_df["strategy"] == bau_strategy_label)
+            & (long_df["pathway"].isin(pathway_for_bau_sum))
+        ]
+        .groupby(["Year", "fuel"], as_index=False)["value_m3"]
+        .sum()
+        .rename(columns={"value_m3": "bau_path_sum_m3"})
+    )
+
+    if not bau_sum.empty:
+        capture_records: list[pd.DataFrame] = []
+        for fuel in FGTV_FUELS:
+            cap_col = f"frac_fgtv_capture_associated_gas_fuel_{fuel}"
+            if cap_col not in data.columns:
+                continue
+            tmp = data[id_cols + [cap_col]].copy()
+            tmp["Year"] = tmp["time_period"] + 2015
+            tmp = tmp.drop(columns=["time_period"])
+            tmp["fuel"] = fuel
+            tmp = tmp.rename(columns={cap_col: "frac_capture"})
+            tmp["frac_capture"] = tmp["frac_capture"].fillna(0.0).clip(0.0, 1.0)
+            capture_records.append(tmp)
+
+        if capture_records:
+            cap_df = pd.concat(capture_records, ignore_index=True)
+            rec_df = cap_df.merge(bau_sum, on=["Year", "fuel"], how="left")
+            rec_df["bau_path_sum_m3"] = rec_df["bau_path_sum_m3"].fillna(0.0)
+            rec_df["value_m3"]   = rec_df["bau_path_sum_m3"] * rec_df["frac_capture"]
+            rec_df["value_bcm"]  = rec_df["value_m3"] / 1e9
+            rec_df["pathway"]    = "recovered"
+            rec_df = rec_df.merge(att_primary, on="primary_id", how="left")
+            rec_df = rec_df.merge(att_strategy, on="strategy_id", how="left")
+            rec_df["iso_code3"]  = iso_code3
+            rec_df["Country"]    = region
+            keep = ["Year","primary_id","strategy_id","design_id","future_id",
+                    "strategy","iso_code3","Country","fuel","pathway",
+                    "value_m3","value_bcm"]
+            rec_df = rec_df[[c for c in keep if c in rec_df.columns]]
+            long_df = pd.concat([long_df, rec_df], ignore_index=True, sort=False)
+
+    long_df = long_df.drop(columns=["time_period"], errors="ignore")
 
     out_cols = [
         "Year", "primary_id", "strategy_id", "design_id", "future_id",
