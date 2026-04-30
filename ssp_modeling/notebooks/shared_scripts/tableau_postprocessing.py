@@ -461,6 +461,13 @@ def build_fgtv_volumes_table(
         (CO2eq -> CH4 mass via GWP, mass -> pure-CH4 volume via density,
          then expressed as natural-gas equivalent at 95% CH4).
 
+      * Gas recovered (estimate, only non-zero when GFR is active)
+            = (flaring + venting + fugitive volume) * f / (1 - f)
+        where f = frac_fgtv_capture_associated_gas_fuel_X. SISEPUEDE
+        scales the upstream gas stream by (1 - f); the captured volume is
+        the gas removed from the production-side pathways before any
+        emissions are computed.
+
     Pathway volumes are reported in cubic metres (m^3) and Bcm (1 Bcm = 1e9 m^3).
     """
     data = pd.read_csv(run_dir / "decomposed_ssp_output.csv")
@@ -488,6 +495,9 @@ def build_fgtv_volumes_table(
         )
 
     # 2) Pathway volumes (flaring/venting/fugitive) derived from emissions.
+    #    Track the per-fuel sum of post-capture pathway volumes so we can
+    #    back out an estimate of the gas captured by the GFR transformation.
+    pathway_sum_m3: dict[str, pd.Series] = {}
     for pathway_label, (process_tag, gas_kind) in FGTV_PATHWAYS.items():
         for fuel in FGTV_FUELS:
             em_col = f"emission_co2e_{gas_kind}_fgtv_{process_tag}_fuel_{fuel}"
@@ -497,13 +507,34 @@ def build_fgtv_volumes_table(
                 volume_m3 = _gas_volume_from_co2_emissions_m3(data[em_col])
             else:
                 volume_m3 = _gas_volume_from_ch4_emissions_m3(data[em_col])
+            volume_m3 = volume_m3.fillna(0.0)
             rows.append(
                 data[id_cols].assign(
                     fuel     = fuel,
                     pathway  = pathway_label,
-                    value_m3 = volume_m3.fillna(0.0),
+                    value_m3 = volume_m3,
                 )
             )
+            pathway_sum_m3[fuel] = pathway_sum_m3.get(fuel, 0.0) + volume_m3
+
+    # 3) Gas recovered (estimate). SISEPUEDE applies GFR by scaling the
+    #    upstream gas stream by (1 - frac_capture); the captured volume
+    #    therefore equals the post-capture pathway sum * f / (1 - f). For
+    #    BAU runs (f = 0) this is zero; for ZRF runs (f = 0.91) it backs
+    #    out the gas diverted away from flaring/venting/fugitive.
+    for fuel, post_capture_sum in pathway_sum_m3.items():
+        cap_col = f"frac_fgtv_capture_associated_gas_fuel_{fuel}"
+        if cap_col not in data.columns:
+            continue
+        f = data[cap_col].clip(0, 0.999).fillna(0.0)
+        recovered = post_capture_sum * f / (1.0 - f)
+        rows.append(
+            data[id_cols].assign(
+                fuel     = fuel,
+                pathway  = "recovered",
+                value_m3 = recovered.fillna(0.0),
+            )
+        )
 
     if not rows:
         out_path.parent.mkdir(parents=True, exist_ok=True)
