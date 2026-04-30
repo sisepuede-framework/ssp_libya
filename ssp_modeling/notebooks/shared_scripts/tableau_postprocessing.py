@@ -415,20 +415,26 @@ FGTV_PATHWAYS = {
 # to the absolute level reported in the World Bank Libya Climate Diagnostic
 # (Oil & Gas Sector, March 2026). The SISEPUEDE input EFs are conservative
 # relative to the empirical 2024 values in that report; rather than rewrite
-# the model inputs, we apply a flat multiplier per pathway here so the Bcm
-# series we ship to Tableau matches the report's stated levels in 2024.
+# the model inputs, we apply a flat multiplier per (fuel, pathway) here so
+# the Bcm series we ship to Tableau matches the report's stated levels in
+# 2024.
 #
-# Calibration anchor (2024 BAU model output -> report target):
-#   Flaring:  2.348 Bcm -> 6.30 Bcm  (x2.683); equivalently 5.96 Mt CO2 -> 16 Mt
-#   Venting:  0.761 Bcm -> 0.98 Bcm  (x1.290); 14.46 -> 18.65 Mt CO2e CH4
-#   Fugitive: 0.202 Bcm -> 0.33 Bcm  (x1.652);  3.84 ->  6.34 Mt CO2e CH4
+# The report's quoted figures are for oil-side operations (associated gas
+# from crude production), so calibration is applied only to fuel='crude' —
+# the dominant upstream oil stream in SISEPUEDE. Other fuels (natural_gas,
+# oil) keep their native physical-density derivation (factor 1.0).
+#
+# Calibration anchor (2024 BAU crude-only model -> report target):
+#   (crude, flaring):  2.234 Bcm -> 6.30 Bcm  (x2.820); 5.67 Mt CO2 -> 16 Mt
+#   (crude, venting):  0.753 Bcm -> 0.98 Bcm  (x1.303); 14.31 -> 18.65 Mt CO2e CH4
+#   (crude, fugitive): 0.185 Bcm -> 0.33 Bcm  (x1.802);  3.52 ->  6.34 Mt CO2e CH4
 #
 # Trends and scenario contrasts (BAU vs ZRF, year-on-year change) are
 # unaffected by these constants - they shift absolute levels only.
-PATHWAY_CALIBRATION_FACTORS = {
-    "flaring":  2.683,
-    "venting":  1.290,
-    "fugitive": 1.652,
+PATHWAY_CALIBRATION_FACTORS: dict[tuple[str, str], float] = {
+    ("crude", "flaring"):  2.820,
+    ("crude", "venting"):  1.303,
+    ("crude", "fugitive"): 1.802,
 }
 
 
@@ -481,9 +487,12 @@ def build_fgtv_volumes_table(
         (CO2eq -> CH4 mass via GWP, mass -> pure-CH4 volume via density,
          then expressed as natural-gas equivalent at 95% CH4).
 
-    Each pathway volume is then multiplied by PATHWAY_CALIBRATION_FACTORS to
-    align the absolute level with the World Bank Libya CCD (March 2026)
-    figures (see the constant's docstring).
+    Each pathway volume is then multiplied by the per-(fuel, pathway)
+    scalar in PATHWAY_CALIBRATION_FACTORS to align the absolute level with
+    the World Bank Libya CCD (March 2026) figures. The report's flaring
+    chart (607 MMcfd in 2024) is for oil-associated gas only, so only
+    fuel='crude' rows are calibrated; natural_gas and oil keep their
+    native physical-density derivation.
 
       * gas_recovery volume (m^3, simple counterfactual diff)
             = BAU_(flaring+venting+fugitive)(Year, fuel)
@@ -514,10 +523,12 @@ def build_fgtv_volumes_table(
         else:
             frame["production_m3"] = 0.0
 
-        # Three FGTV components, each calibrated to the report.
+        # Three FGTV components. Calibration applies only to the (fuel,
+        # pathway) tuples explicitly listed in PATHWAY_CALIBRATION_FACTORS;
+        # everything else passes through at its native physical value.
         for pathway_label, (process_tag, gas_kind) in FGTV_PATHWAYS.items():
             em_col = f"emission_co2e_{gas_kind}_fgtv_{process_tag}_fuel_{fuel}"
-            cal = PATHWAY_CALIBRATION_FACTORS.get(pathway_label, 1.0)
+            cal = PATHWAY_CALIBRATION_FACTORS.get((fuel, pathway_label), 1.0)
             if em_col not in data.columns:
                 frame[f"{pathway_label}_m3"] = 0.0
                 continue
