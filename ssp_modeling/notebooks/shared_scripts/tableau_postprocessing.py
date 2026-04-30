@@ -458,43 +458,41 @@ def build_fgtv_volumes_table(
     region: str,
     out_path: Path,
 ) -> pd.DataFrame:
-    """Produce a wide-format CSV with one row per (Year, primary_id, fuel)
-    and a column per FGTV component plus oil/gas production and
-    gas_recovery, all in cubic metres and Bcm.
+    """Produce a long-format CSV of oil/gas production volumes and the
+    flaring/venting/fugitive plus gas_recovery natural-gas-equivalent
+    volumes implied by the SISEPUEDE FGTV emissions outputs.
 
     Methodology (World Bank GGFR / IEA convention)
     ----------------------------------------------
     SISEPUEDE does not export pathway volumes natively. We derive them from
     the model's CO2eq emissions outputs using standard-condition densities:
 
-      * production_m3 = prod_enfu_fuel_X_pj * 1e6 / density_MJ_per_L
+      * Production volume (m^3) = prod_enfu_fuel_X_pj * 1e6 / density_MJ_per_L
         where density is ``energydensity_enfu_mj_per_litre_fuel_X``.
 
-      * flaring_m3 (associated gas combusted)
-            = (emission_co2e_co2_fgtv_flaring_fuel_X * 1e9) / 2.54 kg/m^3
+      * Flaring volume (m^3 of associated gas combusted)
+            = (emission_co2e_co2_fgtv_flaring_fuel_X * 1e9 kg/Mt) / 2.54 kg/m^3
         (full combustion of associated gas with composition-weighted CO2
          yield matching the Libya CCD March 2026 report).
 
-      * venting_m3 and fugitive_m3 (gas escaped)
+      * Venting and fugitive (DTP) volume (m^3 of natural gas escaped)
             = (emission_co2e_ch4_fgtv_PROCESS_fuel_X * 1e9 / GWP_CH4)
               / 0.717 kg/m^3 / 0.95
         (CO2eq -> CH4 mass via GWP, mass -> pure-CH4 volume via density,
          then expressed as natural-gas equivalent at 95% CH4).
 
-    flaring_m3, venting_m3 and fugitive_m3 are then multiplied by the
-    matching PATHWAY_CALIBRATION_FACTORS scalar so the absolute level
-    matches Libya CCD March 2026 in 2024.
+    Each pathway volume is then multiplied by PATHWAY_CALIBRATION_FACTORS to
+    align the absolute level with the World Bank Libya CCD (March 2026)
+    figures (see the constant's docstring).
 
-      * gas_recovery_m3 (intuitive baseline diff)
+      * gas_recovery volume (m^3, simple counterfactual diff)
             = BAU_(flaring+venting+fugitive)(Year, fuel)
               - scenario_(flaring+venting+fugitive)(Year, fuel)
-        i.e. the volume of gas the scenario stops emitting through the
-        three FGTV streams relative to the BAU twin in the same run.
-        Zero for BAU rows. Negative values would indicate a scenario
-        that emits more than BAU through these streams; we keep the
-        sign so the metric is auditable.
+        i.e. the gas the scenario stops emitting through the three FGTV
+        streams relative to its BAU twin in the same run. Zero for BAU
+        rows by construction. Sign is preserved so the metric is auditable.
 
-    Volumes are reported in cubic metres (m^3) and Bcm (1 Bcm = 1e9 m^3).
+    Pathway volumes are reported in cubic metres (m^3) and Bcm (1 Bcm = 1e9 m^3).
     """
     data = pd.read_csv(run_dir / "decomposed_ssp_output.csv")
     data = data[data["region"] == region].copy()
@@ -533,10 +531,15 @@ def build_fgtv_volumes_table(
 
     if not per_fuel_frames:
         out_path.parent.mkdir(parents=True, exist_ok=True)
-        pd.DataFrame().to_csv(out_path, index=False)
+        pd.DataFrame(
+            columns=["Year", "primary_id", "strategy_id", "design_id",
+                     "future_id", "strategy", "iso_code3", "Country",
+                     "fuel", "pathway", "value_m3", "value_bcm"]
+        ).to_csv(out_path, index=False)
         print(f"[fgtv_vol]  {out_path}  (no FGTV columns found)")
         return pd.DataFrame()
 
+    # Compute gas_recovery in wide form first, then melt.
     wide = pd.concat(per_fuel_frames, ignore_index=True)
     wide["Year"] = wide["time_period"] + 2015
 
@@ -547,40 +550,45 @@ def build_fgtv_volumes_table(
 
     # gas_recovery = BAU(flaring+venting+fugitive) - scenario(flaring+venting+fugitive)
     fgtv_components = ("flaring", "venting", "fugitive")
-    wide["fgtv_total_m3"] = sum(wide[f"{c}_m3"] for c in fgtv_components)
+    wide["_fgtv_total_m3"] = sum(wide[f"{c}_m3"] for c in fgtv_components)
 
     bau_total = (
         wide[wide["strategy"] == "BAU"]
-        .groupby(["Year", "fuel"], as_index=False)["fgtv_total_m3"]
+        .groupby(["Year", "fuel"], as_index=False)["_fgtv_total_m3"]
         .first()
-        .rename(columns={"fgtv_total_m3": "bau_fgtv_total_m3"})
+        .rename(columns={"_fgtv_total_m3": "_bau_fgtv_total_m3"})
     )
     if not bau_total.empty:
         wide = wide.merge(bau_total, on=["Year", "fuel"], how="left")
-        wide["bau_fgtv_total_m3"] = wide["bau_fgtv_total_m3"].fillna(0.0)
-        wide["gas_recovery_m3"] = wide["bau_fgtv_total_m3"] - wide["fgtv_total_m3"]
+        wide["_bau_fgtv_total_m3"] = wide["_bau_fgtv_total_m3"].fillna(0.0)
+        wide["gas_recovery_m3"] = wide["_bau_fgtv_total_m3"] - wide["_fgtv_total_m3"]
     else:
         wide["gas_recovery_m3"] = 0.0
 
-    # Bcm conversions for every volume column.
-    volume_cols = ["production", "flaring", "venting", "fugitive", "gas_recovery"]
-    for col in volume_cols:
-        wide[f"{col}_bcm"] = wide[f"{col}_m3"] / 1e9
+    wide = wide.drop(columns=[c for c in ("_fgtv_total_m3","_bau_fgtv_total_m3") if c in wide.columns])
 
     wide["iso_code3"] = iso_code3
     wide["Country"]   = region
 
-    out_cols = [
-        "Year", "primary_id", "strategy_id", "design_id", "future_id",
-        "strategy", "iso_code3", "Country", "fuel",
-        "production_m3",   "production_bcm",
-        "flaring_m3",      "flaring_bcm",
-        "venting_m3",      "venting_bcm",
-        "fugitive_m3",     "fugitive_bcm",
-        "gas_recovery_m3", "gas_recovery_bcm",
-    ]
-    out_cols = [c for c in out_cols if c in wide.columns]
-    final = wide[out_cols].sort_values(["strategy_id", "fuel", "Year"]).reset_index(drop=True)
+    # Melt to long format: one row per (Year, primary_id, fuel, pathway)
+    pathway_cols = ["production_m3", "flaring_m3", "venting_m3",
+                    "fugitive_m3", "gas_recovery_m3"]
+    id_vars = ["Year", "primary_id", "strategy_id", "design_id", "future_id",
+               "strategy", "iso_code3", "Country", "fuel"]
+    id_vars = [c for c in id_vars if c in wide.columns]
+    long_df = wide.melt(
+        id_vars   = id_vars,
+        value_vars = pathway_cols,
+        var_name  = "pathway",
+        value_name = "value_m3",
+    )
+    long_df["pathway"]   = long_df["pathway"].str.removesuffix("_m3")
+    long_df["value_bcm"] = long_df["value_m3"] / 1e9
+
+    out_cols = id_vars + ["pathway", "value_m3", "value_bcm"]
+    final = long_df[out_cols].sort_values(
+        ["strategy_id", "fuel", "pathway", "Year"]
+    ).reset_index(drop=True)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     final.to_csv(out_path, index=False)
