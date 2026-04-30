@@ -6,5 +6,5 @@ identifiers:
 parameters:
   magnitude: 0.8
   vec_implementation_ramp:
-    tp_0_ramp: 12
+    tp_0_ramp: 10
 transformer: "TFR:FGTV:DEC_LEAKS"
