@@ -1,0 +1,1429 @@
+year,strategy_id,strategy_name,chart,metric,facility_type,value,units
+2023,6003,BAU,fgtv_components,flar_emis_mt_co2e,All,6.267337254285718,Mt CO2e
+2023,6003,BAU,fgtv_components,vent_ch4_mt_co2e,All,15.684255338292829,Mt CO2e
+2023,6003,BAU,fgtv_components,dtp_ch4_mt_co2e,All,5.076407407421452,Mt CO2e
+2023,6003,BAU,fgtv_components,total_fgtv_mt_co2e,All,27.028,Mt CO2e
+2024,6003,BAU,fgtv_components,flar_emis_mt_co2e,All,7.1385924538031755,Mt CO2e
+2024,6003,BAU,fgtv_components,vent_ch4_mt_co2e,All,15.56856086475576,Mt CO2e
+2024,6003,BAU,fgtv_components,dtp_ch4_mt_co2e,All,5.037076182688575,Mt CO2e
+2024,6003,BAU,fgtv_components,total_fgtv_mt_co2e,All,27.74422950124732,Mt CO2e
+2025,6003,BAU,fgtv_components,flar_emis_mt_co2e,All,8.010526775302651,Mt CO2e
+2025,6003,BAU,fgtv_components,vent_ch4_mt_co2e,All,15.450191172846647,Mt CO2e
+2025,6003,BAU,fgtv_components,dtp_ch4_mt_co2e,All,4.99698349864565,Mt CO2e
+2025,6003,BAU,fgtv_components,total_fgtv_mt_co2e,All,28.457701446794577,Mt CO2e
+2026,6003,BAU,fgtv_components,flar_emis_mt_co2e,All,8.883782172434532,Mt CO2e
+2026,6003,BAU,fgtv_components,vent_ch4_mt_co2e,All,15.323396002263785,Mt CO2e
+2026,6003,BAU,fgtv_components,dtp_ch4_mt_co2e,All,4.954494202681464,Mt CO2e
+2026,6003,BAU,fgtv_components,total_fgtv_mt_co2e,All,29.16167237737923,Mt CO2e
+2027,6003,BAU,fgtv_components,flar_emis_mt_co2e,All,9.759138939886,Mt CO2e
+2027,6003,BAU,fgtv_components,vent_ch4_mt_co2e,All,15.181227732354287,Mt CO2e
+2027,6003,BAU,fgtv_components,dtp_ch4_mt_co2e,All,4.907695314351315,Mt CO2e
+2027,6003,BAU,fgtv_components,total_fgtv_mt_co2e,All,29.84806198659088,Mt CO2e
+2028,6003,BAU,fgtv_components,flar_emis_mt_co2e,All,10.637289692407943,Mt CO2e
+2028,6003,BAU,fgtv_components,vent_ch4_mt_co2e,All,15.016390364868784,Mt CO2e
+2028,6003,BAU,fgtv_components,dtp_ch4_mt_co2e,All,4.854575190929266,Mt CO2e
+2028,6003,BAU,fgtv_components,total_fgtv_mt_co2e,All,30.508255248205106,Mt CO2e
+2029,6003,BAU,fgtv_components,flar_emis_mt_co2e,All,11.518612191893805,Mt CO2e
+2029,6003,BAU,fgtv_components,vent_ch4_mt_co2e,All,14.822098415718862,Mt CO2e
+2029,6003,BAU,fgtv_components,dtp_ch4_mt_co2e,All,4.793187884915378,Mt CO2e
+2029,6003,BAU,fgtv_components,total_fgtv_mt_co2e,All,31.133898492527006,Mt CO2e
+2030,6003,BAU,fgtv_components,flar_emis_mt_co2e,All,12.403298419957832,Mt CO2e
+2030,6003,BAU,fgtv_components,vent_ch4_mt_co2e,All,14.59247208614915,Mt CO2e
+2030,6003,BAU,fgtv_components,dtp_ch4_mt_co2e,All,4.721803744640934,Mt CO2e
+2030,6003,BAU,fgtv_components,total_fgtv_mt_co2e,All,31.71757425074674,Mt CO2e
+2031,6003,BAU,fgtv_components,flar_emis_mt_co2e,All,13.29152250839762,Mt CO2e
+2031,6003,BAU,fgtv_components,vent_ch4_mt_co2e,All,14.32290210099644,Mt CO2e
+2031,6003,BAU,fgtv_components,dtp_ch4_mt_co2e,All,4.639038989919705,Mt CO2e
+2031,6003,BAU,fgtv_components,total_fgtv_mt_co2e,All,32.25346359931247,Mt CO2e
+2032,6003,BAU,fgtv_components,flar_emis_mt_co2e,All,14.18365253971454,Mt CO2e
+2032,6003,BAU,fgtv_components,vent_ch4_mt_co2e,All,14.010386021255695,Mt CO2e
+2032,6003,BAU,fgtv_components,dtp_ch4_mt_co2e,All,4.543981816603061,Mt CO2e
+2032,6003,BAU,fgtv_components,total_fgtv_mt_co2e,All,32.73802037757187,Mt CO2e
+2033,6003,BAU,fgtv_components,flar_emis_mt_co2e,All,15.080181025586459,Mt CO2e
+2033,6003,BAU,fgtv_components,vent_ch4_mt_co2e,All,13.653308536693832,Mt CO2e
+2033,6003,BAU,fgtv_components,dtp_ch4_mt_co2e,All,4.43612869032234,Mt CO2e
+2033,6003,BAU,fgtv_components,total_fgtv_mt_co2e,All,33.1696182526011,Mt CO2e
+2034,6003,BAU,fgtv_components,flar_emis_mt_co2e,All,15.981662858580716,Mt CO2e
+2034,6003,BAU,fgtv_components,vent_ch4_mt_co2e,All,13.251238242241929,Mt CO2e
+2034,6003,BAU,fgtv_components,dtp_ch4_mt_co2e,All,4.315325223986939,Mt CO2e
+2034,6003,BAU,fgtv_components,total_fgtv_mt_co2e,All,33.54822632480797,Mt CO2e
+2035,6003,BAU,fgtv_components,flar_emis_mt_co2e,All,16.888660602258717,Mt CO2e
+2035,6003,BAU,fgtv_components,vent_ch4_mt_co2e,All,12.804741706992761,Mt CO2e
+2035,6003,BAU,fgtv_components,dtp_ch4_mt_co2e,All,4.181711914376993,Mt CO2e
+2035,6003,BAU,fgtv_components,total_fgtv_mt_co2e,All,33.875114223626795,Mt CO2e
+2036,6003,BAU,fgtv_components,flar_emis_mt_co2e,All,17.80169694461643,Mt CO2e
+2036,6003,BAU,fgtv_components,vent_ch4_mt_co2e,All,12.315214900945158,Mt CO2e
+2036,6003,BAU,fgtv_components,dtp_ch4_mt_co2e,All,4.035674784076753,Mt CO2e
+2036,6003,BAU,fgtv_components,total_fgtv_mt_co2e,All,34.152586629636616,Mt CO2e
+2037,6003,BAU,fgtv_components,flar_emis_mt_co2e,All,18.721214149418724,Mt CO2e
+2037,6003,BAU,fgtv_components,vent_ch4_mt_co2e,All,11.784731417348624,Mt CO2e
+2037,6003,BAU,fgtv_components,dtp_ch4_mt_co2e,All,3.877800817198919,Mt CO2e
+2037,6003,BAU,fgtv_components,total_fgtv_mt_co2e,All,34.38374638396452,Mt CO2e
+2038,6003,BAU,fgtv_components,flar_emis_mt_co2e,All,19.647540356044743,Mt CO2e
+2038,6003,BAU,fgtv_components,vent_ch4_mt_co2e,All,11.215906406124901,Mt CO2e
+2038,6003,BAU,fgtv_components,dtp_ch4_mt_co2e,All,3.7088378940121682,Mt CO2e
+2038,6003,BAU,fgtv_components,total_fgtv_mt_co2e,All,34.57228465618006,Mt CO2e
+2039,6003,BAU,fgtv_components,flar_emis_mt_co2e,All,20.580862635453077,Mt CO2e
+2039,6003,BAU,fgtv_components,vent_ch4_mt_co2e,All,10.611774706523926,Mt CO2e
+2039,6003,BAU,fgtv_components,dtp_ch4_mt_co2e,All,3.5296588122026593,Mt CO2e
+2039,6003,BAU,fgtv_components,total_fgtv_mt_co2e,All,34.72229615417791,Mt CO2e
+2040,6003,BAU,fgtv_components,flar_emis_mt_co2e,All,21.521206784071865,Mt CO2e
+2040,6003,BAU,fgtv_components,vent_ch4_mt_co2e,All,9.975681324778964,Mt CO2e
+2040,6003,BAU,fgtv_components,dtp_ch4_mt_co2e,All,3.3412288805306494,Mt CO2e
+2040,6003,BAU,fgtv_components,total_fgtv_mt_co2e,All,34.83811698937973,Mt CO2e
+2041,6003,BAU,fgtv_components,flar_emis_mt_co2e,All,22.468423932406992,Mt CO2e
+2041,6003,BAU,fgtv_components,vent_ch4_mt_co2e,All,9.311182136289208,Mt CO2e
+2041,6003,BAU,fgtv_components,dtp_ch4_mt_co2e,All,3.1445764983464617,Mt CO2e
+2041,6003,BAU,fgtv_components,total_fgtv_mt_co2e,All,34.9241825670409,Mt CO2e
+2042,6003,BAU,fgtv_components,flar_emis_mt_co2e,All,23.42218413749737,Mt CO2e
+2042,6003,BAU,fgtv_components,vent_ch4_mt_co2e,All,8.62195249380598,Mt CO2e
+2042,6003,BAU,fgtv_components,dtp_ch4_mt_co2e,All,2.9407660539577787,Mt CO2e
+2042,6003,BAU,fgtv_components,total_fgtv_mt_co2e,All,34.98490268525937,Mt CO2e
+2043,6003,BAU,fgtv_components,flar_emis_mt_co2e,All,24.381982907960637,Mt CO2e
+2043,6003,BAU,fgtv_components,vent_ch4_mt_co2e,All,7.911705015387392,Mt CO2e
+2043,6003,BAU,fgtv_components,dtp_ch4_mt_co2e,All,2.7308734980838456,Mt CO2e
+2043,6003,BAU,fgtv_components,total_fgtv_mt_co2e,All,35.02456142143012,Mt CO2e
+2044,6003,BAU,fgtv_components,flar_emis_mt_co2e,All,25.347159145985938,Mt CO2e
+2044,6003,BAU,fgtv_components,vent_ch4_mt_co2e,All,7.184111743247065,Mt CO2e
+2044,6003,BAU,fgtv_components,dtp_ch4_mt_co2e,All,2.5159632409072223,Mt CO2e
+2044,6003,BAU,fgtv_components,total_fgtv_mt_co2e,All,35.04723413013849,Mt CO2e
+2045,6003,BAU,fgtv_components,flar_emis_mt_co2e,All,26.316922342363466,Mt CO2e
+2045,6003,BAU,fgtv_components,vent_ch4_mt_co2e,All,6.4427260565308515,Mt CO2e
+2045,6003,BAU,fgtv_components,dtp_ch4_mt_co2e,All,2.2970650946801516,Mt CO2e
+2045,6003,BAU,fgtv_components,total_fgtv_mt_co2e,All,35.056713493572744,Mt CO2e
+2046,6003,BAU,fgtv_components,flar_emis_mt_co2e,All,27.290389699234133,Mt CO2e
+2046,6003,BAU,fgtv_components,vent_ch4_mt_co2e,All,5.690901748923949,Mt CO2e
+2046,6003,BAU,fgtv_components,dtp_ch4_mt_co2e,All,2.0751505285517924,Mt CO2e
+2046,6003,BAU,fgtv_components,total_fgtv_mt_co2e,All,35.05644197670814,Mt CO2e
+2047,6003,BAU,fgtv_components,flar_emis_mt_co2e,All,28.266633937867446,Mt CO2e
+2047,6003,BAU,fgtv_components,vent_ch4_mt_co2e,All,4.931706749558808,Mt CO2e
+2047,6003,BAU,fgtv_components,dtp_ch4_mt_co2e,All,1.851107517637475,Mt CO2e
+2047,6003,BAU,fgtv_components,total_fgtv_mt_co2e,All,35.04944820506199,Mt CO2e
+2048,6003,BAU,fgtv_components,flar_emis_mt_co2e,All,29.24474261937551,Mt CO2e
+2048,6003,BAU,fgtv_components,vent_ch4_mt_co2e,All,4.167829083692828,Mt CO2e
+2048,6003,BAU,fgtv_components,dtp_ch4_mt_co2e,All,1.6257133126875294,Mt CO2e
+2048,6003,BAU,fgtv_components,total_fgtv_mt_co2e,All,35.03828501575413,Mt CO2e
+2049,6003,BAU,fgtv_components,flar_emis_mt_co2e,All,30.223889836186007,Mt CO2e
+2049,6003,BAU,fgtv_components,vent_ch4_mt_co2e,All,3.401472841401742,Mt CO2e
+2049,6003,BAU,fgtv_components,dtp_ch4_mt_co2e,All,1.3996045018995016,Mt CO2e
+2049,6003,BAU,fgtv_components,total_fgtv_mt_co2e,All,35.024967179485515,Mt CO2e
+2050,6003,BAU,fgtv_components,flar_emis_mt_co2e,All,31.203421124813225,Mt CO2e
+2050,6003,BAU,fgtv_components,vent_ch4_mt_co2e,All,2.6342421529064106,Mt CO2e
+2050,6003,BAU,fgtv_components,dtp_ch4_mt_co2e,All,1.1732438003572945,Mt CO2e
+2050,6003,BAU,fgtv_components,total_fgtv_mt_co2e,All,35.01090707807519,Mt CO2e
+2023,6004,Unconditional NDC (ZRF),fgtv_components,flar_emis_mt_co2e,All,6.267337254285718,Mt CO2e
+2023,6004,Unconditional NDC (ZRF),fgtv_components,vent_ch4_mt_co2e,All,15.684255338292829,Mt CO2e
+2023,6004,Unconditional NDC (ZRF),fgtv_components,dtp_ch4_mt_co2e,All,5.076407407421452,Mt CO2e
+2023,6004,Unconditional NDC (ZRF),fgtv_components,total_fgtv_mt_co2e,All,27.028,Mt CO2e
+2024,6004,Unconditional NDC (ZRF),fgtv_components,flar_emis_mt_co2e,All,5.908269987067734,Mt CO2e
+2024,6004,Unconditional NDC (ZRF),fgtv_components,vent_ch4_mt_co2e,All,16.4464880789152,Mt CO2e
+2024,6004,Unconditional NDC (ZRF),fgtv_components,dtp_ch4_mt_co2e,All,4.955835864645663,Mt CO2e
+2024,6004,Unconditional NDC (ZRF),fgtv_components,total_fgtv_mt_co2e,All,27.31059393062872,Mt CO2e
+2025,6004,Unconditional NDC (ZRF),fgtv_components,flar_emis_mt_co2e,All,5.549388931135338,Mt CO2e
+2025,6004,Unconditional NDC (ZRF),fgtv_components,vent_ch4_mt_co2e,All,17.20564730361481,Mt CO2e
+2025,6004,Unconditional NDC (ZRF),fgtv_components,dtp_ch4_mt_co2e,All,4.834544397272108,Mt CO2e
+2025,6004,Unconditional NDC (ZRF),fgtv_components,total_fgtv_mt_co2e,All,27.589580632022503,Mt CO2e
+2026,6004,Unconditional NDC (ZRF),fgtv_components,flar_emis_mt_co2e,All,5.190821725747119,Mt CO2e
+2026,6004,Unconditional NDC (ZRF),fgtv_components,vent_ch4_mt_co2e,All,17.95504202561919,Mt CO2e
+2026,6004,Unconditional NDC (ZRF),fgtv_components,dtp_ch4_mt_co2e,All,4.711031795512155,Mt CO2e
+2026,6004,Unconditional NDC (ZRF),fgtv_components,total_fgtv_mt_co2e,All,27.856895546878825,Mt CO2e
+2027,6004,Unconditional NDC (ZRF),fgtv_components,flar_emis_mt_co2e,All,4.833168816621668,Mt CO2e
+2027,6004,Unconditional NDC (ZRF),fgtv_components,vent_ch4_mt_co2e,All,18.68625260649077,Mt CO2e
+2027,6004,Unconditional NDC (ZRF),fgtv_components,dtp_ch4_mt_co2e,All,4.583662281115687,Mt CO2e
+2027,6004,Unconditional NDC (ZRF),fgtv_components,total_fgtv_mt_co2e,All,28.103083704228588,Mt CO2e
+2028,6004,Unconditional NDC (ZRF),fgtv_components,flar_emis_mt_co2e,All,4.477545582846671,Mt CO2e
+2028,6004,Unconditional NDC (ZRF),fgtv_components,vent_ch4_mt_co2e,All,19.389744825797855,Mt CO2e
+2028,6004,Unconditional NDC (ZRF),fgtv_components,dtp_ch4_mt_co2e,All,4.450822133335095,Mt CO2e
+2028,6004,Unconditional NDC (ZRF),fgtv_components,total_fgtv_mt_co2e,All,28.318112541980177,Mt CO2e
+2029,6004,Unconditional NDC (ZRF),fgtv_components,flar_emis_mt_co2e,All,4.125581470015337,Mt CO2e
+2029,6004,Unconditional NDC (ZRF),fgtv_components,vent_ch4_mt_co2e,All,20.055505412363598,Mt CO2e
+2029,6004,Unconditional NDC (ZRF),fgtv_components,dtp_ch4_mt_co2e,All,4.311057338476768,Mt CO2e
+2029,6004,Unconditional NDC (ZRF),fgtv_components,total_fgtv_mt_co2e,All,28.492144220856346,Mt CO2e
+2030,6004,Unconditional NDC (ZRF),fgtv_components,flar_emis_mt_co2e,All,3.779379566930261,Mt CO2e
+2030,6004,Unconditional NDC (ZRF),fgtv_components,vent_ch4_mt_co2e,All,20.67371462016126,Mt CO2e
+2030,6004,Unconditional NDC (ZRF),fgtv_components,dtp_ch4_mt_co2e,All,4.163190113881732,Mt CO2e
+2030,6004,Unconditional NDC (ZRF),fgtv_components,total_fgtv_mt_co2e,All,28.616284300973973,Mt CO2e
+2031,6004,Unconditional NDC (ZRF),fgtv_components,flar_emis_mt_co2e,All,3.4414350220946983,Mt CO2e
+2031,6004,Unconditional NDC (ZRF),fgtv_components,vent_ch4_mt_co2e,All,21.235449307264982,Mt CO2e
+2031,6004,Unconditional NDC (ZRF),fgtv_components,dtp_ch4_mt_co2e,All,4.006411985803366,Mt CO2e
+2031,6004,Unconditional NDC (ZRF),fgtv_components,total_fgtv_mt_co2e,All,28.683296315163837,Mt CO2e
+2032,6004,Unconditional NDC (ZRF),fgtv_components,flar_emis_mt_co2e,All,3.1145183970862456,Mt CO2e
+2032,6004,Unconditional NDC (ZRF),fgtv_components,vent_ch4_mt_co2e,All,21.733417357035616,Mt CO2e
+2032,6004,Unconditional NDC (ZRF),fgtv_components,dtp_ch4_mt_co2e,All,3.8403715534752445,Mt CO2e
+2032,6004,Unconditional NDC (ZRF),fgtv_components,total_fgtv_mt_co2e,All,28.68830730759796,Mt CO2e
+2033,6004,Unconditional NDC (ZRF),fgtv_components,flar_emis_mt_co2e,All,2.8014338031395694,Mt CO2e
+2033,6004,Unconditional NDC (ZRF),fgtv_components,vent_ch4_mt_co2e,All,22.161995670584346,Mt CO2e
+2033,6004,Unconditional NDC (ZRF),fgtv_components,dtp_ch4_mt_co2e,All,3.6650883849242506,Mt CO2e
+2033,6004,Unconditional NDC (ZRF),fgtv_components,total_fgtv_mt_co2e,All,28.628517858649083,Mt CO2e
+2034,6004,Unconditional NDC (ZRF),fgtv_components,flar_emis_mt_co2e,All,2.5047788360387666,Mt CO2e
+2034,6004,Unconditional NDC (ZRF),fgtv_components,vent_ch4_mt_co2e,All,22.51728633881808,Mt CO2e
+2034,6004,Unconditional NDC (ZRF),fgtv_components,dtp_ch4_mt_co2e,All,3.480874675466101,Mt CO2e
+2034,6004,Unconditional NDC (ZRF),fgtv_components,total_fgtv_mt_co2e,All,28.502939850323926,Mt CO2e
+2035,6004,Unconditional NDC (ZRF),fgtv_components,flar_emis_mt_co2e,All,2.2267051911668485,Mt CO2e
+2035,6004,Unconditional NDC (ZRF),fgtv_components,vent_ch4_mt_co2e,All,22.797193856498108,Mt CO2e
+2035,6004,Unconditional NDC (ZRF),fgtv_components,dtp_ch4_mt_co2e,All,3.2882647944816012,Mt CO2e
+2035,6004,Unconditional NDC (ZRF),fgtv_components,total_fgtv_mt_co2e,All,28.312163842147584,Mt CO2e
+2036,6004,Unconditional NDC (ZRF),fgtv_components,flar_emis_mt_co2e,All,1.9686789486024094,Mt CO2e
+2036,6004,Unconditional NDC (ZRF),fgtv_components,vent_ch4_mt_co2e,All,23.00152512886938,Mt CO2e
+2036,6004,Unconditional NDC (ZRF),fgtv_components,dtp_ch4_mt_co2e,All,3.0879526538565916,Mt CO2e
+2036,6004,Unconditional NDC (ZRF),fgtv_components,total_fgtv_mt_co2e,All,28.058156731329447,Mt CO2e
+2037,6004,Unconditional NDC (ZRF),fgtv_components,flar_emis_mt_co2e,All,1.7312397914311897,Mt CO2e
+2037,6004,Unconditional NDC (ZRF),fgtv_components,vent_ch4_mt_co2e,All,23.132112864999826,Mt CO2e
+2037,6004,Unconditional NDC (ZRF),fgtv_components,dtp_ch4_mt_co2e,All,2.880736708819918,Mt CO2e
+2037,6004,Unconditional NDC (ZRF),fgtv_components,total_fgtv_mt_co2e,All,27.744089365252044,Mt CO2e
+2038,6004,Unconditional NDC (ZRF),fgtv_components,flar_emis_mt_co2e,All,1.514161533329959,Mt CO2e
+2038,6004,Unconditional NDC (ZRF),fgtv_components,vent_ch4_mt_co2e,All,23.192421929615136,Mt CO2e
+2038,6004,Unconditional NDC (ZRF),fgtv_components,dtp_ch4_mt_co2e,All,2.6674722963471043,Mt CO2e
+2038,6004,Unconditional NDC (ZRF),fgtv_components,total_fgtv_mt_co2e,All,27.374055759293356,Mt CO2e
+2039,6004,Unconditional NDC (ZRF),fgtv_components,flar_emis_mt_co2e,All,1.3165995719366876,Mt CO2e
+2039,6004,Unconditional NDC (ZRF),fgtv_components,vent_ch4_mt_co2e,All,23.187197781817016,Mt CO2e
+2039,6004,Unconditional NDC (ZRF),fgtv_components,dtp_ch4_mt_co2e,All,2.44903137794448,Mt CO2e
+2039,6004,Unconditional NDC (ZRF),fgtv_components,total_fgtv_mt_co2e,All,26.952828731699384,Mt CO2e
+2040,6004,Unconditional NDC (ZRF),fgtv_components,flar_emis_mt_co2e,All,1.1372255378087015,Mt CO2e
+2040,6004,Unconditional NDC (ZRF),fgtv_components,vent_ch4_mt_co2e,All,23.12215502092446,Mt CO2e
+2040,6004,Unconditional NDC (ZRF),fgtv_components,dtp_ch4_mt_co2e,All,2.2262694925588344,Mt CO2e
+2040,6004,Unconditional NDC (ZRF),fgtv_components,total_fgtv_mt_co2e,All,26.48565005129325,Mt CO2e
+2041,6004,Unconditional NDC (ZRF),fgtv_components,flar_emis_mt_co2e,All,0.9743496583324309,Mt CO2e
+2041,6004,Unconditional NDC (ZRF),fgtv_components,vent_ch4_mt_co2e,All,23.00369681103766,Mt CO2e
+2041,6004,Unconditional NDC (ZRF),fgtv_components,dtp_ch4_mt_co2e,All,1.9999987620961597,Mt CO2e
+2041,6004,Unconditional NDC (ZRF),fgtv_components,total_fgtv_mt_co2e,All,25.978045231467558,Mt CO2e
+2042,6004,Unconditional NDC (ZRF),fgtv_components,flar_emis_mt_co2e,All,0.8260316691862096,Mt CO2e
+2042,6004,Unconditional NDC (ZRF),fgtv_components,vent_ch4_mt_co2e,All,22.838661651097002,Mt CO2e
+2042,6004,Unconditional NDC (ZRF),fgtv_components,dtp_ch4_mt_co2e,All,1.770966574467074,Mt CO2e
+2042,6004,Unconditional NDC (ZRF),fgtv_components,total_fgtv_mt_co2e,All,25.435659894751637,Mt CO2e
+2043,6004,Unconditional NDC (ZRF),fgtv_components,flar_emis_mt_co2e,All,0.6901814108827895,Mt CO2e
+2043,6004,Unconditional NDC (ZRF),fgtv_components,vent_ch4_mt_co2e,All,22.634087481193653,Mt CO2e
+2043,6004,Unconditional NDC (ZRF),fgtv_components,dtp_ch4_mt_co2e,All,1.5398396949379465,Mt CO2e
+2043,6004,Unconditional NDC (ZRF),fgtv_components,total_fgtv_mt_co2e,All,24.864108587015775,Mt CO2e
+2044,6004,Unconditional NDC (ZRF),fgtv_components,flar_emis_mt_co2e,All,0.5646502528096944,Mt CO2e
+2044,6004,Unconditional NDC (ZRF),fgtv_components,vent_ch4_mt_co2e,All,22.396995061146654,Mt CO2e
+2044,6004,Unconditional NDC (ZRF),fgtv_components,dtp_ch4_mt_co2e,All,1.3071934016052769,Mt CO2e
+2044,6004,Unconditional NDC (ZRF),fgtv_components,total_fgtv_mt_co2e,All,24.268838715563035,Mt CO2e
+2045,6004,Unconditional NDC (ZRF),fgtv_components,flar_emis_mt_co2e,All,0.4473146565141425,Mt CO2e
+2045,6004,Unconditional NDC (ZRF),fgtv_components,vent_ch4_mt_co2e,All,22.134186205776643,Mt CO2e
+2045,6004,Unconditional NDC (ZRF),fgtv_components,dtp_ch4_mt_co2e,All,1.0735053964540877,Mt CO2e
+2045,6004,Unconditional NDC (ZRF),fgtv_components,total_fgtv_mt_co2e,All,23.655006258746297,Mt CO2e
+2046,6004,Unconditional NDC (ZRF),fgtv_components,flar_emis_mt_co2e,All,0.33615322292520344,Mt CO2e
+2046,6004,Unconditional NDC (ZRF),fgtv_components,vent_ch4_mt_co2e,All,21.852052463178538,Mt CO2e
+2046,6004,Unconditional NDC (ZRF),fgtv_components,dtp_ch4_mt_co2e,All,0.8391542967670584,Mt CO2e
+2046,6004,Unconditional NDC (ZRF),fgtv_components,total_fgtv_mt_co2e,All,23.027359982872227,Mt CO2e
+2047,6004,Unconditional NDC (ZRF),fgtv_components,flar_emis_mt_co2e,All,0.29793805694044906,Mt CO2e
+2047,6004,Unconditional NDC (ZRF),fgtv_components,vent_ch4_mt_co2e,All,21.556389954358355,Mt CO2e
+2047,6004,Unconditional NDC (ZRF),fgtv_components,dtp_ch4_mt_co2e,All,0.6044225709540365,Mt CO2e
+2047,6004,Unconditional NDC (ZRF),fgtv_components,total_fgtv_mt_co2e,All,22.39013107440469,Mt CO2e
+2048,6004,Unconditional NDC (ZRF),fgtv_components,flar_emis_mt_co2e,All,0.29793805694044906,Mt CO2e
+2048,6004,Unconditional NDC (ZRF),fgtv_components,vent_ch4_mt_co2e,All,21.252216348782852,Mt CO2e
+2048,6004,Unconditional NDC (ZRF),fgtv_components,dtp_ch4_mt_co2e,All,0.3695038513615603,Mt CO2e
+2048,6004,Unconditional NDC (ZRF),fgtv_components,total_fgtv_mt_co2e,All,21.74692535863209,Mt CO2e
+2049,6004,Unconditional NDC (ZRF),fgtv_components,flar_emis_mt_co2e,All,0.29793805694044906,Mt CO2e
+2049,6004,Unconditional NDC (ZRF),fgtv_components,vent_ch4_mt_co2e,All,20.943586327711472,Mt CO2e
+2049,6004,Unconditional NDC (ZRF),fgtv_components,dtp_ch4_mt_co2e,All,0.13451462171213047,Mt CO2e
+2049,6004,Unconditional NDC (ZRF),fgtv_components,total_fgtv_mt_co2e,All,21.10061561155723,Mt CO2e
+2050,6004,Unconditional NDC (ZRF),fgtv_components,flar_emis_mt_co2e,All,0.29793805694044906,Mt CO2e
+2050,6004,Unconditional NDC (ZRF),fgtv_components,vent_ch4_mt_co2e,All,20.633402385682665,Mt CO2e
+2050,6004,Unconditional NDC (ZRF),fgtv_components,dtp_ch4_mt_co2e,All,0.0,Mt CO2e
+2050,6004,Unconditional NDC (ZRF),fgtv_components,total_fgtv_mt_co2e,All,20.453231868849528,Mt CO2e
+2023,6005,Conditional NDC,fgtv_components,flar_emis_mt_co2e,All,6.267337254285718,Mt CO2e
+2023,6005,Conditional NDC,fgtv_components,vent_ch4_mt_co2e,All,15.684255338292829,Mt CO2e
+2023,6005,Conditional NDC,fgtv_components,dtp_ch4_mt_co2e,All,5.076407407421452,Mt CO2e
+2023,6005,Conditional NDC,fgtv_components,total_fgtv_mt_co2e,All,27.028,Mt CO2e
+2024,6005,Conditional NDC,fgtv_components,flar_emis_mt_co2e,All,5.903603897548139,Mt CO2e
+2024,6005,Conditional NDC,fgtv_components,vent_ch4_mt_co2e,All,14.909034021854488,Mt CO2e
+2024,6005,Conditional NDC,fgtv_components,dtp_ch4_mt_co2e,All,4.796120387606258,Mt CO2e
+2024,6005,Conditional NDC,fgtv_components,total_fgtv_mt_co2e,All,25.608758307008834,Mt CO2e
+2025,6005,Conditional NDC,fgtv_components,flar_emis_mt_co2e,All,5.540294546949919,Mt CO2e
+2025,6005,Conditional NDC,fgtv_components,vent_ch4_mt_co2e,All,14.12986286000637,Mt CO2e
+2025,6005,Conditional NDC,fgtv_components,dtp_ch4_mt_co2e,All,4.515342753962789,Mt CO2e
+2025,6005,Conditional NDC,fgtv_components,total_fgtv_mt_co2e,All,24.18550016091898,Mt CO2e
+2026,6005,Conditional NDC,fgtv_components,flar_emis_mt_co2e,All,5.178015637027141,Mt CO2e
+2026,6005,Conditional NDC,fgtv_components,vent_ch4_mt_co2e,All,13.339260134842146,Mt CO2e
+2026,6005,Conditional NDC,fgtv_components,dtp_ch4_mt_co2e,All,4.233131792469115,Mt CO2e
+2026,6005,Conditional NDC,fgtv_components,total_fgtv_mt_co2e,All,22.750407564338268,Mt CO2e
+2027,6005,Conditional NDC,fgtv_components,flar_emis_mt_co2e,All,4.818090420329532,Mt CO2e
+2027,6005,Conditional NDC,fgtv_components,vent_ch4_mt_co2e,All,12.529063659266342,Mt CO2e
+2027,6005,Conditional NDC,fgtv_components,dtp_ch4_mt_co2e,All,3.948839138317645,Mt CO2e
+2027,6005,Conditional NDC,fgtv_components,total_fgtv_mt_co2e,All,21.29599321791336,Mt CO2e
+2028,6005,Conditional NDC,fgtv_components,flar_emis_mt_co2e,All,4.462442048621014,Mt CO2e
+2028,6005,Conditional NDC,fgtv_components,vent_ch4_mt_co2e,All,11.691380684616874,Mt CO2e
+2028,6005,Conditional NDC,fgtv_components,dtp_ch4_mt_co2e,All,3.6621867229929936,Mt CO2e
+2028,6005,Conditional NDC,fgtv_components,total_fgtv_mt_co2e,All,19.816009456230713,Mt CO2e
+2029,6005,Conditional NDC,fgtv_components,flar_emis_mt_co2e,All,4.113449667577317,Mt CO2e
+2029,6005,Conditional NDC,fgtv_components,vent_ch4_mt_co2e,All,10.819427714446334,Mt CO2e
+2029,6005,Conditional NDC,fgtv_components,dtp_ch4_mt_co2e,All,3.373313453859712,Mt CO2e
+2029,6005,Conditional NDC,fgtv_components,total_fgtv_mt_co2e,All,18.306190835883186,Mt CO2e
+2030,6005,Conditional NDC,fgtv_components,flar_emis_mt_co2e,All,3.7737862202758077,Mt CO2e
+2030,6005,Conditional NDC,fgtv_components,vent_ch4_mt_co2e,All,9.908261715088173,Mt CO2e
+2030,6005,Conditional NDC,fgtv_components,dtp_ch4_mt_co2e,All,3.08279059150537,Mt CO2e
+2030,6005,Conditional NDC,fgtv_components,total_fgtv_mt_co2e,All,16.76483852686917,Mt CO2e
+2031,6005,Conditional NDC,fgtv_components,flar_emis_mt_co2e,All,3.4462440486901063,Mt CO2e
+2031,6005,Conditional NDC,fgtv_components,vent_ch4_mt_co2e,All,8.955386065970332,Mt CO2e
+2031,6005,Conditional NDC,fgtv_components,dtp_ch4_mt_co2e,All,2.791608236656715,Mt CO2e
+2031,6005,Conditional NDC,fgtv_components,total_fgtv_mt_co2e,All,15.193238351316975,Mt CO2e
+2032,6005,Conditional NDC,fgtv_components,flar_emis_mt_co2e,All,3.133561005272462,Mt CO2e
+2032,6005,Conditional NDC,fgtv_components,vent_ch4_mt_co2e,All,7.961219162016603,Mt CO2e
+2032,6005,Conditional NDC,fgtv_components,dtp_ch4_mt_co2e,All,2.5011515250841425,Mt CO2e
+2032,6005,Conditional NDC,fgtv_components,total_fgtv_mt_co2e,All,13.595931692373028,Mt CO2e
+2033,6005,Conditional NDC,fgtv_components,flar_emis_mt_co2e,All,2.8381862014274417,Mt CO2e
+2033,6005,Conditional NDC,fgtv_components,vent_ch4_mt_co2e,All,6.9289158274007026,Mt CO2e
+2033,6005,Conditional NDC,fgtv_components,dtp_ch4_mt_co2e,All,2.2130458588426927,Mt CO2e
+2033,6005,Conditional NDC,fgtv_components,total_fgtv_mt_co2e,All,11.980147887670658,Mt CO2e
+2034,6005,Conditional NDC,fgtv_components,flar_emis_mt_co2e,All,2.562091758730792,Mt CO2e
+2034,6005,Conditional NDC,fgtv_components,vent_ch4_mt_co2e,All,5.864104854122997,Mt CO2e
+2034,6005,Conditional NDC,fgtv_components,dtp_ch4_mt_co2e,All,1.929018526906229,Mt CO2e
+2034,6005,Conditional NDC,fgtv_components,total_fgtv_mt_co2e,All,10.355215139759835,Mt CO2e
+2035,6005,Conditional NDC,fgtv_components,flar_emis_mt_co2e,All,2.3066312372171316,Mt CO2e
+2035,6005,Conditional NDC,fgtv_components,vent_ch4_mt_co2e,All,4.774537693217717,Mt CO2e
+2035,6005,Conditional NDC,fgtv_components,dtp_ch4_mt_co2e,All,1.6507762830017945,Mt CO2e
+2035,6005,Conditional NDC,fgtv_components,total_fgtv_mt_co2e,All,8.731945213436454,Mt CO2e
+2036,6005,Conditional NDC,fgtv_components,flar_emis_mt_co2e,All,2.072445709554499,Mt CO2e
+2036,6005,Conditional NDC,fgtv_components,vent_ch4_mt_co2e,All,3.669641680775955,Mt CO2e
+2036,6005,Conditional NDC,fgtv_components,dtp_ch4_mt_co2e,All,1.3798983889504473,Mt CO2e
+2036,6005,Conditional NDC,fgtv_components,total_fgtv_mt_co2e,All,7.121985779280706,Mt CO2e
+2037,6005,Conditional NDC,fgtv_components,flar_emis_mt_co2e,All,1.8594188516710544,Mt CO2e
+2037,6005,Conditional NDC,fgtv_components,vent_ch4_mt_co2e,All,2.559969757995116,Mt CO2e
+2037,6005,Conditional NDC,fgtv_components,dtp_ch4_mt_co2e,All,1.1177446697231026,Mt CO2e
+2037,6005,Conditional NDC,fgtv_components,total_fgtv_mt_co2e,All,5.537133279389071,Mt CO2e
+2038,6005,Conditional NDC,fgtv_components,flar_emis_mt_co2e,All,1.6668205010044848,Mt CO2e
+2038,6005,Conditional NDC,fgtv_components,vent_ch4_mt_co2e,All,1.4563553347915574,Mt CO2e
+2038,6005,Conditional NDC,fgtv_components,dtp_ch4_mt_co2e,All,0.8653784609519928,Mt CO2e
+2038,6005,Conditional NDC,fgtv_components,total_fgtv_mt_co2e,All,3.988554296747827,Mt CO2e
+2039,6005,Conditional NDC,fgtv_components,flar_emis_mt_co2e,All,1.4934367902010246,Mt CO2e
+2039,6005,Conditional NDC,fgtv_components,vent_ch4_mt_co2e,All,0.36903414880873076,Mt CO2e
+2039,6005,Conditional NDC,fgtv_components,dtp_ch4_mt_co2e,All,0.6235038436920433,Mt CO2e
+2039,6005,Conditional NDC,fgtv_components,total_fgtv_mt_co2e,All,2.485974782701584,Mt CO2e
+2040,6005,Conditional NDC,fgtv_components,flar_emis_mt_co2e,All,1.3376874222196886,Mt CO2e
+2040,6005,Conditional NDC,fgtv_components,vent_ch4_mt_co2e,All,0.0,Mt CO2e
+2040,6005,Conditional NDC,fgtv_components,dtp_ch4_mt_co2e,All,0.3924170866250887,Mt CO2e
+2040,6005,Conditional NDC,fgtv_components,total_fgtv_mt_co2e,All,1.0368276301707962,Mt CO2e
+2041,6005,Conditional NDC,fgtv_components,flar_emis_mt_co2e,All,1.1977308475396766,Mt CO2e
+2041,6005,Conditional NDC,fgtv_components,vent_ch4_mt_co2e,All,0.0,Mt CO2e
+2041,6005,Conditional NDC,fgtv_components,dtp_ch4_mt_co2e,All,0.17197255085949403,Mt CO2e
+2041,6005,Conditional NDC,fgtv_components,total_fgtv_mt_co2e,All,0.0,Mt CO2e
+2042,6005,Conditional NDC,fgtv_components,flar_emis_mt_co2e,All,1.0715583344546082,Mt CO2e
+2042,6005,Conditional NDC,fgtv_components,vent_ch4_mt_co2e,All,0.0,Mt CO2e
+2042,6005,Conditional NDC,fgtv_components,dtp_ch4_mt_co2e,All,0.0,Mt CO2e
+2042,6005,Conditional NDC,fgtv_components,total_fgtv_mt_co2e,All,0.0,Mt CO2e
+2043,6005,Conditional NDC,fgtv_components,flar_emis_mt_co2e,All,0.9570792988316071,Mt CO2e
+2043,6005,Conditional NDC,fgtv_components,vent_ch4_mt_co2e,All,0.0,Mt CO2e
+2043,6005,Conditional NDC,fgtv_components,dtp_ch4_mt_co2e,All,0.0,Mt CO2e
+2043,6005,Conditional NDC,fgtv_components,total_fgtv_mt_co2e,All,0.0,Mt CO2e
+2044,6005,Conditional NDC,fgtv_components,flar_emis_mt_co2e,All,0.8521979831981684,Mt CO2e
+2044,6005,Conditional NDC,fgtv_components,vent_ch4_mt_co2e,All,0.0,Mt CO2e
+2044,6005,Conditional NDC,fgtv_components,dtp_ch4_mt_co2e,All,0.0,Mt CO2e
+2044,6005,Conditional NDC,fgtv_components,total_fgtv_mt_co2e,All,0.0,Mt CO2e
+2045,6005,Conditional NDC,fgtv_components,flar_emis_mt_co2e,All,0.7548827974182809,Mt CO2e
+2045,6005,Conditional NDC,fgtv_components,vent_ch4_mt_co2e,All,0.0,Mt CO2e
+2045,6005,Conditional NDC,fgtv_components,dtp_ch4_mt_co2e,All,0.0,Mt CO2e
+2045,6005,Conditional NDC,fgtv_components,total_fgtv_mt_co2e,All,0.0,Mt CO2e
+2046,6005,Conditional NDC,fgtv_components,flar_emis_mt_co2e,All,0.6784098229760609,Mt CO2e
+2046,6005,Conditional NDC,fgtv_components,vent_ch4_mt_co2e,All,0.0,Mt CO2e
+2046,6005,Conditional NDC,fgtv_components,dtp_ch4_mt_co2e,All,0.0,Mt CO2e
+2046,6005,Conditional NDC,fgtv_components,total_fgtv_mt_co2e,All,0.0,Mt CO2e
+2047,6005,Conditional NDC,fgtv_components,flar_emis_mt_co2e,All,0.6784098229760609,Mt CO2e
+2047,6005,Conditional NDC,fgtv_components,vent_ch4_mt_co2e,All,0.0,Mt CO2e
+2047,6005,Conditional NDC,fgtv_components,dtp_ch4_mt_co2e,All,0.0,Mt CO2e
+2047,6005,Conditional NDC,fgtv_components,total_fgtv_mt_co2e,All,0.0,Mt CO2e
+2048,6005,Conditional NDC,fgtv_components,flar_emis_mt_co2e,All,0.6784098229760609,Mt CO2e
+2048,6005,Conditional NDC,fgtv_components,vent_ch4_mt_co2e,All,0.0,Mt CO2e
+2048,6005,Conditional NDC,fgtv_components,dtp_ch4_mt_co2e,All,0.0,Mt CO2e
+2048,6005,Conditional NDC,fgtv_components,total_fgtv_mt_co2e,All,0.0,Mt CO2e
+2049,6005,Conditional NDC,fgtv_components,flar_emis_mt_co2e,All,0.6784098229760609,Mt CO2e
+2049,6005,Conditional NDC,fgtv_components,vent_ch4_mt_co2e,All,0.0,Mt CO2e
+2049,6005,Conditional NDC,fgtv_components,dtp_ch4_mt_co2e,All,0.0,Mt CO2e
+2049,6005,Conditional NDC,fgtv_components,total_fgtv_mt_co2e,All,0.0,Mt CO2e
+2050,6005,Conditional NDC,fgtv_components,flar_emis_mt_co2e,All,0.6784098229760609,Mt CO2e
+2050,6005,Conditional NDC,fgtv_components,vent_ch4_mt_co2e,All,0.0,Mt CO2e
+2050,6005,Conditional NDC,fgtv_components,dtp_ch4_mt_co2e,All,0.0,Mt CO2e
+2050,6005,Conditional NDC,fgtv_components,total_fgtv_mt_co2e,All,0.0,Mt CO2e
+2023,6003,BAU,fgtv_by_gas,fgtv_co2_mt_co2e,All,7.804993131800002,Mt CO2e
+2023,6003,BAU,fgtv_by_gas,fgtv_ch4_mt_co2e,All,19.193918767012,Mt CO2e
+2023,6003,BAU,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.02908810118799967,Mt CO2e
+2023,6003,BAU,fgtv_by_gas,total_fgtv_mt_co2e,All,27.028000000000002,Mt CO2e
+2024,6003,BAU,fgtv_by_gas,fgtv_co2_mt_co2e,All,8.664691989556463,Mt CO2e
+2024,6003,BAU,fgtv_by_gas,fgtv_ch4_mt_co2e,All,19.050415473181573,Mt CO2e
+2024,6003,BAU,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.029122038509224676,Mt CO2e
+2024,6003,BAU,fgtv_by_gas,total_fgtv_mt_co2e,All,27.744229501247325,Mt CO2e
+2025,6003,BAU,fgtv_by_gas,fgtv_co2_mt_co2e,All,9.524816097730445,Mt CO2e
+2025,6003,BAU,fgtv_by_gas,fgtv_ch4_mt_co2e,All,18.903716693451393,Mt CO2e
+2025,6003,BAU,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.029168655612614475,Mt CO2e
+2025,6003,BAU,fgtv_by_gas,total_fgtv_mt_co2e,All,28.45770144679458,Mt CO2e
+2026,6003,BAU,fgtv_by_gas,fgtv_co2_mt_co2e,All,10.385455931290739,Mt CO2e
+2026,6003,BAU,fgtv_by_gas,fgtv_ch4_mt_co2e,All,18.74697866132864,Mt CO2e
+2026,6003,BAU,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.02923778475967253,Mt CO2e
+2026,6003,BAU,fgtv_by_gas,total_fgtv_mt_co2e,All,29.161672377379233,Mt CO2e
+2027,6003,BAU,fgtv_by_gas,fgtv_co2_mt_co2e,All,11.246718547990037,Mt CO2e
+2027,6003,BAU,fgtv_by_gas,fgtv_ch4_mt_co2e,All,18.572006537990745,Mt CO2e
+2027,6003,BAU,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.029336900609884232,Mt CO2e
+2027,6003,BAU,fgtv_by_gas,total_fgtv_mt_co2e,All,29.848061986590885,Mt CO2e
+2028,6003,BAU,fgtv_by_gas,fgtv_co2_mt_co2e,All,12.108576523558543,Mt CO2e
+2028,6003,BAU,fgtv_by_gas,fgtv_ch4_mt_co2e,All,18.370207423777025,Mt CO2e
+2028,6003,BAU,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.029471300869301942,Mt CO2e
+2028,6003,BAU,fgtv_by_gas,total_fgtv_mt_co2e,All,30.50825524820511,Mt CO2e
+2029,6003,BAU,fgtv_by_gas,fgtv_co2_mt_co2e,All,12.970712202193793,Mt CO2e
+2029,6003,BAU,fgtv_by_gas,fgtv_ch4_mt_co2e,All,18.133542022612453,Mt CO2e
+2029,6003,BAU,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.029644267720507964,Mt CO2e
+2029,6003,BAU,fgtv_by_gas,total_fgtv_mt_co2e,All,31.13389849252701,Mt CO2e
+2030,6003,BAU,fgtv_by_gas,fgtv_co2_mt_co2e,All,13.832698432264984,Mt CO2e
+2030,6003,BAU,fgtv_by_gas,fgtv_ch4_mt_co2e,All,17.85501836443352,Mt CO2e
+2030,6003,BAU,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.029857454047977558,Mt CO2e
+2030,6003,BAU,fgtv_by_gas,total_fgtv_mt_co2e,All,31.717574250746743,Mt CO2e
+2031,6003,BAU,fgtv_by_gas,fgtv_co2_mt_co2e,All,14.694210709580325,Mt CO2e
+2031,6003,BAU,fgtv_by_gas,fgtv_ch4_mt_co2e,All,17.52914162158716,Mt CO2e
+2031,6003,BAU,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.03011126814472452,Mt CO2e
+2031,6003,BAU,fgtv_by_gas,total_fgtv_mt_co2e,All,32.25346359931247,Mt CO2e
+2032,6003,BAU,fgtv_by_gas,fgtv_co2_mt_co2e,All,15.55528308127203,Mt CO2e
+2032,6003,BAU,fgtv_by_gas,fgtv_ch4_mt_co2e,All,17.152332033564434,Mt CO2e
+2032,6003,BAU,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.03040526273517704,Mt CO2e
+2032,6003,BAU,fgtv_by_gas,total_fgtv_mt_co2e,All,32.73802037757188,Mt CO2e
+2033,6003,BAU,fgtv_by_gas,fgtv_co2_mt_co2e,All,16.41621704192746,Mt CO2e
+2033,6003,BAU,fgtv_by_gas,fgtv_ch4_mt_co2e,All,16.722662911255508,Mt CO2e
+2033,6003,BAU,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.030738299417922138,Mt CO2e
+2033,6003,BAU,fgtv_by_gas,total_fgtv_mt_co2e,All,33.169618252601104,Mt CO2e
+2034,6003,BAU,fgtv_by_gas,fgtv_co2_mt_co2e,All,17.277499423829173,Mt CO2e
+2034,6003,BAU,fgtv_by_gas,fgtv_ch4_mt_co2e,All,16.23961820727616,Mt CO2e
+2034,6003,BAU,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.03110869370243617,Mt CO2e
+2034,6003,BAU,fgtv_by_gas,total_fgtv_mt_co2e,All,33.54822632480797,Mt CO2e
+2035,6003,BAU,fgtv_by_gas,fgtv_co2_mt_co2e,All,18.139729247234715,Mt CO2e
+2035,6003,BAU,fgtv_by_gas,fgtv_ch4_mt_co2e,All,15.703870634970738,Mt CO2e
+2035,6003,BAU,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.03151434142115159,Mt CO2e
+2035,6003,BAU,fgtv_by_gas,total_fgtv_mt_co2e,All,33.875114223626795,Mt CO2e
+2036,6003,BAU,fgtv_by_gas,fgtv_co2_mt_co2e,All,19.003553373763747,Mt CO2e
+2036,6003,BAU,fgtv_by_gas,fgtv_ch4_mt_co2e,All,15.117080428235138,Mt CO2e
+2036,6003,BAU,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.03195282763755442,Mt CO2e
+2036,6003,BAU,fgtv_by_gas,total_fgtv_mt_co2e,All,34.15258662963662,Mt CO2e
+2037,6003,BAU,fgtv_by_gas,fgtv_co2_mt_co2e,All,19.869610763920562,Mt CO2e
+2037,6003,BAU,fgtv_by_gas,fgtv_ch4_mt_co2e,All,14.481714100603572,Mt CO2e
+2037,6003,BAU,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.0324215194402097,Mt CO2e
+2037,6003,BAU,fgtv_by_gas,total_fgtv_mt_co2e,All,34.38374638396452,Mt CO2e
+2038,6003,BAU,fgtv_by_gas,fgtv_co2_mt_co2e,All,20.73848508528602,Mt CO2e
+2038,6003,BAU,fgtv_by_gas,fgtv_ch4_mt_co2e,All,13.800881926693421,Mt CO2e
+2038,6003,BAU,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.03291764420044466,Mt CO2e
+2038,6003,BAU,fgtv_by_gas,total_fgtv_mt_co2e,All,34.57228465618006,Mt CO2e
+2039,6003,BAU,fgtv_by_gas,fgtv_co2_mt_co2e,All,21.61066543370244,Mt CO2e
+2039,6003,BAU,fgtv_by_gas,fgtv_ch4_mt_co2e,All,13.078192365465195,Mt CO2e
+2039,6003,BAU,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.03343835501009853,Mt CO2e
+2039,6003,BAU,fgtv_by_gas,total_fgtv_mt_co2e,All,34.72229615417791,Mt CO2e
+2040,6003,BAU,fgtv_by_gas,fgtv_co2_mt_co2e,All,22.48651496629966,Mt CO2e
+2040,6003,BAU,fgtv_by_gas,fgtv_ch4_mt_co2e,All,12.31762123797662,Mt CO2e
+2040,6003,BAU,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.03398078510327535,Mt CO2e
+2040,6003,BAU,fgtv_by_gas,total_fgtv_mt_co2e,All,34.83811698937973,Mt CO2e
+2041,6003,BAU,fgtv_by_gas,fgtv_co2_mt_co2e,All,23.36624731396899,Mt CO2e
+2041,6003,BAU,fgtv_by_gas,fgtv_ch4_mt_co2e,All,11.523393159956875,Mt CO2e
+2041,6003,BAU,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.034542093114874654,Mt CO2e
+2041,6003,BAU,fgtv_by_gas,total_fgtv_mt_co2e,All,34.92418256704091,Mt CO2e
+2042,6003,BAU,fgtv_by_gas,fgtv_co2_mt_co2e,All,24.249910699165675,Mt CO2e
+2042,6003,BAU,fgtv_by_gas,fgtv_ch4_mt_co2e,All,10.699872485058798,Mt CO2e
+2042,6003,BAU,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.0351195010347404,Mt CO2e
+2042,6003,BAU,fgtv_by_gas,total_fgtv_mt_co2e,All,34.98490268525938,Mt CO2e
+2043,6003,BAU,fgtv_by_gas,fgtv_co2_mt_co2e,All,25.137385711750316,Mt CO2e
+2043,6003,BAU,fgtv_by_gas,fgtv_ch4_mt_co2e,All,9.851465378998645,Mt CO2e
+2043,6003,BAU,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.03571033068100517,Mt CO2e
+2043,6003,BAU,fgtv_by_gas,total_fgtv_mt_co2e,All,35.02456142143013,Mt CO2e
+2044,6003,BAU,fgtv_by_gas,fgtv_co2_mt_co2e,All,26.02839479869258,Mt CO2e
+2044,6003,BAU,fgtv_by_gas,fgtv_ch4_mt_co2e,All,8.982527292304498,Mt CO2e
+2044,6003,BAU,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.036312039141244194,Mt CO2e
+2044,6003,BAU,fgtv_by_gas,total_fgtv_mt_co2e,All,35.04723413013849,Mt CO2e
+2045,6003,BAU,fgtv_by_gas,fgtv_co2_mt_co2e,All,26.922520904533584,Mt CO2e
+2045,6003,BAU,fgtv_by_gas,fgtv_ch4_mt_co2e,All,8.097270336000236,Mt CO2e
+2045,6003,BAU,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.036922253038745675,Mt CO2e
+2045,6003,BAU,fgtv_by_gas,total_fgtv_mt_co2e,All,35.056713493572744,Mt CO2e
+2046,6003,BAU,fgtv_by_gas,fgtv_co2_mt_co2e,All,27.819235664865122,Mt CO2e
+2046,6003,BAU,fgtv_by_gas,fgtv_ch4_mt_co2e,All,7.19966750851907,Mt CO2e
+2046,6003,BAU,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.03753880332377291,Mt CO2e
+2046,6003,BAU,fgtv_by_gas,total_fgtv_mt_co2e,All,35.05644197670815,Mt CO2e
+2047,6003,BAU,fgtv_by_gas,fgtv_co2_mt_co2e,All,28.71793764065749,Mt CO2e
+2047,6003,BAU,fgtv_by_gas,fgtv_ch4_mt_co2e,All,6.293350802221097,Mt CO2e
+2047,6003,BAU,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.038159762183228654,Mt CO2e
+2047,6003,BAU,fgtv_by_gas,total_fgtv_mt_co2e,All,35.049448205062,Mt CO2e
+2048,6003,BAU,fgtv_by_gas,fgtv_co2_mt_co2e,All,29.618001167744833,Mt CO2e
+2048,6003,BAU,fgtv_by_gas,fgtv_ch4_mt_co2e,All,5.381500364468881,Mt CO2e
+2048,6003,BAU,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.03878348354022834,Mt CO2e
+2048,6003,BAU,fgtv_by_gas,total_fgtv_mt_co2e,All,35.03828501575413,Mt CO2e
+2049,6003,BAU,fgtv_by_gas,fgtv_co2_mt_co2e,All,30.518836439812905,Mt CO2e
+2049,6003,BAU,fgtv_by_gas,fgtv_ch4_mt_co2e,All,4.46672209120849,Mt CO2e
+2049,6003,BAU,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.03940864846393523,Mt CO2e
+2049,6003,BAU,fgtv_by_gas,total_fgtv_mt_co2e,All,35.024967179485515,Mt CO2e
+2050,6003,BAU,fgtv_by_gas,fgtv_co2_mt_co2e,All,31.419961457521463,Mt CO2e
+2050,6003,BAU,fgtv_by_gas,fgtv_ch4_mt_co2e,All,3.5509113039201257,Mt CO2e
+2050,6003,BAU,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.04003431663342785,Mt CO2e
+2050,6003,BAU,fgtv_by_gas,total_fgtv_mt_co2e,All,35.0109070780752,Mt CO2e
+2023,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_co2_mt_co2e,All,7.804993131800002,Mt CO2e
+2023,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_ch4_mt_co2e,All,19.193918767012,Mt CO2e
+2023,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.02908810118799967,Mt CO2e
+2023,6004,Unconditional NDC (ZRF),fgtv_by_gas,total_fgtv_mt_co2e,All,27.028000000000002,Mt CO2e
+2024,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_co2_mt_co2e,All,7.4519625045629585,Mt CO2e
+2024,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_ch4_mt_co2e,All,19.830347036089965,Mt CO2e
+2024,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.028284389975812604,Mt CO2e
+2024,6004,Unconditional NDC (ZRF),fgtv_by_gas,total_fgtv_mt_co2e,All,27.310593930628574,Mt CO2e
+2025,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_co2_mt_co2e,All,7.098862429525421,Mt CO2e
+2025,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_ch4_mt_co2e,All,20.46322513022054,Mt CO2e
+2025,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.027493072276567013,Mt CO2e
+2025,6004,Unconditional NDC (ZRF),fgtv_by_gas,total_fgtv_mt_co2e,All,27.58958063202221,Mt CO2e
+2026,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_co2_mt_co2e,All,6.745268634059932,Mt CO2e
+2026,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_ch4_mt_co2e,All,21.084903187632737,Mt CO2e
+2026,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.026723725186184547,Mt CO2e
+2026,6004,Unconditional NDC (ZRF),fgtv_by_gas,total_fgtv_mt_co2e,All,27.856895546878388,Mt CO2e
+2027,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_co2_mt_co2e,All,6.391117749640628,Mt CO2e
+2027,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_ch4_mt_co2e,All,21.685982118156858,Mt CO2e
+2027,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.02598383643113309,Mt CO2e
+2027,6004,Unconditional NDC (ZRF),fgtv_by_gas,total_fgtv_mt_co2e,All,28.103083704228016,Mt CO2e
+2028,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_co2_mt_co2e,All,6.036811386830746,Mt CO2e
+2028,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_ch4_mt_co2e,All,22.25602199584944,Mt CO2e
+2028,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.025279159300018283,Mt CO2e
+2028,6004,Unconditional NDC (ZRF),fgtv_by_gas,total_fgtv_mt_co2e,All,28.318112541979477,Mt CO2e
+2029,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_co2_mt_co2e,All,5.683273595236165,Mt CO2e
+2029,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_ch4_mt_co2e,All,22.784256606500154,Mt CO2e
+2029,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.024614019120049756,Mt CO2e
+2029,6004,Unconditional NDC (ZRF),fgtv_by_gas,total_fgtv_mt_co2e,All,28.492144220855526,Mt CO2e
+2030,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_co2_mt_co2e,All,5.331964970073832,Mt CO2e
+2030,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_ch4_mt_co2e,All,23.260327762811297,Mt CO2e
+2030,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.023991568088861246,Mt CO2e
+2030,6004,Unconditional NDC (ZRF),fgtv_by_gas,total_fgtv_mt_co2e,All,28.616284300973046,Mt CO2e
+2031,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_co2_mt_co2e,All,4.9848500690893305,Mt CO2e
+2031,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_ch4_mt_co2e,All,23.675032258983506,Mt CO2e
+2031,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.023413987091014075,Mt CO2e
+2031,6004,Unconditional NDC (ZRF),fgtv_by_gas,total_fgtv_mt_co2e,All,28.683296315162824,Mt CO2e
+2032,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_co2_mt_co2e,All,4.644331671630187,Mt CO2e
+2032,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_ch4_mt_co2e,All,24.02109299635022,Mt CO2e
+2032,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.02288263961755866,Mt CO2e
+2032,6004,Unconditional NDC (ZRF),fgtv_by_gas,total_fgtv_mt_co2e,All,28.68830730759687,Mt CO2e
+2033,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_co2_mt_co2e,All,4.312991728759904,Mt CO2e
+2033,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_ch4_mt_co2e,All,24.293128017477798,Mt CO2e
+2033,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.022398112411372868,Mt CO2e
+2033,6004,Unconditional NDC (ZRF),fgtv_by_gas,total_fgtv_mt_co2e,All,28.62851785864792,Mt CO2e
+2034,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_co2_mt_co2e,All,3.99333630634335,Mt CO2e
+2034,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_ch4_mt_co2e,All,24.487643309220548,Mt CO2e
+2034,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.021960234759999156,Mt CO2e
+2034,6004,Unconditional NDC (ZRF),fgtv_by_gas,total_fgtv_mt_co2e,All,28.5029398503227,Mt CO2e
+2035,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_co2_mt_co2e,All,3.687543566781166,Mt CO2e
+2035,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_ch4_mt_co2e,All,24.603052199040757,Mt CO2e
+2035,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.021568076325607848,Mt CO2e
+2035,6004,Unconditional NDC (ZRF),fgtv_by_gas,total_fgtv_mt_co2e,All,28.3121638421463,Mt CO2e
+2036,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_co2_mt_co2e,All,3.397213851112798,Mt CO2e
+2036,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_ch4_mt_co2e,All,24.6397229563256,Mt CO2e
+2036,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.021219923890968682,Mt CO2e
+2036,6004,Unconditional NDC (ZRF),fgtv_by_gas,total_fgtv_mt_co2e,All,28.058156731328108,Mt CO2e
+2037,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_co2_mt_co2e,All,3.1231211265325496,Mt CO2e
+2037,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_ch4_mt_co2e,All,24.60005500082508,Mt CO2e
+2037,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.020913237894288794,Mt CO2e
+2037,6004,Unconditional NDC (ZRF),fgtv_by_gas,total_fgtv_mt_co2e,All,27.744089365250648,Mt CO2e
+2038,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_co2_mt_co2e,All,2.865349098780339,Mt CO2e
+2038,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_ch4_mt_co2e,All,24.48806179716422,Mt CO2e
+2038,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.020644863348605772,Mt CO2e
+2038,6004,Unconditional NDC (ZRF),fgtv_by_gas,total_fgtv_mt_co2e,All,27.374055759291895,Mt CO2e
+2039,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_co2_mt_co2e,All,2.623417124421007,Mt CO2e
+2039,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_ch4_mt_co2e,All,24.3090003924092,Mt CO2e
+2039,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.020411214868920342,Mt CO2e
+2039,6004,Unconditional NDC (ZRF),fgtv_by_gas,total_fgtv_mt_co2e,All,26.952828731697867,Mt CO2e
+2040,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_co2_mt_co2e,All,2.3963961781038634,Mt CO2e
+2040,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_ch4_mt_co2e,All,24.069045435336342,Mt CO2e
+2040,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.020208437852714162,Mt CO2e
+2040,6004,Unconditional NDC (ZRF),fgtv_by_gas,total_fgtv_mt_co2e,All,26.485650051291675,Mt CO2e
+2041,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_co2_mt_co2e,All,2.183014893479563,Mt CO2e
+2041,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_ch4_mt_co2e,All,23.774997789965084,Mt CO2e
+2041,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.020032548022511424,Mt CO2e
+2041,6004,Unconditional NDC (ZRF),fgtv_by_gas,total_fgtv_mt_co2e,All,25.978045231465924,Mt CO2e
+2042,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_co2_mt_co2e,All,1.9817562996544882,Mt CO2e
+2042,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_ch4_mt_co2e,All,23.434024043350355,Mt CO2e
+2042,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.01987955174633233,Mt CO2e
+2042,6004,Unconditional NDC (ZRF),fgtv_by_gas,total_fgtv_mt_co2e,All,25.43565989474995,Mt CO2e
+2043,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_co2_mt_co2e,All,1.7909459385304936,Mt CO2e
+2043,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_ch4_mt_co2e,All,23.05341709880504,Mt CO2e
+2043,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.019829620706350776,Mt CO2e
+2043,6004,Unconditional NDC (ZRF),fgtv_by_gas,total_fgtv_mt_co2e,All,24.864108587014044,Mt CO2e
+2044,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_co2_mt_co2e,All,1.6088325112212427,Mt CO2e
+2044,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_ch4_mt_co2e,All,22.640379378151888,Mt CO2e
+2044,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.019829620706350776,Mt CO2e
+2044,6004,Unconditional NDC (ZRF),fgtv_by_gas,total_fgtv_mt_co2e,All,24.268838715561277,Mt CO2e
+2045,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_co2_mt_co2e,All,1.4336621426431315,Mt CO2e
+2045,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_ch4_mt_co2e,All,22.201824189098605,Mt CO2e
+2045,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.019829620706350776,Mt CO2e
+2045,6004,Unconditional NDC (ZRF),fgtv_by_gas,total_fgtv_mt_co2e,All,23.655006258744525,Mt CO2e
+2046,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_co2_mt_co2e,All,1.2637473941822466,Mt CO2e
+2046,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_ch4_mt_co2e,All,21.744190861267185,Mt CO2e
+2046,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.019829620706350776,Mt CO2e
+2046,6004,Unconditional NDC (ZRF),fgtv_by_gas,total_fgtv_mt_co2e,All,23.02735998287045,Mt CO2e
+2047,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_co2_mt_co2e,All,1.0975321502195874,Mt CO2e
+2047,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_ch4_mt_co2e,All,21.2732694309437,Mt CO2e
+2047,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.019829620706350776,Mt CO2e
+2047,6004,Unconditional NDC (ZRF),fgtv_by_gas,total_fgtv_mt_co2e,All,22.390131074402916,Mt CO2e
+2048,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_co2_mt_co2e,All,0.9336534672810441,Mt CO2e
+2048,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_ch4_mt_co2e,All,20.79403095498706,Mt CO2e
+2048,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.019829620706350776,Mt CO2e
+2048,6004,Unconditional NDC (ZRF),fgtv_by_gas,total_fgtv_mt_co2e,All,21.74692535863032,Mt CO2e
+2049,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_co2_mt_co2e,All,0.7710013960490548,Mt CO2e
+2049,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_ch4_mt_co2e,All,20.310459948701688,Mt CO2e
+2049,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.019829620706350776,Mt CO2e
+2049,6004,Unconditional NDC (ZRF),fgtv_by_gas,total_fgtv_mt_co2e,All,21.100615611555465,Mt CO2e
+2050,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_co2_mt_co2e,All,0.6087776600511061,Mt CO2e
+2050,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_ch4_mt_co2e,All,19.825385966263205,Mt CO2e
+2050,6004,Unconditional NDC (ZRF),fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.019829620706350776,Mt CO2e
+2050,6004,Unconditional NDC (ZRF),fgtv_by_gas,total_fgtv_mt_co2e,All,20.453231868847755,Mt CO2e
+2023,6005,Conditional NDC,fgtv_by_gas,fgtv_co2_mt_co2e,All,7.804993131800002,Mt CO2e
+2023,6005,Conditional NDC,fgtv_by_gas,fgtv_ch4_mt_co2e,All,19.193918767012,Mt CO2e
+2023,6005,Conditional NDC,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.02908810118799967,Mt CO2e
+2023,6005,Conditional NDC,fgtv_by_gas,total_fgtv_mt_co2e,All,27.028000000000002,Mt CO2e
+2024,6005,Conditional NDC,fgtv_by_gas,fgtv_co2_mt_co2e,All,7.370394633925433,Mt CO2e
+2024,6005,Conditional NDC,fgtv_by_gas,fgtv_ch4_mt_co2e,All,18.21008849210172,Mt CO2e
+2024,6005,Conditional NDC,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.02827518098176405,Mt CO2e
+2024,6005,Conditional NDC,fgtv_by_gas,total_fgtv_mt_co2e,All,25.608758307008838,Mt CO2e
+2025,6005,Conditional NDC,fgtv_by_gas,fgtv_co2_mt_co2e,All,6.935965102698095,Mt CO2e
+2025,6005,Conditional NDC,fgtv_by_gas,fgtv_ch4_mt_co2e,All,17.222060229861096,Mt CO2e
+2025,6005,Conditional NDC,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.027474828359937524,Mt CO2e
+2025,6005,Conditional NDC,fgtv_by_gas,total_fgtv_mt_co2e,All,24.185500160918984,Mt CO2e
+2026,6005,Conditional NDC,fgtv_by_gas,fgtv_co2_mt_co2e,All,6.5018084081217395,Mt CO2e
+2026,6005,Conditional NDC,fgtv_by_gas,fgtv_ch4_mt_co2e,All,16.22190218194169,Mt CO2e
+2026,6005,Conditional NDC,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.026696974275037925,Mt CO2e
+2026,6005,Conditional NDC,fgtv_by_gas,total_fgtv_mt_co2e,All,22.75040756433827,Mt CO2e
+2027,6005,Conditional NDC,fgtv_by_gas,fgtv_co2_mt_co2e,All,6.068730178326621,Mt CO2e
+2027,6005,Conditional NDC,fgtv_by_gas,fgtv_ch4_mt_co2e,All,15.201313393880309,Mt CO2e
+2027,6005,Conditional NDC,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.02594964570666538,Mt CO2e
+2027,6005,Conditional NDC,fgtv_by_gas,total_fgtv_mt_co2e,All,21.295993217913363,Mt CO2e
+2028,6005,Conditional NDC,fgtv_by_gas,fgtv_co2_mt_co2e,All,5.638183194321846,Mt CO2e
+2028,6005,Conditional NDC,fgtv_by_gas,fgtv_ch4_mt_co2e,All,14.152587054754033,Mt CO2e
+2028,6005,Conditional NDC,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.025239207155089025,Mt CO2e
+2028,6005,Conditional NDC,fgtv_by_gas,total_fgtv_mt_co2e,All,19.816009456230717,Mt CO2e
+2029,6005,Conditional NDC,fgtv_by_gas,fgtv_co2_mt_co2e,All,5.212176087126405,Mt CO2e
+2029,6005,Conditional NDC,fgtv_by_gas,fgtv_ch4_mt_co2e,All,13.069444184379488,Mt CO2e
+2029,6005,Conditional NDC,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.024570564377560295,Mt CO2e
+2029,6005,Conditional NDC,fgtv_by_gas,total_fgtv_mt_co2e,All,18.30619083588319,Mt CO2e
+2030,6005,Conditional NDC,fgtv_by_gas,fgtv_co2_mt_co2e,All,4.793152715805576,Mt CO2e
+2030,6005,Conditional NDC,fgtv_by_gas,fgtv_ch4_mt_co2e,All,11.947738479715767,Mt CO2e
+2030,6005,Conditional NDC,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.023947331348100016,Mt CO2e
+2030,6005,Conditional NDC,fgtv_by_gas,total_fgtv_mt_co2e,All,16.764838526869173,Mt CO2e
+2031,6005,Conditional NDC,fgtv_by_gas,fgtv_co2_mt_co2e,All,4.383847720680539,Mt CO2e
+2031,6005,Conditional NDC,fgtv_by_gas,fgtv_ch4_mt_co2e,All,10.786018666161059,Mt CO2e
+2031,6005,Conditional NDC,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.023371964475647378,Mt CO2e
+2031,6005,Conditional NDC,fgtv_by_gas,total_fgtv_mt_co2e,All,15.193238351316978,Mt CO2e
+2032,6005,Conditional NDC,fgtv_by_gas,fgtv_co2_mt_co2e,All,3.9871378659122847,Mt CO2e
+2032,6005,Conditional NDC,fgtv_by_gas,fgtv_ch4_mt_co2e,All,9.585947953098447,Mt CO2e
+2032,6005,Conditional NDC,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.02284587336255949,Mt CO2e
+2032,6005,Conditional NDC,fgtv_by_gas,total_fgtv_mt_co2e,All,13.595931692373032,Mt CO2e
+2033,6005,Conditional NDC,fgtv_by_gas,fgtv_co2_mt_co2e,All,3.605773240569609,Mt CO2e
+2033,6005,Conditional NDC,fgtv_by_gas,fgtv_ch4_mt_co2e,All,8.352005182382936,Mt CO2e
+2033,6005,Conditional NDC,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.02236946471836671,Mt CO2e
+2033,6005,Conditional NDC,fgtv_by_gas,total_fgtv_mt_co2e,All,11.980147887670661,Mt CO2e
+2034,6005,Conditional NDC,fgtv_by_gas,fgtv_co2_mt_co2e,All,3.2421545299865673,Mt CO2e
+2034,6005,Conditional NDC,fgtv_by_gas,fgtv_ch4_mt_co2e,All,7.091118414379595,Mt CO2e
+2034,6005,Conditional NDC,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.021942195393920803,Mt CO2e
+2034,6005,Conditional NDC,fgtv_by_gas,total_fgtv_mt_co2e,All,10.355215139759839,Mt CO2e
+2035,6005,Conditional NDC,fgtv_by_gas,fgtv_co2_mt_co2e,All,2.8981568491201677,Mt CO2e
+2035,6005,Conditional NDC,fgtv_by_gas,fgtv_ch4_mt_co2e,All,5.812225728871756,Mt CO2e
+2035,6005,Conditional NDC,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.021562635444775553,Mt CO2e
+2035,6005,Conditional NDC,fgtv_by_gas,total_fgtv_mt_co2e,All,8.731945213436457,Mt CO2e
+2036,6005,Conditional NDC,fgtv_by_gas,fgtv_co2_mt_co2e,All,2.575000832915695,Mt CO2e
+2036,6005,Conditional NDC,fgtv_by_gas,fgtv_ch4_mt_co2e,All,4.525756403600862,Mt CO2e
+2036,6005,Conditional NDC,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.021228542764392656,Mt CO2e
+2036,6005,Conditional NDC,fgtv_by_gas,total_fgtv_mt_co2e,All,7.12198577928071,Mt CO2e
+2037,6005,Conditional NDC,fgtv_by_gas,fgtv_co2_mt_co2e,All,2.273172022940045,Mt CO2e
+2037,6005,Conditional NDC,fgtv_by_gas,fgtv_ch4_mt_co2e,All,3.2430243050276957,Mt CO2e
+2037,6005,Conditional NDC,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.020936951421577015,Mt CO2e
+2037,6005,Conditional NDC,fgtv_by_gas,total_fgtv_mt_co2e,All,5.537133279389074,Mt CO2e
+2038,6005,Conditional NDC,fgtv_by_gas,fgtv_co2_mt_co2e,All,1.9925212384332724,Mt CO2e
+2038,6005,Conditional NDC,fgtv_by_gas,fgtv_ch4_mt_co2e,All,1.975348688616494,Mt CO2e
+2038,6005,Conditional NDC,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.020684369698311004,Mt CO2e
+2038,6005,Conditional NDC,fgtv_by_gas,total_fgtv_mt_co2e,All,3.9885542967478305,Mt CO2e
+2039,6005,Conditional NDC,fgtv_by_gas,fgtv_co2_mt_co2e,All,1.732353094252703,Mt CO2e
+2039,6005,Conditional NDC,fgtv_by_gas,fgtv_ch4_mt_co2e,All,0.7331547361702011,Mt CO2e
+2039,6005,Conditional NDC,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.020466952278936374,Mt CO2e
+2039,6005,Conditional NDC,fgtv_by_gas,total_fgtv_mt_co2e,All,2.4859747827015877,Mt CO2e
+2040,6005,Conditional NDC,fgtv_by_gas,fgtv_co2_mt_co2e,All,1.4915029509647277,Mt CO2e
+2040,6005,Conditional NDC,fgtv_by_gas,fgtv_ch4_mt_co2e,All,0.0,Mt CO2e
+2040,6005,Conditional NDC,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.020280648849055984,Mt CO2e
+2040,6005,Conditional NDC,fgtv_by_gas,total_fgtv_mt_co2e,All,1.0368276301707997,Mt CO2e
+2041,6005,Conditional NDC,fgtv_by_gas,fgtv_co2_mt_co2e,All,1.2684028340956421,Mt CO2e
+2041,6005,Conditional NDC,fgtv_by_gas,fgtv_ch4_mt_co2e,All,0.0,Mt CO2e
+2041,6005,Conditional NDC,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.020121331536785726,Mt CO2e
+2041,6005,Conditional NDC,fgtv_by_gas,total_fgtv_mt_co2e,All,0.0,Mt CO2e
+2042,6005,Conditional NDC,fgtv_by_gas,fgtv_co2_mt_co2e,All,1.0611371527420945,Mt CO2e
+2042,6005,Conditional NDC,fgtv_by_gas,fgtv_ch4_mt_co2e,All,0.0,Mt CO2e
+2042,6005,Conditional NDC,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.020108135054551637,Mt CO2e
+2042,6005,Conditional NDC,fgtv_by_gas,total_fgtv_mt_co2e,All,0.0,Mt CO2e
+2043,6005,Conditional NDC,fgtv_by_gas,fgtv_co2_mt_co2e,All,0.8675614502670789,Mt CO2e
+2043,6005,Conditional NDC,fgtv_by_gas,fgtv_ch4_mt_co2e,All,0.0,Mt CO2e
+2043,6005,Conditional NDC,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.020108135054551637,Mt CO2e
+2043,6005,Conditional NDC,fgtv_by_gas,total_fgtv_mt_co2e,All,0.0,Mt CO2e
+2044,6005,Conditional NDC,fgtv_by_gas,fgtv_co2_mt_co2e,All,0.6854115054404912,Mt CO2e
+2044,6005,Conditional NDC,fgtv_by_gas,fgtv_ch4_mt_co2e,All,0.0,Mt CO2e
+2044,6005,Conditional NDC,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.020108135054551637,Mt CO2e
+2044,6005,Conditional NDC,fgtv_by_gas,total_fgtv_mt_co2e,All,0.0,Mt CO2e
+2045,6005,Conditional NDC,fgtv_by_gas,fgtv_co2_mt_co2e,All,0.5124041402508748,Mt CO2e
+2045,6005,Conditional NDC,fgtv_by_gas,fgtv_ch4_mt_co2e,All,0.0,Mt CO2e
+2045,6005,Conditional NDC,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.020108135054551637,Mt CO2e
+2045,6005,Conditional NDC,fgtv_by_gas,total_fgtv_mt_co2e,All,0.0,Mt CO2e
+2046,6005,Conditional NDC,fgtv_by_gas,fgtv_co2_mt_co2e,All,0.34633115948472104,Mt CO2e
+2046,6005,Conditional NDC,fgtv_by_gas,fgtv_ch4_mt_co2e,All,0.0,Mt CO2e
+2046,6005,Conditional NDC,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.020108135054551637,Mt CO2e
+2046,6005,Conditional NDC,fgtv_by_gas,total_fgtv_mt_co2e,All,0.0,Mt CO2e
+2047,6005,Conditional NDC,fgtv_by_gas,fgtv_co2_mt_co2e,All,0.2703466355692763,Mt CO2e
+2047,6005,Conditional NDC,fgtv_by_gas,fgtv_ch4_mt_co2e,All,0.0,Mt CO2e
+2047,6005,Conditional NDC,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.020108135054551637,Mt CO2e
+2047,6005,Conditional NDC,fgtv_by_gas,total_fgtv_mt_co2e,All,0.0,Mt CO2e
+2048,6005,Conditional NDC,fgtv_by_gas,fgtv_co2_mt_co2e,All,0.2703466355692763,Mt CO2e
+2048,6005,Conditional NDC,fgtv_by_gas,fgtv_ch4_mt_co2e,All,0.0,Mt CO2e
+2048,6005,Conditional NDC,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.020108135054551637,Mt CO2e
+2048,6005,Conditional NDC,fgtv_by_gas,total_fgtv_mt_co2e,All,0.0,Mt CO2e
+2049,6005,Conditional NDC,fgtv_by_gas,fgtv_co2_mt_co2e,All,0.2703466355692763,Mt CO2e
+2049,6005,Conditional NDC,fgtv_by_gas,fgtv_ch4_mt_co2e,All,0.0,Mt CO2e
+2049,6005,Conditional NDC,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.020108135054551637,Mt CO2e
+2049,6005,Conditional NDC,fgtv_by_gas,total_fgtv_mt_co2e,All,0.0,Mt CO2e
+2050,6005,Conditional NDC,fgtv_by_gas,fgtv_co2_mt_co2e,All,0.2703466355692763,Mt CO2e
+2050,6005,Conditional NDC,fgtv_by_gas,fgtv_ch4_mt_co2e,All,0.0,Mt CO2e
+2050,6005,Conditional NDC,fgtv_by_gas,fgtv_n2o_mt_co2e,All,0.020108135054551637,Mt CO2e
+2050,6005,Conditional NDC,fgtv_by_gas,total_fgtv_mt_co2e,All,0.0,Mt CO2e
+2023,6003,BAU,fgtv_components_by_gas,flaring_co2_mt_co2e,All,6.23380136718604,Mt CO2e
+2024,6003,BAU,fgtv_components_by_gas,flaring_co2_mt_co2e,All,7.1007125133853055,Mt CO2e
+2025,6003,BAU,fgtv_components_by_gas,flaring_co2_mt_co2e,All,7.968296899946287,Mt CO2e
+2026,6003,BAU,fgtv_components_by_gas,flaring_co2_mt_co2e,All,8.837190411282357,Mt CO2e
+2027,6003,BAU,fgtv_components_by_gas,flaring_co2_mt_co2e,All,9.708166416289899,Mt CO2e
+2028,6003,BAU,fgtv_components_by_gas,flaring_co2_mt_co2e,All,10.581910965471081,Mt CO2e
+2029,6003,BAU,fgtv_components_by_gas,flaring_co2_mt_co2e,All,11.458796847086266,Mt CO2e
+2030,6003,BAU,fgtv_components_by_gas,flaring_co2_mt_co2e,All,12.3390121972853,Mt CO2e
+2031,6003,BAU,fgtv_components_by_gas,flaring_co2_mt_co2e,All,13.22272769767925,Mt CO2e
+2032,6003,BAU,fgtv_components_by_gas,flaring_co2_mt_co2e,All,14.110307418101396,Mt CO2e
+2033,6003,BAU,fgtv_components_by_gas,flaring_co2_mt_co2e,All,15.002239653844242,Mt CO2e
+2034,6003,BAU,fgtv_components_by_gas,flaring_co2_mt_co2e,All,15.89907519570911,Mt CO2e
+2035,6003,BAU,fgtv_components_by_gas,flaring_co2_mt_co2e,All,16.801372898943935,Mt CO2e
+2036,6003,BAU,fgtv_components_by_gas,flaring_co2_mt_co2e,All,17.709652376842786,Mt CO2e
+2037,6003,BAU,fgtv_components_by_gas,flaring_co2_mt_co2e,All,18.624353654048612,Mt CO2e
+2038,6003,BAU,fgtv_components_by_gas,flaring_co2_mt_co2e,All,19.545803630276108,Mt CO2e
+2039,6003,BAU,fgtv_components_by_gas,flaring_co2_mt_co2e,All,20.474189261576598,Mt CO2e
+2040,6003,BAU,fgtv_components_by_gas,flaring_co2_mt_co2e,All,21.409537439792146,Mt CO2e
+2041,6003,BAU,fgtv_components_by_gas,flaring_co2_mt_co2e,All,22.351701645064665,Mt CO2e
+2042,6003,BAU,fgtv_components_by_gas,flaring_co2_mt_co2e,All,23.300355537851797,Mt CO2e
+2043,6003,BAU,fgtv_components_by_gas,flaring_co2_mt_co2e,All,24.254999409096204,Mt CO2e
+2044,6003,BAU,fgtv_components_by_gas,flaring_co2_mt_co2e,All,25.214977977533675,Mt CO2e
+2045,6003,BAU,fgtv_components_by_gas,flaring_co2_mt_co2e,All,26.179507377633186,Mt CO2e
+2046,6003,BAU,fgtv_components_by_gas,flaring_co2_mt_co2e,All,27.147712006716656,Mt CO2e
+2047,6003,BAU,fgtv_components_by_gas,flaring_co2_mt_co2e,All,28.11867198186642,Mt CO2e
+2048,6003,BAU,fgtv_components_by_gas,flaring_co2_mt_co2e,All,29.09148202738113,Mt CO2e
+2049,6003,BAU,fgtv_components_by_gas,flaring_co2_mt_co2e,All,30.065322643278922,Mt CO2e
+2050,6003,BAU,fgtv_components_by_gas,flaring_co2_mt_co2e,All,31.039544398156664,Mt CO2e
+2023,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_co2_mt_co2e,All,6.23380136718604,Mt CO2e
+2024,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_co2_mt_co2e,All,5.876530175469052,Mt CO2e
+2025,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_co2_mt_co2e,All,5.519442611615947,Mt CO2e
+2026,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_co2_mt_co2e,All,5.162664412545021,Mt CO2e
+2027,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_co2_mt_co2e,All,4.806792249925674,Mt CO2e
+2028,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_co2_mt_co2e,All,4.4529356125320225,Mt CO2e
+2029,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_co2_mt_co2e,All,4.102715902272975,Mt CO2e
+2030,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_co2_mt_co2e,All,3.7582261192318374,Mt CO2e
+2031,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_co2_mt_co2e,All,3.42194956899163,Mt CO2e
+2032,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_co2_mt_co2e,All,3.096643702746547,Mt CO2e
+2033,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_co2_mt_co2e,All,2.7850993639577104,Mt CO2e
+2034,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_co2_mt_co2e,All,2.489901853898548,Mt CO2e
+2035,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_co2_mt_co2e,All,2.2131926998244076,Mt CO2e
+2036,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_co2_mt_co2e,All,1.9564311175725002,Mt CO2e
+2037,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_co2_mt_co2e,All,1.720154432796987,Mt CO2e
+2038,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_co2_mt_co2e,All,1.5041378214999588,Mt CO2e
+2039,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_co2_mt_co2e,All,1.307541041237983,Mt CO2e
+2040,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_co2_mt_co2e,All,1.1290424213300443,Mt CO2e
+2041,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_co2_mt_co2e,All,0.9669606287449134,Mt CO2e
+2042,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_co2_mt_co2e,All,0.8193650380700489,Mt CO2e
+2043,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_co2_mt_co2e,All,0.6841758374572768,Mt CO2e
+2044,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_co2_mt_co2e,All,0.5592550072384171,Mt CO2e
+2045,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_co2_mt_co2e,All,0.4424894764633118,Mt CO2e
+2046,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_co2_mt_co2e,All,0.3318677954115916,Mt CO2e
+2047,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_co2_mt_co2e,All,0.2938045822124957,Mt CO2e
+2048,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_co2_mt_co2e,All,0.2938045822124957,Mt CO2e
+2049,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_co2_mt_co2e,All,0.2938045822124957,Mt CO2e
+2050,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_co2_mt_co2e,All,0.2938045822124957,Mt CO2e
+2023,6005,Conditional NDC,fgtv_components_by_gas,flaring_co2_mt_co2e,All,6.23380136718604,Mt CO2e
+2024,6005,Conditional NDC,fgtv_components_by_gas,flaring_co2_mt_co2e,All,5.8718884994796525,Mt CO2e
+2025,6005,Conditional NDC,fgtv_components_by_gas,flaring_co2_mt_co2e,All,5.510395911786684,Mt CO2e
+2026,6005,Conditional NDC,fgtv_components_by_gas,flaring_co2_mt_co2e,All,5.149925829832567,Mt CO2e
+2027,6005,Conditional NDC,fgtv_components_by_gas,flaring_co2_mt_co2e,All,4.791794242458728,Mt CO2e
+2028,6005,Conditional NDC,fgtv_components_by_gas,flaring_co2_mt_co2e,All,4.437914496851143,Mt CO2e
+2029,6005,Conditional NDC,fgtv_components_by_gas,flaring_co2_mt_co2e,All,4.090654038926436,Mt CO2e
+2030,6005,Conditional NDC,fgtv_components_by_gas,flaring_co2_mt_co2e,All,3.7526729142609865,Mt CO2e
+2031,6005,Conditional NDC,fgtv_components_by_gas,flaring_co2_mt_co2e,All,3.426750120209653,Mt CO2e
+2032,6005,Conditional NDC,fgtv_components_by_gas,flaring_co2_mt_co2e,All,3.115610494847241,Mt CO2e
+2033,6005,Conditional NDC,fgtv_components_by_gas,flaring_co2_mt_co2e,All,2.821691554460164,Mt CO2e
+2034,6005,Conditional NDC,fgtv_components_by_gas,flaring_co2_mt_co2e,All,2.5469561355466173,Mt CO2e
+2035,6005,Conditional NDC,fgtv_components_by_gas,flaring_co2_mt_co2e,All,2.292751505364947,Mt CO2e
+2036,6005,Conditional NDC,fgtv_components_by_gas,flaring_co2_mt_co2e,All,2.0597158988520885,Mt CO2e
+2037,6005,Conditional NDC,fgtv_components_by_gas,flaring_co2_mt_co2e,All,1.8477338400648695,Mt CO2e
+2038,6005,Conditional NDC,fgtv_components_by_gas,flaring_co2_mt_co2e,All,1.6560789953896378,Mt CO2e
+2039,6005,Conditional NDC,fgtv_components_by_gas,flaring_co2_mt_co2e,All,1.4835436689209436,Mt CO2e
+2040,6005,Conditional NDC,fgtv_components_by_gas,flaring_co2_mt_co2e,All,1.3285555030389338,Mt CO2e
+2041,6005,Conditional NDC,fgtv_components_by_gas,flaring_co2_mt_co2e,All,1.1892821410159309,Mt CO2e
+2042,6005,Conditional NDC,fgtv_components_by_gas,flaring_co2_mt_co2e,All,1.0637248376576791,Mt CO2e
+2043,6005,Conditional NDC,fgtv_components_by_gas,flaring_co2_mt_co2e,All,0.949803372448579,Mt CO2e
+2044,6005,Conditional NDC,fgtv_components_by_gas,flaring_co2_mt_co2e,All,0.8454323546993613,Mt CO2e
+2045,6005,Conditional NDC,fgtv_components_by_gas,flaring_co2_mt_co2e,All,0.7485902264540234,Mt CO2e
+2046,6005,Conditional NDC,fgtv_components_by_gas,flaring_co2_mt_co2e,All,0.672448021468834,Mt CO2e
+2047,6005,Conditional NDC,fgtv_components_by_gas,flaring_co2_mt_co2e,All,0.672448021468834,Mt CO2e
+2048,6005,Conditional NDC,fgtv_components_by_gas,flaring_co2_mt_co2e,All,0.672448021468834,Mt CO2e
+2049,6005,Conditional NDC,fgtv_components_by_gas,flaring_co2_mt_co2e,All,0.672448021468834,Mt CO2e
+2050,6005,Conditional NDC,fgtv_components_by_gas,flaring_co2_mt_co2e,All,0.672448021468834,Mt CO2e
+2023,6003,BAU,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.025726617117425566,Mt CO2e
+2024,6003,BAU,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.02956362733954257,Mt CO2e
+2025,6003,BAU,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.03340434126124703,Mt CO2e
+2026,6003,BAU,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.03725310558222113,Mt CO2e
+2027,6003,BAU,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.041115399529482566,Mt CO2e
+2028,6003,BAU,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.04499671824258565,Mt CO2e
+2029,6003,BAU,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.048901448419688194,Mt CO2e
+2030,6003,BAU,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.05283319206606035,Mt CO2e
+2031,6003,BAU,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.056795341752659094,Mt CO2e
+2032,6003,BAU,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.06079185526290247,Mt CO2e
+2033,6003,BAU,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.0648269110154689,Mt CO2e
+2034,6003,BAU,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.06890460270918958,Mt CO2e
+2035,6003,BAU,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.07302867221838516,Mt CO2e
+2036,6003,BAU,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.07720227984517139,Mt CO2e
+2037,6003,BAU,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.08142781134806365,Mt CO2e
+2038,6003,BAU,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.0857067215239421,Mt CO2e
+2039,6003,BAU,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.09003941466634205,Mt CO2e
+2040,6003,BAU,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.09442516285111605,Mt CO2e
+2041,6003,BAU,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.0988620637211663,Mt CO2e
+2042,6003,BAU,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.10334704014926288,Mt CO2e
+2043,6003,BAU,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.10787590758995846,Mt CO2e
+2044,6003,BAU,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.11244350542348353,Mt CO2e
+2045,6003,BAU,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.11704388630615192,Mt CO2e
+2046,6003,BAU,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.12167056914048527,Mt CO2e
+2047,6003,BAU,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.12631686181779708,Mt CO2e
+2048,6003,BAU,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.13097626031635928,Mt CO2e
+2049,6003,BAU,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.1356429309218197,Mt CO2e
+2050,6003,BAU,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.1403122822711541,Mt CO2e
+2023,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.025726617117425566,Mt CO2e
+2024,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.024258206857861446,Mt CO2e
+2025,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.022790490053924486,Mt CO2e
+2026,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.021323906879678372,Mt CO2e
+2027,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.01986078231274995,Mt CO2e
+2028,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.018405497004842047,Mt CO2e
+2029,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.01696448300534433,Mt CO2e
+2030,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.015546106836545358,Mt CO2e
+2031,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.01416040254339119,Mt CO2e
+2032,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.012818635489747272,Mt CO2e
+2033,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.011532329455892812,Mt CO2e
+2034,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.010312274021422055,Mt CO2e
+2035,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.009167511182608744,Mt CO2e
+2036,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.008104299959622599,Mt CO2e
+2037,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.007125058372374611,Mt CO2e
+2038,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.00622902503880989,Mt CO2e
+2039,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.005412867387470636,Mt CO2e
+2040,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.0046712375117160514,Mt CO2e
+2041,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.003997277714467794,Mt CO2e
+2042,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.0033830790972702164,Mt CO2e
+2043,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.002820097788438433,Mt CO2e
+2044,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.0022995334957732496,Mt CO2e
+2045,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.0018126757477360507,Mt CO2e
+2046,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.001351223331785432,Mt CO2e
+2047,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.0011095290034632693,Mt CO2e
+2048,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.0011095290034632693,Mt CO2e
+2049,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.0011095290034632693,Mt CO2e
+2050,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.0011095290034632693,Mt CO2e
+2023,6005,Conditional NDC,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.025726617117425566,Mt CO2e
+2024,6005,Conditional NDC,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.024236683866094146,Mt CO2e
+2025,6005,Conditional NDC,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.022748422641764656,Mt CO2e
+2026,6005,Conditional NDC,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.021264250056539754,Mt CO2e
+2027,6005,Conditional NDC,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.019789483144775428,Mt CO2e
+2028,6005,Conditional NDC,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.018331861635046985,Mt CO2e
+2029,6005,Conditional NDC,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.01690095976416882,Mt CO2e
+2030,6005,Conditional NDC,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.015507563940766028,Mt CO2e
+2031,6005,Conditional NDC,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.014163009204155298,Mt CO2e
+2032,6005,Conditional NDC,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.012878490981818907,Mt CO2e
+2033,6005,Conditional NDC,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.011664107134489886,Mt CO2e
+2034,6005,Conditional NDC,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.010528068984969888,Mt CO2e
+2035,6005,Conditional NDC,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.009476091408350273,Mt CO2e
+2036,6005,Conditional NDC,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.00851097247179147,Mt CO2e
+2037,6005,Conditional NDC,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.007632374179910133,Mt CO2e
+2038,6005,Conditional NDC,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.006837413714884649,Mt CO2e
+2039,6005,Conditional NDC,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.006121199696821733,Mt CO2e
+2040,6005,Conditional NDC,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.005477315737012896,Mt CO2e
+2041,6005,Conditional NDC,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.004898254350438065,Mt CO2e
+2042,6005,Conditional NDC,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.004375805251955194,Mt CO2e
+2043,6005,Conditional NDC,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.0039014080931078395,Mt CO2e
+2044,6005,Conditional NDC,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.003466469663672358,Mt CO2e
+2045,6005,Conditional NDC,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.0030626509323398027,Mt CO2e
+2046,6005,Conditional NDC,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.0026821293081934045,Mt CO2e
+2047,6005,Conditional NDC,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.002675243203080286,Mt CO2e
+2048,6005,Conditional NDC,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.002675243203080286,Mt CO2e
+2049,6005,Conditional NDC,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.002675243203080286,Mt CO2e
+2050,6005,Conditional NDC,fgtv_components_by_gas,flaring_ch4_mt_co2e,All,0.002675243203080286,Mt CO2e
+2023,6003,BAU,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.007809269982253241,Mt CO2e
+2024,6003,BAU,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.008316313078571256,Mt CO2e
+2025,6003,BAU,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.008825534095597963,Mt CO2e
+2026,6003,BAU,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.009338655570660666,Mt CO2e
+2027,6003,BAU,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.009857124067540404,Mt CO2e
+2028,6003,BAU,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.010382008695394539,Mt CO2e
+2029,6003,BAU,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.010913896389149618,Mt CO2e
+2030,6003,BAU,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.011453030607937044,Mt CO2e
+2031,6003,BAU,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.01199946896732982,Mt CO2e
+2032,6003,BAU,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.012553266351990888,Mt CO2e
+2033,6003,BAU,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.01311446072860668,Mt CO2e
+2034,6003,BAU,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.013683060164360224,Mt CO2e
+2035,6003,BAU,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.014259031098402809,Mt CO2e
+2036,6003,BAU,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.014842287930518575,Mt CO2e
+2037,6003,BAU,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.015432684024105567,Mt CO2e
+2038,6003,BAU,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.01603000424673439,Mt CO2e
+2039,6003,BAU,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.016633959212145628,Mt CO2e
+2040,6003,BAU,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.017244181430569706,Mt CO2e
+2041,6003,BAU,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.01786022362308236,Mt CO2e
+2042,6003,BAU,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.018481559498187212,Mt CO2e
+2043,6003,BAU,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.019107591276314114,Mt CO2e
+2044,6003,BAU,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.019737663030591553,Mt CO2e
+2045,6003,BAU,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.020371078425914384,Mt CO2e
+2046,6003,BAU,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.021007123378760893,Mt CO2e
+2047,6003,BAU,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.021645094184991467,Mt CO2e
+2048,6003,BAU,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.022284331679784337,Mt CO2e
+2049,6003,BAU,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.022924261987025848,Mt CO2e
+2050,6003,BAU,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.0235644443871683,Mt CO2e
+2023,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.007809269982253241,Mt CO2e
+2024,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.007481604740847198,Mt CO2e
+2025,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.007155829465519087,Mt CO2e
+2026,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.006833406322496204,Mt CO2e
+2027,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.006515784383341687,Mt CO2e
+2028,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.006204473309921953,Mt CO2e
+2029,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.005901084737149544,Mt CO2e
+2030,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.005607340862024369,Mt CO2e
+2031,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.005325050559836259,Mt CO2e
+2032,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.005056058850121748,Mt CO2e
+2033,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.004802109726146159,Mt CO2e
+2034,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.0045647081189843525,Mt CO2e
+2035,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.004344980160025864,Mt CO2e
+2036,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.0041435310704842545,Mt CO2e
+2037,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.003960300262027791,Mt CO2e
+2038,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.0037946867913906984,Mt CO2e
+2039,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.003645663311434367,Mt CO2e
+2040,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.0035118789671418744,Mt CO2e
+2041,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.00339175187325026,Mt CO2e
+2042,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.0032835520190910425,Mt CO2e
+2043,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.0031854756372746793,Mt CO2e
+2044,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.003095712075704667,Mt CO2e
+2045,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.0030239457246907363,Mt CO2e
+2046,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.0030239457246907363,Mt CO2e
+2047,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.0030239457246907363,Mt CO2e
+2048,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.0030239457246907363,Mt CO2e
+2049,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.0030239457246907363,Mt CO2e
+2050,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.0030239457246907363,Mt CO2e
+2023,6005,Conditional NDC,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.007809269982253241,Mt CO2e
+2024,6005,Conditional NDC,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.007478714202376069,Mt CO2e
+2025,6005,Conditional NDC,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.007150212521438918,Mt CO2e
+2026,6005,Conditional NDC,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.006825557137988911,Mt CO2e
+2027,6005,Conditional NDC,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.006506694725971398,Mt CO2e
+2028,6005,Conditional NDC,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.00619569013475735,Mt CO2e
+2029,6005,Conditional NDC,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.00589466888663389,Mt CO2e
+2030,6005,Conditional NDC,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.00560574207396866,Mt CO2e
+2031,6005,Conditional NDC,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.005330919276203235,Mt CO2e
+2032,6005,Conditional NDC,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.005072019443300304,Mt CO2e
+2033,6005,Conditional NDC,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.004830539832681648,Mt CO2e
+2034,6005,Conditional NDC,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.004607554199094986,Mt CO2e
+2035,6005,Conditional NDC,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.004403640443722005,Mt CO2e
+2036,6005,Conditional NDC,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.0042188382305046925,Mt CO2e
+2037,6005,Conditional NDC,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.004052637426159575,Mt CO2e
+2038,6005,Conditional NDC,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.0039040918998464623,Mt CO2e
+2039,6005,Conditional NDC,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.0037719215831432643,Mt CO2e
+2040,6005,Conditional NDC,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.003654603443625874,Mt CO2e
+2041,6005,Conditional NDC,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.003550452173191789,Mt CO2e
+2042,6005,Conditional NDC,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.003457691544858368,Mt CO2e
+2043,6005,Conditional NDC,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.0033745182898048728,Mt CO2e
+2044,6005,Conditional NDC,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.0032991588350195647,Mt CO2e
+2045,6005,Conditional NDC,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.0032865583040317947,Mt CO2e
+2046,6005,Conditional NDC,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.0032865583040317947,Mt CO2e
+2047,6005,Conditional NDC,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.0032865583040317947,Mt CO2e
+2048,6005,Conditional NDC,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.0032865583040317947,Mt CO2e
+2049,6005,Conditional NDC,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.0032865583040317947,Mt CO2e
+2050,6005,Conditional NDC,fgtv_components_by_gas,flaring_n2o_mt_co2e,All,0.0032865583040317947,Mt CO2e
+2023,6003,BAU,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.5084709613723827,Mt CO2e
+2024,6003,BAU,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.5046872266563384,Mt CO2e
+2025,6003,BAU,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.5008309977050133,Mt CO2e
+2026,6003,BAU,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.4967323116007346,Mt CO2e
+2027,6003,BAU,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.4921819846779597,Mt CO2e
+2028,6003,BAU,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.48695801511902725,Mt CO2e
+2029,6003,BAU,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.48085227737905567,Mt CO2e
+2030,6003,BAU,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.4736827854209059,Mt CO2e
+2031,6003,BAU,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.46530534569862814,Mt CO2e
+2032,6003,BAU,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.45562433813891556,Mt CO2e
+2033,6003,BAU,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.4445862536248979,Mt CO2e
+2034,6003,BAU,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.4321737050498825,Mt CO2e
+2035,6003,BAU,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.41839993777760265,Mt CO2e
+2036,6003,BAU,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.40330384260095176,Mt CO2e
+2037,6003,BAU,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.38694545498188027,Mt CO2e
+2038,6003,BAU,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.36940190814736634,Mt CO2e
+2039,6003,BAU,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.3507637942259811,Mt CO2e
+2040,6003,BAU,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.33113187674330136,Mt CO2e
+2041,6003,BAU,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.31061408920041805,Mt CO2e
+2042,6003,BAU,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.2893227479104482,Mt CO2e
+2043,6003,BAU,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.26737201796813137,Mt CO2e
+2044,6003,BAU,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.24487548249969293,Mt CO2e
+2045,6003,BAU,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.22194367077639504,Mt CO2e
+2046,6003,BAU,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.19868146303884016,Mt CO2e
+2047,6003,BAU,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.17518529151186046,Mt CO2e
+2048,6003,BAU,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.15154006033804418,Mt CO2e
+2049,6003,BAU,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.127815712148948,Mt CO2e
+2050,6003,BAU,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.10406337590132161,Mt CO2e
+2023,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_co2_mt_co2e,All,0.5084709613723827,Mt CO2e
+2024,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_co2_mt_co2e,All,0.5325874183846029,Mt CO2e
+2025,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_co2_mt_co2e,All,0.5566194191622033,Mt CO2e
+2026,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_co2_mt_co2e,All,0.580368329387529,Mt CO2e
+2027,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_co2_mt_co2e,All,0.6035796538807802,Mt CO2e
+2028,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_co2_mt_co2e,All,0.6259618599726798,Mt CO2e
+2029,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_co2_mt_co2e,All,0.6472058530748998,Mt CO2e
+2030,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_co2_mt_co2e,All,0.6670060052235217,Mt CO2e
+2031,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_co2_mt_co2e,All,0.6850824739253438,Mt CO2e
+2032,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_co2_mt_co2e,All,0.7012044953258556,Mt CO2e
+2033,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_co2_mt_co2e,All,0.7151920808017135,Mt CO2e
+2034,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_co2_mt_co2e,All,0.7269182377243675,Mt CO2e
+2035,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_co2_mt_co2e,All,0.7363118092427613,Mt CO2e
+2036,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_co2_mt_co2e,All,0.7433609931935562,Mt CO2e
+2037,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_co2_mt_co2e,All,0.7481175639674538,Mt CO2e
+2038,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_co2_mt_co2e,All,0.7506847935814327,Mt CO2e
+2039,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_co2_mt_co2e,All,0.751206634304315,Mt CO2e
+2040,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_co2_mt_co2e,All,0.749858108319676,Mt CO2e
+2041,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_co2_mt_co2e,All,0.7468366243421585,Mt CO2e
+2042,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_co2_mt_co2e,All,0.7423541161922054,Mt CO2e
+2043,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_co2_mt_co2e,All,0.736629584990123,Mt CO2e
+2044,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_co2_mt_co2e,All,0.7298822226102175,Mt CO2e
+2045,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_co2_mt_co2e,All,0.7223249812900406,Mt CO2e
+2046,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_co2_mt_co2e,All,0.7141584537703473,Mt CO2e
+2047,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_co2_mt_co2e,All,0.7055649320440425,Mt CO2e
+2048,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_co2_mt_co2e,All,0.696702520545474,Mt CO2e
+2049,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_co2_mt_co2e,All,0.6876991913460521,Mt CO2e
+2050,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_co2_mt_co2e,All,0.6786466846738868,Mt CO2e
+2023,6005,Conditional NDC,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.5084709613723827,Mt CO2e
+2024,6005,Conditional NDC,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.4840222354087528,Mt CO2e
+2025,6005,Conditional NDC,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.459460119024351,Mt CO2e
+2026,6005,Conditional NDC,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.43455851644997645,Mt CO2e
+2027,6005,Conditional NDC,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.40906737452091435,Mt CO2e
+2028,6005,Conditional NDC,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.382742434661379,Mt CO2e
+2029,6005,Conditional NDC,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.3553715484593931,Mt CO2e
+2030,6005,Conditional NDC,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.32679795492378716,Mt CO2e
+2031,6005,Conditional NDC,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.2969398884289436,Mt CO2e
+2032,6005,Conditional NDC,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.2658058269854293,Mt CO2e
+2033,6005,Conditional NDC,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.2334895583947209,Mt CO2e
+2034,6005,Conditional NDC,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.20016249823204485,Mt CO2e
+2035,6005,Conditional NDC,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.1660631054420843,Mt CO2e
+2036,6005,Conditional NDC,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.13148318834773076,Mt CO2e
+2037,6005,Conditional NDC,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.09675084771841619,Mt CO2e
+2038,6005,Conditional NDC,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.06220402898145888,Mt CO2e
+2039,6005,Conditional NDC,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.028162916095156476,Mt CO2e
+2040,6005,Conditional NDC,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.0,Mt CO2e
+2041,6005,Conditional NDC,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.0,Mt CO2e
+2042,6005,Conditional NDC,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.0,Mt CO2e
+2043,6005,Conditional NDC,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.0,Mt CO2e
+2044,6005,Conditional NDC,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.0,Mt CO2e
+2045,6005,Conditional NDC,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.0,Mt CO2e
+2046,6005,Conditional NDC,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.0,Mt CO2e
+2047,6005,Conditional NDC,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.0,Mt CO2e
+2048,6005,Conditional NDC,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.0,Mt CO2e
+2049,6005,Conditional NDC,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.0,Mt CO2e
+2050,6005,Conditional NDC,fgtv_components_by_gas,venting_co2_mt_co2e,All,0.0,Mt CO2e
+2023,6003,BAU,fgtv_components_by_gas,venting_ch4_mt_co2e,All,15.16172106426309,Mt CO2e
+2024,6003,BAU,fgtv_components_by_gas,venting_ch4_mt_co2e,All,15.050124536848578,Mt CO2e
+2025,6003,BAU,fgtv_components_by_gas,venting_ch4_mt_co2e,All,14.935918266289278,Mt CO2e
+2026,6003,BAU,fgtv_components_by_gas,venting_ch4_mt_co2e,All,14.813516510373393,Mt CO2e
+2027,6003,BAU,fgtv_components_by_gas,venting_ch4_mt_co2e,All,14.676176769470842,Mt CO2e
+2028,6003,BAU,fgtv_components_by_gas,venting_ch4_mt_co2e,All,14.51682218248683,Mt CO2e
+2029,6003,BAU,fgtv_components_by_gas,venting_ch4_mt_co2e,All,14.3288735503181,Mt CO2e
+2030,6003,BAU,fgtv_components_by_gas,venting_ch4_mt_co2e,All,14.106632082033215,Mt CO2e
+2031,6003,BAU,fgtv_components_by_gas,venting_ch4_mt_co2e,All,13.845632431661212,Mt CO2e
+2032,6003,BAU,fgtv_components_by_gas,venting_ch4_mt_co2e,All,13.542968095170316,Mt CO2e
+2033,6003,BAU,fgtv_components_by_gas,venting_ch4_mt_co2e,All,13.197078045038534,Mt CO2e
+2034,6003,BAU,fgtv_components_by_gas,venting_ch4_mt_co2e,All,12.807549388882297,Mt CO2e
+2035,6003,BAU,fgtv_components_by_gas,venting_ch4_mt_co2e,All,12.374936834650068,Mt CO2e
+2036,6003,BAU,fgtv_components_by_gas,venting_ch4_mt_co2e,All,11.900599023726873,Mt CO2e
+2037,6003,BAU,fgtv_components_by_gas,venting_ch4_mt_co2e,All,11.386551185155437,Mt CO2e
+2038,6003,BAU,fgtv_components_by_gas,venting_ch4_mt_co2e,All,10.835333057899318,Mt CO2e
+2039,6003,BAU,fgtv_components_by_gas,venting_ch4_mt_co2e,All,10.249890614076422,Mt CO2e
+2040,6003,BAU,fgtv_components_by_gas,venting_ch4_mt_co2e,All,9.633469784533009,Mt CO2e
+2041,6003,BAU,fgtv_components_by_gas,venting_ch4_mt_co2e,All,8.989520130484111,Mt CO2e
+2042,6003,BAU,fgtv_components_by_gas,venting_ch4_mt_co2e,All,8.32160621346654,Mt CO2e
+2043,6003,BAU,fgtv_components_by_gas,venting_ch4_mt_co2e,All,7.633327897482131,Mt CO2e
+2044,6003,BAU,fgtv_components_by_gas,venting_ch4_mt_co2e,All,6.928244923356495,Mt CO2e
+2045,6003,BAU,fgtv_components_by_gas,venting_ch4_mt_co2e,All,6.209801281881878,Mt CO2e
+2046,6003,BAU,fgtv_components_by_gas,venting_ch4_mt_co2e,All,5.481246877998387,Mt CO2e
+2047,6003,BAU,fgtv_components_by_gas,venting_ch4_mt_co2e,All,4.745554044291051,Mt CO2e
+2048,6003,BAU,fgtv_components_by_gas,venting_ch4_mt_co2e,All,4.005326576924,Mt CO2e
+2049,6003,BAU,fgtv_components_by_gas,venting_ch4_mt_co2e,All,3.262699134016316,Mt CO2e
+2050,6003,BAU,fgtv_components_by_gas,venting_ch4_mt_co2e,All,2.519225060028009,Mt CO2e
+2023,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_ch4_mt_co2e,All,15.16172106426309,Mt CO2e
+2024,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_ch4_mt_co2e,All,15.900151559279504,Mt CO2e
+2025,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_ch4_mt_co2e,All,16.635585975599756,Mt CO2e
+2026,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_ch4_mt_co2e,All,17.361526515941275,Mt CO2e
+2027,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_ch4_mt_co2e,All,18.069803974403552,Mt CO2e
+2028,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_ch4_mt_co2e,All,18.751172798561083,Mt CO2e
+2029,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_ch4_mt_co2e,All,19.39592697126563,Mt CO2e
+2030,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_ch4_mt_co2e,All,19.994551396241175,Mt CO2e
+2031,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_ch4_mt_co2e,All,20.538402509701353,Mt CO2e
+2032,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_ch4_mt_co2e,All,21.020419273761483,Mt CO2e
+2033,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_ch4_mt_co2e,All,21.43515935175032,Mt CO2e
+2034,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_ch4_mt_co2e,All,21.77885295278198,Mt CO2e
+2035,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_ch4_mt_co2e,All,22.049477112688212,Mt CO2e
+2036,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_ch4_mt_co2e,All,22.2468521010564,Mt CO2e
+2037,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_ch4_mt_co2e,All,22.372760523818954,Mt CO2e
+2038,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_ch4_mt_co2e,All,22.43056569595337,Mt CO2e
+2039,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_ch4_mt_co2e,All,22.42487084928907,Mt CO2e
+2040,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_ch4_mt_co2e,All,22.361217249100044,Mt CO2e
+2041,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_ch4_mt_co2e,All,22.245812270088763,Mt CO2e
+2042,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_ch4_mt_co2e,All,22.085284002473763,Mt CO2e
+2043,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_ch4_mt_co2e,All,21.886452796264372,Mt CO2e
+2044,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_ch4_mt_co2e,All,21.65612150114354,Mt CO2e
+2045,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_ch4_mt_co2e,All,21.400880120612012,Mt CO2e
+2046,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_ch4_mt_co2e,All,21.126920601519455,Mt CO2e
+2047,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_ch4_mt_co2e,All,20.839857608556404,Mt CO2e
+2048,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_ch4_mt_co2e,All,20.54455138180458,Mt CO2e
+2049,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_ch4_mt_co2e,All,20.244929141126924,Mt CO2e
+2050,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_ch4_mt_co2e,All,19.943801984029683,Mt CO2e
+2023,6005,Conditional NDC,fgtv_components_by_gas,venting_ch4_mt_co2e,All,15.16172106426309,Mt CO2e
+2024,6005,Conditional NDC,fgtv_components_by_gas,venting_ch4_mt_co2e,All,14.41126268519459,Mt CO2e
+2025,6005,Conditional NDC,fgtv_components_by_gas,venting_ch4_mt_co2e,All,13.65696083212907,Mt CO2e
+2026,6005,Conditional NDC,fgtv_components_by_gas,venting_ch4_mt_co2e,All,12.891554438101643,Mt CO2e
+2027,6005,Conditional NDC,fgtv_components_by_gas,venting_ch4_mt_co2e,All,12.107127306538803,Mt CO2e
+2028,6005,Conditional NDC,fgtv_components_by_gas,venting_ch4_mt_co2e,All,11.296028082691173,Mt CO2e
+2029,6005,Conditional NDC,fgtv_components_by_gas,venting_ch4_mt_co2e,All,10.451683577963603,Mt CO2e
+2030,6005,Conditional NDC,fgtv_components_by_gas,venting_ch4_mt_co2e,All,9.569306541467515,Mt CO2e
+2031,6005,Conditional NDC,fgtv_components_by_gas,venting_ch4_mt_co2e,All,8.646481853902765,Mt CO2e
+2032,6005,Conditional NDC,fgtv_components_by_gas,venting_ch4_mt_co2e,All,7.683619747082531,Mt CO2e
+2033,6005,Conditional NDC,fgtv_components_by_gas,venting_ch4_mt_co2e,All,6.683782030973269,Mt CO2e
+2034,6005,Conditional NDC,fgtv_components_by_gas,venting_ch4_mt_co2e,All,5.652427207578784,Mt CO2e
+2035,6005,Conditional NDC,fgtv_components_by_gas,venting_ch4_mt_co2e,All,4.597069653208036,Mt CO2e
+2036,6005,Conditional NDC,fgtv_components_by_gas,venting_ch4_mt_co2e,All,3.52684645780832,Mt CO2e
+2037,6005,Conditional NDC,fgtv_components_by_gas,venting_ch4_mt_co2e,All,2.4519841330627816,Mt CO2e
+2038,6005,Conditional NDC,fgtv_components_by_gas,venting_ch4_mt_co2e,All,1.3829798657292534,Mt CO2e
+2039,6005,Conditional NDC,fgtv_components_by_gas,venting_ch4_mt_co2e,All,0.3297509344894154,Mt CO2e
+2040,6005,Conditional NDC,fgtv_components_by_gas,venting_ch4_mt_co2e,All,0.0,Mt CO2e
+2041,6005,Conditional NDC,fgtv_components_by_gas,venting_ch4_mt_co2e,All,0.0,Mt CO2e
+2042,6005,Conditional NDC,fgtv_components_by_gas,venting_ch4_mt_co2e,All,0.0,Mt CO2e
+2043,6005,Conditional NDC,fgtv_components_by_gas,venting_ch4_mt_co2e,All,0.0,Mt CO2e
+2044,6005,Conditional NDC,fgtv_components_by_gas,venting_ch4_mt_co2e,All,0.0,Mt CO2e
+2045,6005,Conditional NDC,fgtv_components_by_gas,venting_ch4_mt_co2e,All,0.0,Mt CO2e
+2046,6005,Conditional NDC,fgtv_components_by_gas,venting_ch4_mt_co2e,All,0.0,Mt CO2e
+2047,6005,Conditional NDC,fgtv_components_by_gas,venting_ch4_mt_co2e,All,0.0,Mt CO2e
+2048,6005,Conditional NDC,fgtv_components_by_gas,venting_ch4_mt_co2e,All,0.0,Mt CO2e
+2049,6005,Conditional NDC,fgtv_components_by_gas,venting_ch4_mt_co2e,All,0.0,Mt CO2e
+2050,6005,Conditional NDC,fgtv_components_by_gas,venting_ch4_mt_co2e,All,0.0,Mt CO2e
+2023,6003,BAU,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.0140633126573552,Mt CO2e
+2024,6003,BAU,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.013749101251094556,Mt CO2e
+2025,6003,BAU,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.01344190885285328,Mt CO2e
+2026,6003,BAU,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.013147180290388168,Mt CO2e
+2027,6003,BAU,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.012868978206442352,Mt CO2e
+2028,6003,BAU,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.012610167264096837,Mt CO2e
+2029,6003,BAU,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.012372588023072967,Mt CO2e
+2030,6003,BAU,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.01215721869657139,Mt CO2e
+2031,6003,BAU,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.0119643236382977,Mt CO2e
+2032,6003,BAU,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011793587948291502,Mt CO2e
+2033,6003,BAU,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011644238032337833,Mt CO2e
+2034,6003,BAU,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011515148311773409,Mt CO2e
+2035,6003,BAU,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011404934567184107,Mt CO2e
+2036,6003,BAU,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011312034619480306,Mt CO2e
+2037,6003,BAU,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011234777213487267,Mt CO2e
+2038,6003,BAU,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2039,6003,BAU,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2040,6003,BAU,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2041,6003,BAU,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2042,6003,BAU,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2043,6003,BAU,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2044,6003,BAU,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2045,6003,BAU,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2046,6003,BAU,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2047,6003,BAU,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2048,6003,BAU,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2049,6003,BAU,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2050,6003,BAU,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2023,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.0140633126573552,Mt CO2e
+2024,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.013749101251094556,Mt CO2e
+2025,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.01344190885285328,Mt CO2e
+2026,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.013147180290388168,Mt CO2e
+2027,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.012868978206442352,Mt CO2e
+2028,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.012610167264096837,Mt CO2e
+2029,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.012372588023072967,Mt CO2e
+2030,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.01215721869657139,Mt CO2e
+2031,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.0119643236382977,Mt CO2e
+2032,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011793587948291502,Mt CO2e
+2033,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011644238032337833,Mt CO2e
+2034,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011515148311773409,Mt CO2e
+2035,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011404934567184107,Mt CO2e
+2036,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011312034619480306,Mt CO2e
+2037,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011234777213487267,Mt CO2e
+2038,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2039,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2040,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2041,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2042,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2043,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2044,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2045,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2046,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2047,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2048,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2049,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2050,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2023,6005,Conditional NDC,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.0140633126573552,Mt CO2e
+2024,6005,Conditional NDC,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.013749101251094556,Mt CO2e
+2025,6005,Conditional NDC,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.01344190885285328,Mt CO2e
+2026,6005,Conditional NDC,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.013147180290388168,Mt CO2e
+2027,6005,Conditional NDC,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.012868978206442352,Mt CO2e
+2028,6005,Conditional NDC,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.012610167264096837,Mt CO2e
+2029,6005,Conditional NDC,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.012372588023072967,Mt CO2e
+2030,6005,Conditional NDC,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.01215721869657139,Mt CO2e
+2031,6005,Conditional NDC,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.0119643236382977,Mt CO2e
+2032,6005,Conditional NDC,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011793587948291502,Mt CO2e
+2033,6005,Conditional NDC,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011644238032337833,Mt CO2e
+2034,6005,Conditional NDC,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011515148311773409,Mt CO2e
+2035,6005,Conditional NDC,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011404934567184107,Mt CO2e
+2036,6005,Conditional NDC,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011312034619480306,Mt CO2e
+2037,6005,Conditional NDC,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011234777213487267,Mt CO2e
+2038,6005,Conditional NDC,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2039,6005,Conditional NDC,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2040,6005,Conditional NDC,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2041,6005,Conditional NDC,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2042,6005,Conditional NDC,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2043,6005,Conditional NDC,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2044,6005,Conditional NDC,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2045,6005,Conditional NDC,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2046,6005,Conditional NDC,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2047,6005,Conditional NDC,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2048,6005,Conditional NDC,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2049,6005,Conditional NDC,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2050,6005,Conditional NDC,fgtv_components_by_gas,venting_n2o_mt_co2e,All,0.011230412830986141,Mt CO2e
+2023,6003,BAU,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,1.0627208032415771,Mt CO2e
+2024,6003,BAU,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,1.0592922495152788,Mt CO2e
+2025,6003,BAU,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,1.0556882000800563,Mt CO2e
+2026,6003,BAU,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,1.05153320840899,Mt CO2e
+2027,6003,BAU,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,1.046370147023928,Mt CO2e
+2028,6003,BAU,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,1.039707542970561,Mt CO2e
+2029,6003,BAU,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,1.0310630777309426,Mt CO2e
+2030,6003,BAU,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,1.0200034495615582,Mt CO2e
+2031,6003,BAU,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,1.006177666205499,Mt CO2e
+2032,6003,BAU,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.9893513250350039,Mt CO2e
+2033,6003,BAU,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.9693911344618011,Mt CO2e
+2034,6003,BAU,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.946250523073823,Mt CO2e
+2035,6003,BAU,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.9199564105169409,Mt CO2e
+2036,6003,BAU,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.8905971543238551,Mt CO2e
+2037,6003,BAU,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.8583116548939562,Mt CO2e
+2038,6003,BAU,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.8232795468664285,Mt CO2e
+2039,6003,BAU,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.7857123779037227,Mt CO2e
+2040,6003,BAU,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.7458456497680395,Mt CO2e
+2041,6003,BAU,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.7039315797076989,Mt CO2e
+2042,6003,BAU,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.66023241340718,Mt CO2e
+2043,6003,BAU,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.6150142846896932,Mt CO2e
+2044,6003,BAU,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.5685413386628977,Mt CO2e
+2045,6003,BAU,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.5210698561276674,Mt CO2e
+2046,6003,BAU,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.4728421951132805,Mt CO2e
+2047,6003,BAU,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.42408036728286125,Mt CO2e
+2048,6003,BAU,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.3749790800293219,Mt CO2e
+2049,6003,BAU,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.3256980843886911,Mt CO2e
+2050,6003,BAU,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.2763536834671271,Mt CO2e
+2023,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_co2_mt_co2e,All,1.0627208032415771,Mt CO2e
+2024,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_co2_mt_co2e,All,1.0428449107093074,Mt CO2e
+2025,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_co2_mt_co2e,All,1.022800398747281,Mt CO2e
+2026,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_co2_mt_co2e,All,1.0022358921273982,Mt CO2e
+2027,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.9807458458341944,Mt CO2e
+2028,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.9579139143260673,Mt CO2e
+2029,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.9333518398883163,Mt CO2e
+2030,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.9067328456185015,Mt CO2e
+2031,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.8778180261723876,Mt CO2e
+2032,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.8464834735578175,Mt CO2e
+2033,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.8127002840005146,Mt CO2e
+2034,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.7765162147204696,Mt CO2e
+2035,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.7380390577140326,Mt CO2e
+2036,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.6974217403467764,Mt CO2e
+2037,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.6548491297681422,Mt CO2e
+2038,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.6105264836989786,Mt CO2e
+2039,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.5646694488787373,Mt CO2e
+2040,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.5174956484541692,Mt CO2e
+2041,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.46921764039251523,Mt CO2e
+2042,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.4200371453922572,Mt CO2e
+2043,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.3701405160831167,Mt CO2e
+2044,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.31969528137263115,Mt CO2e
+2045,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.26884768488980226,Mt CO2e
+2046,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.2177211450003309,Mt CO2e
+2047,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.16641557505473403,Mt CO2e
+2048,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.11500751897068884,Mt CO2e
+2049,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.06355107327096987,Mt CO2e
+2050,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.01207957922131303,Mt CO2e
+2023,6005,Conditional NDC,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,1.0627208032415771,Mt CO2e
+2024,6005,Conditional NDC,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,1.014483899037016,Mt CO2e
+2025,6005,Conditional NDC,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.9661090718870393,Mt CO2e
+2026,6005,Conditional NDC,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.9173240618391694,Mt CO2e
+2027,6005,Conditional NDC,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.8678685613469477,Mt CO2e
+2028,6005,Conditional NDC,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.8175262628092912,Mt CO2e
+2029,6005,Conditional NDC,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.766150499740541,Mt CO2e
+2030,6005,Conditional NDC,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.7136818466207677,Mt CO2e
+2031,6005,Conditional NDC,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.6601577120419084,Mt CO2e
+2032,6005,Conditional NDC,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.6057215440795818,Mt CO2e
+2033,6005,Conditional NDC,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.5505921277146926,Mt CO2e
+2034,6005,Conditional NDC,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.4950358962078746,Mt CO2e
+2035,6005,Conditional NDC,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.4393422383131068,Mt CO2e
+2036,6005,Conditional NDC,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.38380174571584647,Mt CO2e
+2037,6005,Conditional NDC,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.3286873351567309,Mt CO2e
+2038,6005,Conditional NDC,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.27423821406214755,Mt CO2e
+2039,6005,Conditional NDC,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.22064650923657497,Mt CO2e
+2040,6005,Conditional NDC,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.16804658928368638,Mt CO2e
+2041,6005,Conditional NDC,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.11650707306679953,Mt CO2e
+2042,6005,Conditional NDC,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.0660255549435867,Mt CO2e
+2043,6005,Conditional NDC,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.01654226279268889,Mt CO2e
+2044,6005,Conditional NDC,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.0,Mt CO2e
+2045,6005,Conditional NDC,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.0,Mt CO2e
+2046,6005,Conditional NDC,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.0,Mt CO2e
+2047,6005,Conditional NDC,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.0,Mt CO2e
+2048,6005,Conditional NDC,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.0,Mt CO2e
+2049,6005,Conditional NDC,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.0,Mt CO2e
+2050,6005,Conditional NDC,fgtv_components_by_gas,fugitive_co2_mt_co2e,All,0.0,Mt CO2e
+2023,6003,BAU,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,4.006471085631484,Mt CO2e
+2024,6003,BAU,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,3.970727308993726,Mt CO2e
+2025,6003,BAU,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,3.934394085901407,Mt CO2e
+2026,6003,BAU,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,3.896209045373814,Mt CO2e
+2027,6003,BAU,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,3.854714368991436,Mt CO2e
+2028,6003,BAU,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,3.8083885230488326,Mt CO2e
+2029,6003,BAU,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,3.755767023876076,Mt CO2e
+2030,6003,BAU,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,3.69555309033582,Mt CO2e
+2031,6003,BAU,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,3.62671384817501,Mt CO2e
+2032,6003,BAU,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,3.5485720831330534,Mt CO2e
+2033,6003,BAU,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,3.4607579552034418,Mt CO2e
+2034,6003,BAU,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,3.3631642156866874,Mt CO2e
+2035,6003,BAU,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,3.2559051281043567,Mt CO2e
+2036,6003,BAU,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,3.13927912466521,Mt CO2e
+2037,6003,BAU,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,3.013735104102213,Mt CO2e
+2038,6003,BAU,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,2.87984214727231,Mt CO2e
+2039,6003,BAU,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,2.7382623367245755,Mt CO2e
+2040,6003,BAU,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,2.5897262905946303,Mt CO2e
+2041,6003,BAU,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,2.4350109657537207,Mt CO2e
+2042,6003,BAU,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,2.2749192314451063,Mt CO2e
+2043,6003,BAU,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,2.110261573928655,Mt CO2e
+2044,6003,BAU,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,1.9418388635266077,Mt CO2e
+2045,6003,BAU,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,1.7704251678142828,Mt CO2e
+2046,6003,BAU,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,1.5967500613822683,Mt CO2e
+2047,6003,BAU,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,1.421479896114318,Mt CO2e
+2048,6003,BAU,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,1.24519752723059,Mt CO2e
+2049,6003,BAU,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,1.068380026272422,Mt CO2e
+2050,6003,BAU,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,0.8913739616230305,Mt CO2e
+2023,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,4.006471085631484,Mt CO2e
+2024,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,3.905937269952581,Mt CO2e
+2025,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,3.8048486645668227,Mt CO2e
+2026,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,3.7020527648117367,Mt CO2e
+2027,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,3.5963173614405077,Mt CO2e
+2028,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,3.4864437002834707,Mt CO2e
+2029,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,3.3713651522291395,Mt CO2e
+2030,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,3.2502302597335433,Mt CO2e
+2031,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,3.1224693467387334,Mt CO2e
+2032,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,2.987855087098966,Mt CO2e
+2033,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,2.846436336271571,Mt CO2e
+2034,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,2.698478082417145,Mt CO2e
+2035,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,2.5444075751699486,Mt CO2e
+2036,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,2.384766555309604,Mt CO2e
+2037,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,2.220169418633803,Mt CO2e
+2038,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,2.0512670761721252,Mt CO2e
+2039,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,1.8787166757327816,Mt CO2e
+2040,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,1.7031569487247529,Mt CO2e
+2041,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,1.52518824216207,Mt CO2e
+2042,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,1.3453569617795762,Mt CO2e
+2043,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,1.1641442047525103,Mt CO2e
+2044,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,0.9819583435128703,Mt CO2e
+2045,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,0.7991313927391592,Mt CO2e
+2046,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,0.6159190364162437,Mt CO2e
+2047,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,0.4325042400198702,Mt CO2e
+2048,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,0.24900442497472608,Mt CO2e
+2049,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,0.06548223165153055,Mt CO2e
+2050,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,0.0,Mt CO2e
+2023,6005,Conditional NDC,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,4.006471085631484,Mt CO2e
+2024,6005,Conditional NDC,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,3.774589123040931,Mt CO2e
+2025,6005,Conditional NDC,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,3.542350975090069,Mt CO2e
+2026,6005,Conditional NDC,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,3.3090834937832345,Mt CO2e
+2027,6005,Conditional NDC,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,3.0743966041963793,Mt CO2e
+2028,6005,Conditional NDC,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,2.838227110427388,Mt CO2e
+2029,6005,Conditional NDC,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,2.6008596466512266,Mt CO2e
+2030,6005,Conditional NDC,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,2.3629243743069424,Mt CO2e
+2031,6005,Conditional NDC,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,2.125373803053554,Mt CO2e
+2032,6005,Conditional NDC,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,1.889449715033484,Mt CO2e
+2033,6005,Conditional NDC,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,1.6565590442745433,Mt CO2e
+2034,6005,Conditional NDC,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,1.4281631378151936,Mt CO2e
+2035,6005,Conditional NDC,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,1.2056799842547117,Mt CO2e
+2036,6005,Conditional NDC,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,0.9903989733200884,Mt CO2e
+2037,6005,Conditional NDC,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,0.7834077977843379,Mt CO2e
+2038,6005,Conditional NDC,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,0.5855314091716897,Mt CO2e
+2039,6005,Conditional NDC,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,0.3972826019832958,Mt CO2e
+2040,6005,Conditional NDC,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,0.21882411544072855,Mt CO2e
+2041,6005,Conditional NDC,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,0.04994251503588365,Mt CO2e
+2042,6005,Conditional NDC,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,0.0,Mt CO2e
+2043,6005,Conditional NDC,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,0.0,Mt CO2e
+2044,6005,Conditional NDC,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,0.0,Mt CO2e
+2045,6005,Conditional NDC,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,0.0,Mt CO2e
+2046,6005,Conditional NDC,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,0.0,Mt CO2e
+2047,6005,Conditional NDC,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,0.0,Mt CO2e
+2048,6005,Conditional NDC,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,0.0,Mt CO2e
+2049,6005,Conditional NDC,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,0.0,Mt CO2e
+2050,6005,Conditional NDC,fgtv_components_by_gas,fugitive_ch4_mt_co2e,All,0.0,Mt CO2e
+2023,6003,BAU,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.007215518548391234,Mt CO2e
+2024,6003,BAU,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.007056624179559092,Mt CO2e
+2025,6003,BAU,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.006901212664163677,Mt CO2e
+2026,6003,BAU,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.006751948898624343,Mt CO2e
+2027,6003,BAU,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.006610798335902322,Mt CO2e
+2028,6003,BAU,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.006479124909811588,Mt CO2e
+2029,6003,BAU,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.006357783308286568,Mt CO2e
+2030,6003,BAU,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.006247204743470458,Mt CO2e
+2031,6003,BAU,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.006147475539098463,Mt CO2e
+2032,6003,BAU,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.0060584084348962175,Mt CO2e
+2033,6003,BAU,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005979600656979294,Mt CO2e
+2034,6003,BAU,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005910485226304289,Mt CO2e
+2035,6003,BAU,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.00585037575556649,Mt CO2e
+2036,6003,BAU,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005798505087557407,Mt CO2e
+2037,6003,BAU,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005754058202618763,Mt CO2e
+2038,6003,BAU,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005716199873299752,Mt CO2e
+2039,6003,BAU,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005684097574230641,Mt CO2e
+2040,6003,BAU,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.0056569401678475476,Mt CO2e
+2041,6003,BAU,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005633952884907234,Mt CO2e
+2042,6003,BAU,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005614409105354178,Mt CO2e
+2043,6003,BAU,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005597639465355167,Mt CO2e
+2044,6003,BAU,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005583038717571185,Mt CO2e
+2045,6003,BAU,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005572565498763688,Mt CO2e
+2046,6003,BAU,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005572565498763688,Mt CO2e
+2047,6003,BAU,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005572565498763688,Mt CO2e
+2048,6003,BAU,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005572565498763688,Mt CO2e
+2049,6003,BAU,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005572565498763688,Mt CO2e
+2050,6003,BAU,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005572565498763688,Mt CO2e
+2023,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.007215518548391234,Mt CO2e
+2024,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.0070536839838708796,Mt CO2e
+2025,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.0068953339581946955,Mt CO2e
+2026,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.006743138573300244,Mt CO2e
+2027,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.00659907384134914,Mt CO2e
+2028,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.006464518725999595,Mt CO2e
+2029,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.006340346359827357,Mt CO2e
+2030,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.006227008530265611,Mt CO2e
+2031,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.006124612892880245,Mt CO2e
+2032,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.006032992819145542,Mt CO2e
+2033,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.0059517646528890085,Mt CO2e
+2034,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005880378329241532,Mt CO2e
+2035,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005818161598398017,Mt CO2e
+2036,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005764358201004261,Mt CO2e
+2037,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005718160418773874,Mt CO2e
+2038,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005678736476802774,Mt CO2e
+2039,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005645253333761905,Mt CO2e
+2040,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005616895380712355,Mt CO2e
+2041,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005592879542374241,Mt CO2e
+2042,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.0055752621506740384,Mt CO2e
+2043,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.0055752621506740384,Mt CO2e
+2044,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.0055752621506740384,Mt CO2e
+2045,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.0055752621506740384,Mt CO2e
+2046,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.0055752621506740384,Mt CO2e
+2047,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.0055752621506740384,Mt CO2e
+2048,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.0055752621506740384,Mt CO2e
+2049,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.0055752621506740384,Mt CO2e
+2050,6004,Unconditional NDC (ZRF),fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.0055752621506740384,Mt CO2e
+2023,6005,Conditional NDC,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.007215518548391234,Mt CO2e
+2024,6005,Conditional NDC,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.007047365528293433,Mt CO2e
+2025,6005,Conditional NDC,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.006882706985645342,Mt CO2e
+2026,6005,Conditional NDC,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.00672423684666087,Mt CO2e
+2027,6005,Conditional NDC,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.006573972774251661,Mt CO2e
+2028,6005,Conditional NDC,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.00643334975623488,Mt CO2e
+2029,6005,Conditional NDC,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.0063033074678534905,Mt CO2e
+2030,6005,Conditional NDC,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.006184370577560027,Mt CO2e
+2031,6005,Conditional NDC,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.006076721561146514,Mt CO2e
+2032,6005,Conditional NDC,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005980265970967758,Mt CO2e
+2033,6005,Conditional NDC,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005894686853347311,Mt CO2e
+2034,6005,Conditional NDC,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005819492883052495,Mt CO2e
+2035,6005,Conditional NDC,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005754060433869531,Mt CO2e
+2036,6005,Conditional NDC,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005697669914407751,Mt CO2e
+2037,6005,Conditional NDC,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.0056495367819302655,Mt CO2e
+2038,6005,Conditional NDC,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005608837718052196,Mt CO2e
+2039,6005,Conditional NDC,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005591163919533798,Mt CO2e
+2040,6005,Conditional NDC,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005591163919533798,Mt CO2e
+2041,6005,Conditional NDC,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005591163919533798,Mt CO2e
+2042,6005,Conditional NDC,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005591163919533798,Mt CO2e
+2043,6005,Conditional NDC,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005591163919533798,Mt CO2e
+2044,6005,Conditional NDC,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005591163919533798,Mt CO2e
+2045,6005,Conditional NDC,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005591163919533798,Mt CO2e
+2046,6005,Conditional NDC,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005591163919533798,Mt CO2e
+2047,6005,Conditional NDC,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005591163919533798,Mt CO2e
+2048,6005,Conditional NDC,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005591163919533798,Mt CO2e
+2049,6005,Conditional NDC,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005591163919533798,Mt CO2e
+2050,6005,Conditional NDC,fgtv_components_by_gas,fugitive_n2o_mt_co2e,All,0.005591163919533798,Mt CO2e

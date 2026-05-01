@@ -186,7 +186,7 @@ ssp_modeling/cost-benefits/tornado_plot/data
 ssp_modeling/cost-benefits/out
 
 # ignore tableau/data directory
-ssp_modeling/tableau/data/
+#ssp_modeling/tableau/data/
 
 ssp_modeling/cost-benefits/output
 
