@@ -1,14 +1,20 @@
-citations: null
-description: "Gas Flaring Recovery (GFR): capture associated gas at oil/gas wellheads\
-  \ that would otherwise be flared, vented, or released as fugitive leaks. Represents\
-  \ LP gas compressors, thermal oxidizers, re-injection to reservoir, or productive\
-  \ use of recovered gas. Captured gas is removed from the three production-emission\
-  \ streams proportionally to the magnitude."
+citations:
+description: "Gas Flaring Recovery (GFR): capture associated gas at oil/gas wellheads
+  that would otherwise be flared, vented, or released as fugitive leaks. Represents
+  LP gas compressors, thermal oxidizers, re-injection to reservoir, or productive
+  use of recovered gas. Captured gas is removed from the three production-emission
+  streams proportionally to the magnitude."
 identifiers:
   transformation_code: "TX:FGTV:INC_GAS_RECOVERY_STRATEGY_CONDITIONAL"
-  transformation_name: "Scaled Default Max Parameters by 1.0 - FGTV: Gas Recovery"
+  transformation_name: "Scaled Default Max Parameters by 2.0 - FGTV: Gas Recovery"
 parameters:
-  magnitude: 0.5
+  magnitude: 1.5
   vec_implementation_ramp:
-    tp_0_ramp: 12
+    tp_0_ramp: 10
+    n_tp_ramp: 4
+    alpha_logistic: 1.0
+    window_logistic:
+    - -2
+    - 8
+    d: 1
 transformer: "TFR:FGTV:INC_GAS_RECOVERY"

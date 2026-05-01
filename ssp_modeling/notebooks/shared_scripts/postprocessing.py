@@ -23,7 +23,7 @@ def run_decomposition(
     year_ref: int,
     region: str,
     output_path: Optional[Path] = None,
-    initial_conditions_id: str = "_0",
+    initial_conditions_id: str = "_74074",
 ) -> pd.DataFrame:
     """
     Rescale *df_export* against Libya inventory targets and return the
@@ -38,7 +38,7 @@ def run_decomposition(
     year_ref              : reference / calibration year (e.g. 2023)
     region                : region label used inside the model (e.g. "libya")
     output_path           : where to write the decomposed CSV (None = skip)
-    initial_conditions_id : primary_id suffix of the baseline scenario (default "_0")
+    initial_conditions_id : primary_id suffix of the baseline scenario (default "_74074")
     """
     if str(project_dir) not in sys.path:
         sys.path.insert(0, str(project_dir))

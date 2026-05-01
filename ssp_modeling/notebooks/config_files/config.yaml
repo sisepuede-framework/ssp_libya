@@ -1,5 +1,5 @@
 country_name: "libya"
-ssp_input_file_name: "sisepuede_raw_inputs_oilgas_bau_calibrated.csv"
+ssp_input_file_name: "sisepuede_raw_inputs_oilgas_fgtv_water_updated.csv"
 ssp_transformation_cw: "ssp_libya_transformation_cw_20260408.xlsx"
 set_lndu_reallocation_factor_to_zero: true
 energy_model_flag: true

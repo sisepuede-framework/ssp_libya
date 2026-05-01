@@ -20,5 +20,5 @@ parameters:
   magnitude: 0.99
   scale_non_renewables_to_match_surplus_msp: false
   vec_implementation_ramp:
-    tp_0_ramp: 12
+    tp_0_ramp: 10
 transformer: "TFR:ENTC:TARGET_RENEWABLE_ELEC"
