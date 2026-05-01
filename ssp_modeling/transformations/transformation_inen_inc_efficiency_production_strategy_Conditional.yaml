@@ -1,11 +1,29 @@
-citations: null
+citations:
 description: Missing
 identifiers:
   transformation_code: "TX:INEN:INC_EFFICIENCY_PRODUCTION_STRATEGY_CONDITIONAL"
-  transformation_name: "Scaled Default Max Parameters by 0.25 - INEN: Maximize industrial\
-    \ production efficiency"
+  transformation_name: "Scaled Default Max Parameters by 0.25 - INEN: Maximize industrial
+    production efficiency"
 parameters:
-  categories: null
+  categories:
+  - cement
+  - chemicals
+  - electronics
+  - glass
+  - lime_and_carbonite
+  - metals
+  - mining
+  - other_product_manufacturing
+  - paper
+  - plastic
+  - recycled_glass
+  - recycled_metals
+  - recycled_paper
+  - recycled_plastic
+  - recycled_textiles
+  - recycled_wood
+  - textiles
+  - wood
   magnitude: 0.1
   vec_implementation_ramp:
     tp_0_ramp: 12
