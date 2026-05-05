@@ -103,6 +103,12 @@ def _apply_hp_to_subsec_gas(
 HP_SCHEDULE = [
     ("1.A.1 - Fuel Production",                                          ["CO2"], 200),
     ("1.A.1 - Fuel Production",                                          ["CH4"], 200),
+    
+    ("1.A.1 - Electricity and Heat Generation",                          ["CO2"], 135),
+
+     ("1.A.2.f - Cement (Energy)",                                       ["CO2"], 400),
+
+
     ("1.B - Fugitive emissions from fuels - Fugitive",                   ["CH4"], 50),
     ("1.B - Fugitive emissions from fuels - Fugitive",                   ["CO2"], 50),
     ("1.B - Fugitive emissions from fuels - Venting",                    ["CH4"], 100),
