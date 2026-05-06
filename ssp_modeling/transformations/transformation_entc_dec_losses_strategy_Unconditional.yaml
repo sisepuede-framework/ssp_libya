@@ -10,5 +10,5 @@ parameters:
   magnitude_type: final_value
   min_loss: 0.01
   vec_implementation_ramp:
-    tp_0_ramp: 12
+    tp_0_ramp: 10
 transformer: "TFR:ENTC:DEC_LOSSES"

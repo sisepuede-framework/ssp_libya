@@ -62,15 +62,22 @@ def _apply_hp_to_subsec_gas(
     by_cols=("primary_id", "strategy_id", "design_id", "future_id", "Code"),
     time_col: str = "Year",
     value_col: str = "value",
+    cutoff_year: int | None = 2025,
 ) -> pd.DataFrame:
     """Apply HP smoothing per group for matching (subsector, gas) rows.
 
-    Updates `value_hp` in place and replaces `value` with the smooth where set.
+    If `cutoff_year` is set, the HP filter is applied only to years
+    >= cutoff_year, anchored at cutoff_year so the smoothed series starts
+    exactly at the original value of that year (preserving continuity).
+    Years strictly before cutoff_year keep their original `value` and
+    `value_hp` mirrors `value` for those rows. This keeps historical /
+    pre-transformation trajectories untouched and lets smoothing only show
+    up where the transformations actually act (default: from 2025 onward).
+    Set `cutoff_year=None` to smooth the full series.
+
     Mirrors hp_filter_subsec(replace_original=TRUE) from data_prep_new_mapping.r,
     including the side-effect that the R helper re-snapshots `value_original`
-    from the *current* value column at the start of every call (so HP-filtered
-    rows end up with their own smoothed value in `value_original` after the
-    final call). We replicate that for byte-level parity with the R output.
+    from the *current* value column at the start of every call.
     """
     if isinstance(gases, str):
         gases = [gases]
@@ -88,14 +95,29 @@ def _apply_hp_to_subsec_gas(
     smoothed = pd.Series(np.nan, index=sub.index, dtype=float, name="value_hp")
     for _, idx in sub.groupby(list(by_cols), dropna=False).indices.items():
         ordered = sub.iloc[idx].sort_values(time_col)
-        v = ordered[value_col].astype(float).to_numpy()
-        sm = _hp_smooth_series(v, lambda_hp)
-        smoothed.loc[ordered.index] = sm
+        if cutoff_year is not None:
+            window = ordered.loc[ordered[time_col] >= cutoff_year]
+            if len(window) < 2:
+                continue
+            v = window[value_col].astype(float).to_numpy()
+            sm = _hp_smooth_series(v, lambda_hp)
+            smoothed.loc[window.index] = sm
+        else:
+            v = ordered[value_col].astype(float).to_numpy()
+            sm = _hp_smooth_series(v, lambda_hp)
+            smoothed.loc[ordered.index] = sm
 
     df.loc[smoothed.index, "value_hp"] = smoothed.values
     valid = smoothed.notna()
     if valid.any():
         df.loc[smoothed.index[valid], value_col] = smoothed[valid].values
+    # Pre-cutoff matched rows: mirror original value into value_hp so the
+    # column stays usable end-to-end in Tableau.
+    not_smoothed = smoothed.isna()
+    if not_smoothed.any():
+        df.loc[smoothed.index[not_smoothed], "value_hp"] = (
+            df.loc[smoothed.index[not_smoothed], value_col].astype(float).values
+        )
     return df
 
 
@@ -104,17 +126,20 @@ HP_SCHEDULE = [
     ("1.A.1 - Fuel Production",                                          ["CO2"], 200),
     ("1.A.1 - Fuel Production",                                          ["CH4"], 200),
     
-    ("1.A.1 - Electricity and Heat Generation",                          ["CO2"], 135),
+    #("1.A.1 - Electricity and Heat Generation",                          ["CO2"], 100),
 
-     ("1.A.2.f - Cement (Energy)",                                       ["CO2"], 400),
+    ("1.A.2.f - Cement (Energy)",                                       ["CO2"], 400),
 
 
-    ("1.B - Fugitive emissions from fuels - Fugitive",                   ["CH4"], 50),
-    ("1.B - Fugitive emissions from fuels - Fugitive",                   ["CO2"], 50),
-    ("1.B - Fugitive emissions from fuels - Venting",                    ["CH4"], 100),
-    ("1.B - Fugitive emissions from fuels - Venting",                    ["CO2"], 100),
-    ("1.B - Fugitive emissions from fuels - Flaring",                    ["CH4"], 50),
-    ("1.B - Fugitive emissions from fuels - Flaring",                    ["CO2"], 50),
+    # ("1.B - Fugitive emissions from fuels - Fugitive",                   ["CH4"], 100),
+    # ("1.B - Fugitive emissions from fuels - Fugitive",                   ["CO2"], 1600),
+
+     ("1.B - Fugitive emissions from fuels - Venting",                    ["CH4"], 60),
+     ("1.B - Fugitive emissions from fuels - Venting",                    ["CO2"], 60),
+    
+    #  ("1.B - Fugitive emissions from fuels - Flaring",                    ["CH4"], 10),
+    #  ("1.B - Fugitive emissions from fuels - Flaring",                    ["CO2"], 10),
+
     ("3.C.4 - Direct N2O Emissions from managed soils",                  ["N2O"],  200),
     ("3.A.1 - Enteric Fermentation",                                     ["CH4"],  200),
     ("3.A.2 - Manure Management",                                        ["CH4"],  200),
@@ -140,8 +165,15 @@ def build_emissions_table(
     year_ref: int,
     out_path: Path,
     hp_schedule: Iterable[tuple] = HP_SCHEDULE,
+    hp_cutoff_year: int | None = 2025,
 ) -> pd.DataFrame:
-    """Port of data_prep_new_mapping.r."""
+    """Port of data_prep_new_mapping.r.
+
+    `hp_cutoff_year` controls the HP filter window: years strictly before this
+    year keep their original values, smoothing only kicks in from this year
+    onward (default 2025, the first transformation year). Set to None to
+    smooth the entire series like the original R pipeline.
+    """
 
     # 1 — load mapping
     mapping = pd.read_csv(targets_path)
@@ -242,10 +274,14 @@ def build_emissions_table(
     ).reset_index(drop=True)
 
     # 11 — HP filter (note: _apply_hp_to_subsec_gas re-snapshots value_original on
-    #       every call, matching the R hp_filter_subsec side-effect)
+    #       every call, matching the R hp_filter_subsec side-effect). Smoothing
+    #       is anchored at hp_cutoff_year so pre-transformation trajectories
+    #       stay untouched.
     combined["value_hp"] = np.nan
     for subsec, gases, lam in hp_schedule:
-        combined = _apply_hp_to_subsec_gas(combined, subsec, gases, lam)
+        combined = _apply_hp_to_subsec_gas(
+            combined, subsec, gases, lam, cutoff_year=hp_cutoff_year,
+        )
 
     # 12 — write CSV with the column order expected by Tableau
     final_cols = [
@@ -456,6 +492,7 @@ def run_tableau_postprocessing(
     year_ref: int,
     wide_inputs_outputs_filename: str | None = None,
     out_dir: str | Path | None = None,
+    hp_cutoff_year: int | None = 2025,
 ) -> dict:
     """Generate every Tableau-ready CSV in one call.
 
@@ -472,6 +509,10 @@ def run_tableau_postprocessing(
         inside run_dir; if None, auto-detected as the single matching pattern.
     out_dir : where to write the Tableau CSVs (defaults to
         <project_dir>/ssp_modeling/tableau/data).
+    hp_cutoff_year : first year where the HP smoothing kicks in for the
+        emissions table (default 2025). Years before this stay as the raw
+        simulation output so trajectories only diverge from where the
+        transformations start to act. Set to None to smooth the entire series.
     """
     run_dir = Path(run_dir)
     project_dir = Path(project_dir)
@@ -496,13 +537,14 @@ def run_tableau_postprocessing(
     employment_path        = pp_data / "levers" / "Sisepuede - Employment Results - WB (SECTOR).csv"
 
     emissions = build_emissions_table(
-        run_dir       = run_dir,
-        targets_path  = targets_path,
-        edgar_path    = edgar_path,
-        iso_code3     = iso_code3,
-        region        = region,
-        year_ref      = year_ref,
-        out_path      = out_dir / f"decomposed_emissions_{region}_{year_ref}.csv",
+        run_dir        = run_dir,
+        targets_path   = targets_path,
+        edgar_path     = edgar_path,
+        iso_code3      = iso_code3,
+        region         = region,
+        year_ref       = year_ref,
+        out_path       = out_dir / f"decomposed_emissions_{region}_{year_ref}.csv",
+        hp_cutoff_year = hp_cutoff_year,
     )
     drivers = build_drivers_table(
         run_dir                 = run_dir,

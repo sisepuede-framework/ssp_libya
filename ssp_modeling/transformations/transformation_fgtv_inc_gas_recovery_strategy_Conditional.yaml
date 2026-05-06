@@ -8,13 +8,8 @@ identifiers:
   transformation_code: "TX:FGTV:INC_GAS_RECOVERY_STRATEGY_CONDITIONAL"
   transformation_name: "Scaled Default Max Parameters by 2.0 - FGTV: Gas Recovery"
 parameters:
-  magnitude: 1.5
+  magnitude: 1.9
   vec_implementation_ramp:
     tp_0_ramp: 10
-    n_tp_ramp: 4
-    alpha_logistic: 1.0
-    window_logistic:
-    - -2
-    - 8
-    d: 1
+    n_tp_ramp: 5
 transformer: "TFR:FGTV:INC_GAS_RECOVERY"
