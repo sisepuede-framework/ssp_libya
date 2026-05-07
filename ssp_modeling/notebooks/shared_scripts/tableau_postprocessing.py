@@ -125,6 +125,9 @@ def _apply_hp_to_subsec_gas(
 HP_SCHEDULE = [
     ("1.A.1 - Fuel Production",                                          ["CO2"], 200),
     ("1.A.1 - Fuel Production",                                          ["CH4"], 200),
+
+    # ("1.A.4 - Other Sectors",                                            ["CO2"], 200),
+    # ("1.A.4 - Other Sectors",                                            ["CH4"], 200),
     
     #("1.A.1 - Electricity and Heat Generation",                          ["CO2"], 100),
 
